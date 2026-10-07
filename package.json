@@ -1,0 +1,16 @@
+{
+  "name": "cubicyard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cubic Yard Calculator — free material volume calculators for concrete, gravel, mulch, dirt, sand.",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "15.5.27",
+    "react": "19.0.1",
+    "react-dom": "19.0.1"
+  }
+}
