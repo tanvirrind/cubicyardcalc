@@ -1,20 +1,16 @@
 import "./globals.css";
-import { Oswald, IBM_Plex_Mono } from "next/font/google";
+// Self-hosted fonts via Fontsource. next/font/google is intentionally NOT
+// used: it fetches from fonts.googleapis.com at build time, which the
+// Hostinger build sandbox blocks (build fails with a null-read in the
+// Google font loader). npm registry access works, so fonts ride along
+// with the dependencies instead.
+import "@fontsource-variable/oswald";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
+import "@fontsource/ibm-plex-mono/600.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import JsonLd from "../components/JsonLd";
-
-const display = Oswald({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["500", "600", "700"],
-});
-
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500", "600"],
-});
 
 const SITE_URL = "https://cubicyardcalculator.site";
 const SITE_NAME = "Cubic Yard Calculator";
@@ -91,7 +87,7 @@ const websiteJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable}`}>
+    <html lang="en">
       <body>
         <JsonLd data={orgJsonLd} />
         <JsonLd data={websiteJsonLd} />
