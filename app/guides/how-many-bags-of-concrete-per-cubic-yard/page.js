@@ -42,6 +42,10 @@ const faqs = [
     q: "Do bag yields vary?",
     a: "Yes. The table uses manufacturer yields, but exact yield varies by mix and moisture. Check the bag label and round up, then add 10% overage for spillage and uneven forms.",
   },
+  {
+    q: "How many bags of concrete per fence post?",
+    a: "About 2 bags of 80 lb mix for a standard post: a 10-inch-diameter hole 30 inches deep holds roughly 1.15 cubic feet of concrete after the post itself displaces its share. Grab a third bag as overage — holes are never perfectly round.",
+  },
 ];
 
 const bagTable = [
@@ -109,6 +113,36 @@ export default function Guide() {
         bags. That's a lot of lifting: at roughly 60 bags an hour of mixing
         work, a 10×10 slab is about the size where ready-mix starts looking
         very attractive.
+      </p>
+
+      <h2>Bag counts by common project</h2>
+      <p>
+        Most people don&apos;t buy &ldquo;a cubic yard of bags&rdquo; — they
+        buy for a project. Same math, pre-computed, using 80 lb bags (yield
+        0.60 cu ft per bag). The &ldquo;order&rdquo; column adds 10% overage
+        and rounds up:
+      </p>
+      <table className="ref-table" style={{ margin: "20px 0" }}>
+        <thead>
+          <tr><th>Project</th><th>80-lb bags</th><th>Order (with 10%)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Fence post (10&Prime; hole, 30&Prime; deep)</td><td className="num">2</td><td className="num">3</td></tr>
+          <tr><td>Deck footing (12&Prime; &times; 36&Prime;)</td><td className="num">4</td><td className="num">5</td></tr>
+          <tr><td>Concrete steps (3 steps, 4 ft wide)</td><td className="num">11</td><td className="num">13</td></tr>
+          <tr><td>12&times;12 patio slab, 4&Prime; thick</td><td className="num">80</td><td className="num">88</td></tr>
+        </tbody>
+      </table>
+      <p>
+        A fence post is the classic small job: a 10-inch hole 30 inches deep
+        needs about 2 bags of 80 lb mix after the post itself displaces its
+        share — grab a third bag and you have margin for an uneven hole. A
+        12&times;12 slab is where the bag route starts to hurt: 80+ bags is
+        two tons of lifting, which is exactly what the{" "}
+        <a href="/guides/bagged-vs-ready-mix-concrete/">
+          bagged vs ready-mix guide
+        </a>{" "}
+        helps you decide.
       </p>
 
       <h2>Bags vs ready-mix: the breakpoint</h2>

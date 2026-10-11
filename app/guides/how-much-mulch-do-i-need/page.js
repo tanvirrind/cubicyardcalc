@@ -43,6 +43,10 @@ const faqs = [
     q: "What is a mulch volcano?",
     a: "Piling mulch against a tree trunk in a cone — it rots the bark and invites pests. Keep mulch 3 to 6 inches away from trunks and spread it flat instead.",
   },
+  {
+    q: "How much area does one bag of mulch cover?",
+    a: "A 2 cu ft bag covers 12 sq ft at 2 inches deep, 8 sq ft at 3 inches, or 6 sq ft at 4 inches. A 3 cu ft bag covers 18, 12, or 9 sq ft at the same depths.",
+  },
 ];
 
 export default function Guide() {
@@ -111,6 +115,27 @@ export default function Guide() {
           <tr><td className="num">3 cu ft</td><td className="num">9</td><td className="num">9</td></tr>
         </tbody>
       </table>
+
+      <h2>Coverage per bag</h2>
+      <p>
+        Buying bags? Skip the yard math and work straight from the bag.
+        Coverage per bag at common depths:
+      </p>
+      <table className="ref-table" style={{ margin: "20px 0" }}>
+        <thead>
+          <tr><th>Bag size</th><th>At 2 inches</th><th>At 3 inches</th><th>At 4 inches</th></tr>
+        </thead>
+        <tbody>
+          <tr><td className="num">2 cu ft</td><td className="num">12 sq ft</td><td className="num">8 sq ft</td><td className="num">6 sq ft</td></tr>
+          <tr><td className="num">3 cu ft</td><td className="num">18 sq ft</td><td className="num">12 sq ft</td><td className="num">9 sq ft</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Example: a 10&times;10 bed (100 sq ft) at 3 inches needs 100 / 8 =
+        12.5 — call it <strong>13 bags</strong> of 2 cu ft mulch, matching the
+        FAQ math above. For 3 cu ft bags, the same bed needs 100 / 12 = 8.3,
+        so <strong>9 bags</strong>.
+      </p>
 
       <h2>Bags vs bulk: the real math</h2>
       <p>
