@@ -2,27 +2,27 @@ import Link from "next/link";
 import { guides } from "../../lib/guides";
 
 export const metadata = {
-  title: "Bulk Material Guides — Bags, Bulk & Density",
+  title: "Bulk Material Guides — Projects, Comparisons & Costs",
   description:
-    "Practical guides: concrete bag counts and bagged vs ready-mix costs, topsoil vs fill dirt, a complete material weight chart, gravel driveways, paver bases, mulch needs, and cubic-yards-to-tons conversion. Free, with worked examples.",
+    "20 practical guides: project quantity charts for pools, french drains, fire pits, sheds, driveways and more, material comparisons, truck capacity, and installation costs. Free, with worked examples.",
   keywords: [
-    "how many bags of concrete per cubic yard",
-    "how much mulch do i need",
+    "bulk material guides",
+    "how many cubic yards fit in a pickup truck",
+    "how much sand for pool base",
+    "playground mulch depth",
+    "mulch installation cost",
+    "landscape fabric under rock",
+    "decomposed granite vs gravel",
+    "how much gravel for french drain",
     "topsoil vs fill dirt",
     "how much does a cubic yard weigh",
-    "how much gravel do i need for a driveway",
     "bagged vs ready mix concrete cost",
-    "how much sand do i need for pavers",
-    "crushed stone vs pea gravel",
-    "how many wheelbarrow loads in a cubic yard",
-    "cubic yards to tons conversion",
-    "bulk material guides",
   ],
   alternates: { canonical: "https://cubicyardcalculator.site/guides/" },
   openGraph: {
-    title: "Bulk Material Guides — Bags, Bulk & Density | Cubic Yard Calculator",
+    title: "Bulk Material Guides — Projects, Comparisons & Costs | Cubic Yard Calculator",
     description:
-      "Concrete bags, mulch math, topsoil vs fill dirt, weight charts, gravel driveways, paver bases, and tons conversion — practical guides with worked examples.",
+      "Project quantity charts, material comparisons, truck capacity tables, and installation cost guides — 20 practical guides with worked examples.",
     url: "https://cubicyardcalculator.site/guides/",
   },
 };
