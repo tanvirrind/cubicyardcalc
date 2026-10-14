@@ -4,25 +4,25 @@ import { guides } from "../../lib/guides";
 export const metadata = {
   title: "Bulk Material Guides — Projects, Comparisons & Costs",
   description:
-    "20 practical guides: project quantity charts for pools, french drains, fire pits, sheds, driveways and more, material comparisons, truck capacity, and installation costs. Free, with worked examples.",
+    "30 practical guides: project quantity charts for retaining walls, walkways, RV pads, sandboxes, dry creek beds and more, material comparisons, a gravel size chart, measuring techniques, and installation costs. Free, with worked examples.",
   keywords: [
     "bulk material guides",
-    "how many cubic yards fit in a pickup truck",
-    "how much sand for pool base",
-    "playground mulch depth",
-    "mulch installation cost",
-    "landscape fabric under rock",
-    "decomposed granite vs gravel",
-    "how much gravel for french drain",
-    "topsoil vs fill dirt",
-    "how much does a cubic yard weigh",
-    "bagged vs ready mix concrete cost",
+    "how much gravel for a retaining wall",
+    "types of sand for landscaping",
+    "how much gravel for a walkway",
+    "gravel size chart",
+    "how much sand for a sandbox",
+    "how much gravel for an RV pad",
+    "how to measure irregular area for mulch",
+    "how much dirt to level a yard",
+    "how much rock for a dry creek bed",
+    "topsoil vs compost vs garden soil",
   ],
   alternates: { canonical: "https://cubicyardcalculator.site/guides/" },
   openGraph: {
     title: "Bulk Material Guides — Projects, Comparisons & Costs | Cubic Yard Calculator",
     description:
-      "Project quantity charts, material comparisons, truck capacity tables, and installation cost guides — 20 practical guides with worked examples.",
+      "Project quantity charts, material comparisons, a gravel size chart, measuring techniques, and installation cost guides — 30 practical guides with worked examples.",
     url: "https://cubicyardcalculator.site/guides/",
   },
 };
