@@ -56,6 +56,7 @@ export default function Guide() {
       slug="how-much-rock-for-a-dry-creek-bed"
       calculatorHref="/calculators/landscape-rock-calculator/"
       calculatorLabel="Try the landscape rock calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 

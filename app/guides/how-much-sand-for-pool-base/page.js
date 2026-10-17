@@ -57,6 +57,7 @@ export default function Guide() {
       slug="how-much-sand-for-pool-base"
       calculatorHref="/calculators/sand-calculator/"
       calculatorLabel="Try the sand calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
