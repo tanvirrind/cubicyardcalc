@@ -79,6 +79,9 @@ const calcs = [
   { name: "Mulch calculator", note: "Yards & bag counts", href: "/calculators/mulch-calculator/" },
   { name: "Gravel calculator", note: "Yards & tons", href: "/calculators/gravel-calculator/" },
   { name: "Asphalt calculator", note: "Driveways, tons & cost", href: "/calculators/asphalt-calculator/" },
+  { name: "Concrete footing calculator", note: "Strip footings, yards & bags", href: "/calculators/concrete-footing-calculator/" },
+  { name: "Rebar calculator", note: "Bars, footage & weight", href: "/calculators/rebar-calculator/" },
+  { name: "Concrete block calculator", note: "CMU blocks, mortar & grout", href: "/calculators/concrete-block-calculator/" },
   { name: "Sand calculator", note: "Yards & tons", href: "/calculators/sand-calculator/" },
   { name: "Dirt calculator", note: "Topsoil & fill dirt, yards & tons", href: "/calculators/dirt-calculator/" },
   { name: "Topsoil calculator", note: "Gardens & raised beds", href: "/calculators/topsoil-calculator/" },
@@ -173,7 +176,7 @@ export default function Home() {
           <div className="kicker">Calculators</div>
           <h2 className="h2">One site, every bulk material</h2>
           <p className="sub">
-            Seventeen free calculators — volume, weight, bag counts, cost, and
+            Twenty free calculators — volume, weight, bag counts, cost, and
             conversions, all in one place.
           </p>
           <div className="grid3">
