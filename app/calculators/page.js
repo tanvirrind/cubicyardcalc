@@ -21,7 +21,7 @@ export const metadata = {
   openGraph: {
     title: "Free Cubic Yard Calculators — Concrete, Mulch & More | Cubic Yard Calculator",
     description:
-      "Twenty-three free bulk-material calculators: concrete, gravel, mulch, sand, dirt, topsoil, rock, asphalt, bag converters and more.",
+      "Twenty-nine free bulk-material calculators: concrete, gravel, mulch, sand, dirt, topsoil, rock, asphalt, pavers, brick, sod, project cost estimators, bag converters and more.",
     url: "https://cubicyardcalculator.site/calculators/",
   },
 };
@@ -50,6 +50,12 @@ const calcs = [
   { name: "Pea gravel calculator", note: "Walkways, patios & dog runs", href: "/calculators/pea-gravel-calculator/" },
   { name: "Post hole concrete calculator", note: "Bags per hole, post deducted", href: "/calculators/post-hole-concrete-calculator/" },
   { name: "m² → square yards", note: "Two-way area converter", href: "/calculators/square-meters-to-square-yards-calculator/" },
+  { name: "Paver calculator", note: "Pavers, gravel base & sand", href: "/calculators/paver-calculator/" },
+  { name: "Brick calculator", note: "Bricks & mortar bags", href: "/calculators/brick-calculator/" },
+  { name: "Sod calculator", note: "Rolls & pallets", href: "/calculators/sod-calculator/" },
+  { name: "Fence cost calculator", note: "Installed price ranges", href: "/calculators/fence-cost-calculator/" },
+  { name: "Driveway cost calculator", note: "Asphalt, concrete, gravel", href: "/calculators/driveway-cost-calculator/" },
+  { name: "Shed cost calculator", note: "Kits, custom & shed homes", href: "/calculators/shed-cost-calculator/" },
 ];
 
 export default function CalculatorsHub() {
