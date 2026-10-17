@@ -56,6 +56,7 @@ export default function Guide() {
       slug="topsoil-vs-compost-vs-garden-soil"
       calculatorHref="/calculators/topsoil-calculator/"
       calculatorLabel="Try the topsoil calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 

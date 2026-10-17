@@ -56,6 +56,7 @@ export default function Guide() {
       slug="types-of-sand"
       calculatorHref="/calculators/sand-calculator/"
       calculatorLabel="Try the sand calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 

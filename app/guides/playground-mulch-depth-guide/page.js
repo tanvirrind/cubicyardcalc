@@ -57,6 +57,7 @@ export default function Guide() {
       slug="playground-mulch-depth-guide"
       calculatorHref="/calculators/mulch-calculator/"
       calculatorLabel="Try the mulch calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
