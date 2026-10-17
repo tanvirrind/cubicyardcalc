@@ -62,6 +62,7 @@ export default function Guide() {
       slug="cubic-yards-to-tons-conversion-guide"
       calculatorHref="/calculators/tons-to-cubic-yards-calculator/"
       calculatorLabel="Try the tons converter"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
