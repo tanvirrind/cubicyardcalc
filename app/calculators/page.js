@@ -21,7 +21,7 @@ export const metadata = {
   openGraph: {
     title: "Free Cubic Yard Calculators — Concrete, Mulch & More | Cubic Yard Calculator",
     description:
-      "Sixteen free bulk-material calculators: concrete, gravel, mulch, sand, dirt, topsoil, rock, bag converters and more.",
+      "Seventeen free bulk-material calculators: concrete, gravel, mulch, sand, dirt, topsoil, rock, asphalt, bag converters and more.",
     url: "https://cubicyardcalculator.site/calculators/",
   },
 };
@@ -31,6 +31,7 @@ const calcs = [
   { name: "Concrete calculator", note: "Yards, weight, bags & cost", href: "/calculators/concrete-calculator/" },
   { name: "Mulch calculator", note: "Yards & bag counts", href: "/calculators/mulch-calculator/" },
   { name: "Gravel calculator", note: "Yards & tons", href: "/calculators/gravel-calculator/" },
+  { name: "Asphalt calculator", note: "Driveways, tons & cost", href: "/calculators/asphalt-calculator/" },
   { name: "Sand calculator", note: "Yards & tons", href: "/calculators/sand-calculator/" },
   { name: "Dirt calculator", note: "Topsoil & fill dirt, yards & tons", href: "/calculators/dirt-calculator/" },
   { name: "Topsoil calculator", note: "Gardens & raised beds", href: "/calculators/topsoil-calculator/" },

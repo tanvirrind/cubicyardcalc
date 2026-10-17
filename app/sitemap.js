@@ -11,6 +11,7 @@ const routes = [
   { path: "/calculators/dirt-calculator/", priority: 0.9, changeFrequency: "weekly" },
   { path: "/calculators/mulch-calculator/", priority: 0.9, changeFrequency: "weekly" },
   { path: "/calculators/gravel-calculator/", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/calculators/asphalt-calculator/", priority: 0.9, changeFrequency: "weekly" },
   { path: "/calculators/sand-calculator/", priority: 0.9, changeFrequency: "weekly" },
   { path: "/calculators/square-feet-to-cubic-yards-calculator/", priority: 0.9, changeFrequency: "weekly" },
   { path: "/calculators/cubic-feet-to-cubic-yards-calculator/", priority: 0.9, changeFrequency: "weekly" },
