@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { F, SelectF, UnitF, ResultHead, Row, TotalRow, ResultNote, DIMENSION_OPTIONS, num } from "./Fields";
+import { F, SelectF, UnitF, ResultHead, Row, TotalRow, ResultNote, DIMENSION_OPTIONS, num, WASTE_OPTIONS } from "./Fields";
 import { toFeet, densityLbs, densityOptions, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
 import { fmtNum, fmt$ } from "../lib/format";
 
@@ -20,6 +20,7 @@ export default function AsphaltCalculator() {
   const [height, setHeight] = useState("10");
   const [heightUnit, setHeightUnit] = useState("ft");
   const [densityIdx, setDensityIdx] = useState("0");
+  const [waste, setWaste] = useState("10");
 
   const [priceTon, setPriceTon] = useState("110");
 
@@ -36,12 +37,12 @@ export default function AsphaltCalculator() {
     const lbs = densityLbs("asphalt", densityIdx);
     const tonsPerYard = lbs / 2000;
     const tons = yards * tonsPerYard;
-    const overageYards = withOverage(yards);
-    const overageTons = withOverage(tons);
+    const overageYards = withOverage(yards, num(waste) / 100);
+    const overageTons = withOverage(tons, num(waste) / 100);
     // Cost is priced on the order quantity (overage included), like the concrete calculator.
     const cost = overageTons * num(priceTon);
     return { yards, tons, lbs, overageYards, overageTons, cost, tonsPerYard };
-  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, thickness, thicknessUnit, densityIdx, priceTon]);
+  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, thickness, thicknessUnit, densityIdx, priceTon, waste]);
 
   return (
     <div className="calc-layout">
@@ -70,6 +71,7 @@ export default function AsphaltCalculator() {
           options={DIMENSION_OPTIONS}
           hint="Residential driveway: 2–3 in over compacted base. Parking areas: 3–4 in."
         />
+        <SelectF label="Waste & overage" value={waste} set={setWaste} options={WASTE_OPTIONS} hint="Added to the order quantity" />
         <div className="field-row">
           <F label="Price per ton ($)" value={priceTon} set={setPriceTon} hint="2026 hot mix: ~$75–$150/ton picked up, $110–$200 delivered" />
         </div>
@@ -88,7 +90,7 @@ export default function AsphaltCalculator() {
         <Row label="Cubic meters" value={fmtNum(r.yards * YD3_TO_M3)} />
         <Row label="Tons" value={fmtNum(r.tons)} />
         <Row label="Tonnes" value={fmtNum(r.tons * TONS_TO_TONNES)} />
-        <Row label="With 10% overage" value={`${fmtNum(r.overageYards)} yd³`} />
+        <Row label={`With ${waste}% overage`} value={`${fmtNum(r.overageYards)} yd³`} />
         <Row label="Overage (tons)" value={fmtNum(r.overageTons)} />
         <TotalRow label="Material cost" value={fmt$(r.cost)} />
         <div style={{ marginTop: 18 }}>

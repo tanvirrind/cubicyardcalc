@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { F, UnitF, SelectF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS } from "./Fields";
+import { F, UnitF, SelectF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS, WASTE_OPTIONS } from "./Fields";
 import { toFeet, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, CONCRETE_BAGS_PER_YARD, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
 import { fmtNum, fmt$ } from "../lib/format";
 
@@ -21,6 +21,7 @@ export default function ConcreteCalculator() {
   const [height, setHeight] = useState("10");
   const [heightUnit, setHeightUnit] = useState("ft");
   const [directYards, setDirectYards] = useState("1");
+  const [waste, setWaste] = useState("10");
   const [priceYd, setPriceYd] = useState("150");
   const [delivery, setDelivery] = useState("0");
   const [taxPct, setTaxPct] = useState("0");
@@ -42,7 +43,9 @@ export default function ConcreteCalculator() {
     }
     const lbs = yards * DENSITIES.concrete.lbs;
     const tons = lbs / 2000;
-    const overage = withOverage(yards);
+    // Slab mode uses the selected waste factor; the known-cubic-yards mode
+    // keeps the original fixed 10% default untouched.
+    const overage = mode === "slab" ? withOverage(yards, num(waste) / 100) : withOverage(yards);
     const bags = CONCRETE_BAGS_PER_YARD.map((b) => ({
       label: b.label,
       count: Math.ceil(yards * b.perYard),
@@ -55,7 +58,7 @@ export default function ConcreteCalculator() {
     const tax = (material + deliv) * (num(taxPct) / 100);
     const total = material + deliv + tax;
     return { yards, lbs, tons, overage, bags, material, deliv, tax, total };
-  }, [mode, shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, thickness, thicknessUnit, directYards, priceYd, delivery, taxPct]);
+  }, [mode, shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, thickness, thicknessUnit, directYards, waste, priceYd, delivery, taxPct]);
 
   return (
     <div className="calc-layout">
@@ -89,6 +92,7 @@ export default function ConcreteCalculator() {
             <div className="field-row">
               <UnitF label="Thickness" value={thickness} set={setThickness} unit={thicknessUnit} setUnit={setThicknessUnit} options={DIMENSION_OPTIONS} hint="4 in = patios, 6 in = driveways" />
             </div>
+            <SelectF label="Waste & overage" value={waste} set={setWaste} options={WASTE_OPTIONS} hint="Added to the order quantity" />
           </>
         ) : (
           <F label="Cubic yards" value={directYards} set={setDirectYards} />
@@ -111,7 +115,7 @@ export default function ConcreteCalculator() {
         <Row label="Weight" value={`${fmtNum(r.lbs, 0)} lbs`} />
         <Row label="Weight (tons)" value={fmtNum(r.tons)} />
         <Row label="Weight (tonnes)" value={fmtNum(r.tons * TONS_TO_TONNES)} />
-        <Row label="With 10% overage" value={`${fmtNum(r.overage)} yd³`} />
+        <Row label={mode === "slab" ? `With ${waste}% overage` : "With 10% overage"} value={`${fmtNum(r.overage)} yd³`} />
         <div
           style={{
             fontSize: 13,

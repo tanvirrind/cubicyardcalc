@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { F, num, SelectF, UnitF, ResultHead, Row, TotalRow, ResultNote, DIMENSION_OPTIONS } from "./Fields";
+import { F, num, SelectF, UnitF, ResultHead, Row, TotalRow, ResultNote, DIMENSION_OPTIONS, WASTE_OPTIONS } from "./Fields";
 import { toFeet, densityLbs, densityOptions, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
 import { fmtNum, fmt$ } from "../lib/format";
 
@@ -23,6 +23,7 @@ export default function SandCalculator() {
   const [price, setPrice] = useState("0");
   const [delivery, setDelivery] = useState("0");
   const [taxPct, setTaxPct] = useState("0");
+  const [waste, setWaste] = useState("10");
 
 
   const r = useMemo(() => {
@@ -37,8 +38,8 @@ export default function SandCalculator() {
     const yards = (areaSqFt * dFt) / 27;
     const lbs = densityLbs("sand", densityIdx);
     const tons = (yards * lbs) / 2000;
-    const overage = withOverage(yards);
-    const overageTons = withOverage(tons);
+    const overage = withOverage(yards, num(waste) / 100);
+    const overageTons = withOverage(tons, num(waste) / 100);
     const bags50 = Math.ceil((yards * lbs) / 50);
     // Cost prices the overage-included order quantity, like the concrete calculator.
     const materialCost = overage * num(price);
@@ -46,7 +47,7 @@ export default function SandCalculator() {
     const tax = (materialCost + deliv) * (num(taxPct) / 100);
     const total = materialCost + deliv + tax;
     return { yards, tons, lbs, overage, overageTons, bags50, materialCost, deliv, tax, total };
-  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, densityIdx, price, delivery, taxPct]);
+  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, densityIdx, price, delivery, taxPct, waste]);
 
   return (
     <div className="calc-layout">
@@ -82,6 +83,7 @@ export default function SandCalculator() {
           options={densityOptions("sand")}
           hint="Weight changes with type; volume does not"
         />
+        <SelectF label="Waste & overage" value={waste} set={setWaste} options={WASTE_OPTIONS} hint="Added to the order quantity" />
         <h3 style={{ marginTop: 26 }}>Cost estimate</h3>
         <div className="field-row">
           <F label="Price per cubic yard ($)" value={price} set={setPrice} />
@@ -99,7 +101,7 @@ export default function SandCalculator() {
         <Row label="Tons" value={fmtNum(r.tons)} />
         <Row label="Tonnes" value={fmtNum(r.tons * TONS_TO_TONNES)} />
         <Row label="Weight (lbs)" value={fmtNum(r.tons * 2000, 0)} />
-        <Row label="With 10% overage" value={`${fmtNum(r.overage)} yd³`} />
+        <Row label={`With ${waste}% overage`} value={`${fmtNum(r.overage)} yd³`} />
         <Row label="50 lb bags (approx.)" value={r.bags50.toLocaleString("en-US")} />
         {r.total > 0 && (
           <>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { F, SelectF, UnitF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS } from "./Fields";
+import { F, SelectF, UnitF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS, WASTE_OPTIONS } from "./Fields";
 import { toFeet, densityLbs, densityOptions, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
 import { fmtNum, fmt$ } from "../lib/format";
 
@@ -29,6 +29,7 @@ export default function TopsoilCalculator() {
   const [price, setPrice] = useState("0");
   const [delivery, setDelivery] = useState("0");
   const [taxPct, setTaxPct] = useState("0");
+  const [waste, setWaste] = useState("10");
 
 
   const applyPreset = (p) => {
@@ -51,15 +52,15 @@ export default function TopsoilCalculator() {
     const yards = (areaSqFt * dFt) / 27;
     const lbs = densityLbs("topsoil", densityIdx);
     const tons = (yards * lbs) / 2000;
-    const overage = withOverage(yards);
-    const overageTons = withOverage(tons);
+    const overage = withOverage(yards, num(waste) / 100);
+    const overageTons = withOverage(tons, num(waste) / 100);
     // Cost prices the overage-included order quantity, like the concrete calculator.
     const materialCost = overage * num(price);
     const deliv = num(delivery);
     const tax = (materialCost + deliv) * (num(taxPct) / 100);
     const total = materialCost + deliv + tax;
     return { yards, tons, lbs, overage, overageTons, materialCost, deliv, tax, total };
-  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, densityIdx, price, delivery, taxPct]);
+  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, densityIdx, price, delivery, taxPct, waste]);
 
   return (
     <div className="calc-layout">
@@ -112,6 +113,7 @@ export default function TopsoilCalculator() {
           options={densityOptions("topsoil")}
           hint="Weight changes with type; volume does not"
         />
+        <SelectF label="Waste & overage" value={waste} set={setWaste} options={WASTE_OPTIONS} hint="Added to the order quantity" />
         <h3 style={{ marginTop: 26 }}>Cost estimate</h3>
         <div className="field-row">
           <F label="Price per cubic yard ($)" value={price} set={setPrice} />
@@ -128,7 +130,7 @@ export default function TopsoilCalculator() {
         <Row label="Cubic meters" value={fmtNum(r.yards * YD3_TO_M3)} />
         <Row label="Weight" value={`${fmtNum(r.tons)} tons`} />
         <Row label="Tonnes" value={fmtNum(r.tons * TONS_TO_TONNES)} />
-        <Row label="With 10% overage" value={`${fmtNum(r.overage)} yd³`} />
+        <Row label={`With ${waste}% overage`} value={`${fmtNum(r.overage)} yd³`} />
         <Row label="Overage weight" value={`${fmtNum(r.overageTons)} tons`} />
         {r.total > 0 && (
           <>
