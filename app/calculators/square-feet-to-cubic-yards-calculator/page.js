@@ -61,6 +61,12 @@ const depthTable = [
   { depth: "12 inches", a100: "3.70", a500: "18.52", a1000: "37.04" },
 ];
 
+const workedExamples = [
+  { area: "10 × 10 ft (100 sq ft)", d3: "0.926", d4: "1.235", d6: "1.852" },
+  { area: "12 × 12 ft (144 sq ft)", d3: "1.333", d4: "1.778", d6: "2.667" },
+  { area: "20 × 20 ft (400 sq ft)", d3: "3.704", d4: "4.938", d6: "7.407" },
+];
+
 export default function SqftToYardsPage() {
   return (
     <section className="section">
@@ -85,6 +91,9 @@ export default function SqftToYardsPage() {
         <p className="sub">
           Enter square feet and depth to calculate cubic yards, weight in
           tons, and overage for common bulk materials.
+        </p>
+        <p style={{ fontSize: 14, color: "var(--muted)", marginTop: 10 }}>
+          By the Cubic Yard Calculator team · Last updated October 2026
         </p>
         <div className="answer-box">
           <p>
@@ -119,6 +128,30 @@ export default function SqftToYardsPage() {
                   <td className="num">{r.a100}</td>
                   <td className="num">{r.a500}</td>
                   <td className="num">{r.a1000}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="card" style={{ marginTop: 32, maxWidth: 780, padding: "24px 28px" }}>
+          <h3 style={{ marginTop: 0 }}>Worked examples: common project sizes</h3>
+          <p style={{ color: "var(--muted)" }}>
+            Cubic yards needed for common areas at typical depths. The
+            formula: area × (depth in inches ÷ 12) ÷ 27. For example, a 10×10
+            slab at 4 inches deep: 100 × (4 ÷ 12) ÷ 27 = 1.235 cubic yards.
+          </p>
+          <table className="ref-table">
+            <thead>
+              <tr><th>Project size</th><th>3 inches deep</th><th>4 inches deep</th><th>6 inches deep</th></tr>
+            </thead>
+            <tbody>
+              {workedExamples.map((r) => (
+                <tr key={r.area}>
+                  <td className="num">{r.area}</td>
+                  <td className="num">{r.d3}</td>
+                  <td className="num">{r.d4}</td>
+                  <td className="num">{r.d6}</td>
                 </tr>
               ))}
             </tbody>

@@ -57,9 +57,37 @@ export default function Guide() {
       slug="how-much-does-a-cubic-yard-weigh"
       calculatorHref="/calculators/tons-to-cubic-yards-calculator/"
       calculatorLabel="Try the tons converter"
-      updated="2026-10-12"
+      updated="2026-10-17"
     >
       <JsonLd data={faqJsonLd(faqs)} />
+
+      <h2>How much does a yard of concrete weigh?</h2>
+      <p>
+        A cubic yard of concrete weighs about{" "}
+        <strong>4,050 lbs — just over 2 tons</strong> (2.03 tons, to be
+        exact). That makes concrete the second-heaviest common material on
+        this chart, behind only landscape rock.
+      </p>
+      <p>
+        <strong>Wet vs cured:</strong> freshly mixed concrete and cured
+        concrete weigh essentially the same per yard. Wet concrete in the
+        truck runs about 4,050 lbs per cubic yard; once it cures it has
+        lost a little water through evaporation, but for delivery, forming,
+        and support planning the number that matters is the same. Plan on
+        4,050 lbs either way.
+      </p>
+      <p>
+        Ordering bagged concrete? See{" "}
+        <a href="/guides/how-many-bags-of-concrete-per-cubic-yard/">
+          how many bags of concrete are in a cubic yard
+        </a>{" "}
+        for every bag size (forty-five 80-lb bags per yard). And if you are
+        moving it by hand, check{" "}
+        <a href="/guides/how-many-wheelbarrow-loads-in-a-cubic-yard/">
+          how many wheelbarrow loads fit in a cubic yard
+        </a>{" "}
+        before you schedule the pour — weight per load adds up fast.
+      </p>
 
       <h2>The short answer</h2>
       <p>
