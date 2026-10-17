@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     q: "Does dirt settle after delivery?",
-    a: "Yes. Loose dirt compacts 10 to 30 percent when placed, watered, and tamped. Order extra and expect to top off low spots after the first heavy rain.",
+    a: "Yes. Topsoil settles 10 to 20 percent and fill dirt 10 to 15 percent once placed, watered, and tamped, while sand settles only about 5 percent. Order the buffer up front and expect to top off low spots after the first heavy rain.",
   },
 ];
 
@@ -86,6 +86,49 @@ export default function DirtCalculatorPage() {
           </p>
         </div>
         <DirtCalculator />
+        <div className="info-block" style={{ marginTop: 32, maxWidth: 720 }}>
+          <h2 className="h3">Loose yards vs compacted yards: which are you buying?</h2>
+          <p>
+            Every soil quote and delivery ticket talks about <strong>cubic
+            yards</strong>, but there are two different yards hiding inside
+            that word — and ordering the wrong one is how people end up a
+            yard short. A <strong>loose yard</strong> is the volume soil
+            occupies in the truck: screened, loaded, and full of air.
+            A <strong>compacted yard</strong> is the volume the same soil
+            occupies in the ground after gravity, rain, and watering (or a
+            plate compactor) collapse those air pockets and pack the particles
+            together. Your project needs compacted yards; the supplier sells
+            loose ones.
+          </p>
+          <p>
+            The gap between them is the fluff factor, and it is bigger than
+            most people expect. <strong>Topsoil</strong> delivered loose
+            settles <strong>10–20%</strong> — a 6-inch layer is about 5
+            inches deep after a few waterings. <strong>Fill dirt</strong>
+            settles <strong>10–15%</strong>, faster in wet weather.{" "}
+            <strong>Sand</strong> barely settles at all, around{" "}
+            <strong>5%</strong>, because its particles are already dense.
+            That is why the calculator above defaults to a{" "}
+            <strong>×1.10 settlement buffer</strong> on the order quantity,
+            and why screened topsoil jobs usually want <strong>×1.15 or
+            ×1.25</strong> from the buffer selector — the buffer converts
+            your compacted-yard math into the loose-yard quantity the truck
+            actually delivers.
+          </p>
+          <p>
+            Two practical rules fall out of this. First, <strong>order the
+            loose volume, not the finished depth</strong>: if your design
+            calls for 4 inches of compacted crusher run under pavers, you
+            need roughly 4.6–4.8 inches of loose material to get there.
+            Second, never try to &ldquo;save&rdquo; the buffer — a second
+            one-yard delivery with its minimum delivery fee almost always
+            costs more than the extra yard would have on day one. Read our{" "}
+            <Link href="/guides/how-much-extra-soil-to-order/" style={{ color: "var(--accent-deep)", fontWeight: 700 }}>
+              full settlement guide
+            </Link>{" "}
+            for buffer tables by material and project type.
+          </p>
+        </div>
         <p className="disclaimer">
           <strong>Ballpark, not gospel.</strong> Densities change with
           moisture, compaction, and screening — confirm weights and delivery
