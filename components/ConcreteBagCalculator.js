@@ -10,11 +10,26 @@ const bagOptions = CONCRETE_BAGS_PER_YARD.map((b) => ({
   label: `${b.label} — ${b.perYard}/yd³`,
 }));
 
+// One click fills the yards field with the project's concrete volume
+// (80 lb baseline, matching the guide's worked examples).
+const PRESETS = [
+  { label: "Fence post hole", yards: "0.0402" },
+  { label: "10×10 slab @ 4 in", yards: "1.2346" },
+  { label: "Mailbox post", yards: "0.022" },
+  { label: "Deck footing", yards: "0.0873" },
+];
+
 export default function ConcreteBagCalculator() {
   const [mode, setMode] = useState("yards"); // yards -> bags, or bags -> yards
   const [yards, setYards] = useState("1");
   const [bagSize, setBagSize] = useState("80 lb bags");
   const [bagCount, setBagCount] = useState("45");
+
+  const applyPreset = (p) => {
+    setMode("yards");
+    setYards(p.yards);
+    setBagSize("80 lb bags");
+  };
 
   const perYard =
     CONCRETE_BAGS_PER_YARD.find((b) => b.label === bagSize)?.perYard ?? 45;
@@ -57,6 +72,23 @@ export default function ConcreteBagCalculator() {
           <F label="Number of bags" value={bagCount} set={setBagCount} step="1" />
         )}
         <SelectF label="Bag size" value={bagSize} set={setBagSize} options={bagOptions} />
+        <div style={{ marginTop: 14 }}>
+          <div style={{ fontSize: 12, color: "var(--muted)", marginBottom: 6 }}>
+            Quick presets
+          </div>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            {PRESETS.map((p) => (
+              <button
+                key={p.label}
+                type="button"
+                className="btn btn-ghost btn-sm"
+                onClick={() => applyPreset(p)}
+              >
+                {p.label}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="result-card">

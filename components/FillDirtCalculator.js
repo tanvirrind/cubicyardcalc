@@ -5,6 +5,19 @@ import { F, SelectF, UnitF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSIO
 import { toFeet, densityLbs, densityOptions, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
 import { fmtNum, fmt$ } from "../lib/format";
 
+// Settlement/compaction buffer applied to the ORDER quantity, extending the
+// long-standing fixed 10% overage. "Light" (×1.10) is exactly what the
+// calculator did before the selector existed, so the default behavior is
+// unchanged. Guidance follows our settlement guide
+// (app/guides/how-much-extra-soil-to-order/): fill dirt settles 10–15%,
+// so most jobs want Light or Standard.
+const SETTLEMENT_OPTIONS = [
+  { value: "none", factor: 0.0, label: "None ×1.00 — already-settled fill" },
+  { value: "light", factor: 0.1, label: "Light ×1.10 — typical grading jobs" },
+  { value: "standard", factor: 0.15, label: "Standard ×1.15 — 10–15% settlement range" },
+  { value: "heavy", factor: 0.25, label: "Heavy ×1.25 — deep compacted lifts" },
+];
+
 export default function FillDirtCalculator() {
   const [length, setLength] = useState("20");
   const [width, setWidth] = useState("20");
@@ -20,6 +33,8 @@ export default function FillDirtCalculator() {
   const [height, setHeight] = useState("10");
   const [heightUnit, setHeightUnit] = useState("ft");
   const [densityIdx, setDensityIdx] = useState("0");
+  // Default "light" (×1.10) reproduces the calculator's original fixed 10% overage.
+  const [settlement, setSettlement] = useState("light");
   const [price, setPrice] = useState("0");
   const [delivery, setDelivery] = useState("0");
   const [taxPct, setTaxPct] = useState("0");
@@ -37,15 +52,16 @@ export default function FillDirtCalculator() {
     const yards = (areaSqFt * dFt) / 27;
     const lbs = densityLbs("dirt", densityIdx);
     const tons = (yards * lbs) / 2000;
-    const overage = withOverage(yards);
-    const overageTons = withOverage(tons);
+    const sf = SETTLEMENT_OPTIONS.find((o) => o.value === settlement)?.factor ?? 0.1;
+    const overage = withOverage(yards, sf);
+    const overageTons = withOverage(tons, sf);
     // Cost prices the overage-included order quantity, like the concrete calculator.
     const materialCost = overage * num(price);
     const deliv = num(delivery);
     const tax = (materialCost + deliv) * (num(taxPct) / 100);
     const total = materialCost + deliv + tax;
-    return { yards, tons, lbs, overage, overageTons, materialCost, deliv, tax, total };
-  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, densityIdx, price, delivery, taxPct]);
+    return { yards, tons, lbs, overage, overageTons, sf, materialCost, deliv, tax, total };
+  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, densityIdx, settlement, price, delivery, taxPct]);
 
   return (
     <div className="calc-layout">
@@ -81,6 +97,13 @@ export default function FillDirtCalculator() {
           options={densityOptions("dirt")}
           hint="Weight changes with type; volume does not"
         />
+        <SelectF
+          label="Settlement / compaction buffer"
+          value={settlement}
+          set={setSettlement}
+          options={SETTLEMENT_OPTIONS}
+          hint="Fill dirt settles 10–15% — Light or Standard for most jobs; Heavy for deep compacted lifts"
+        />
         <h3 style={{ marginTop: 26 }}>Cost estimate</h3>
         <div className="field-row">
           <F label="Price per cubic yard ($)" value={price} set={setPrice} />
@@ -97,7 +120,7 @@ export default function FillDirtCalculator() {
         <Row label="Cubic meters" value={fmtNum(r.yards * YD3_TO_M3)} />
         <Row label="Weight" value={`${fmtNum(r.tons)} tons`} />
         <Row label="Tonnes" value={fmtNum(r.tons * TONS_TO_TONNES)} />
-        <Row label="With 10% overage" value={`${fmtNum(r.overage)} yd³`} />
+        <Row label={`With settlement (×${(1 + r.sf).toFixed(2)})`} value={`${fmtNum(r.overage)} yd³`} />
         <Row label="Overage weight" value={`${fmtNum(r.overageTons)} tons`} />
         {r.total > 0 && (
           <>

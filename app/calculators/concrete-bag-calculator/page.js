@@ -38,6 +38,14 @@ const faqs = [
     a: "Yes. Add about 10 percent to cover waste, uneven forms, and small measurement differences.",
   },
   {
+    q: "How many bags of Quikrete make a cubic yard?",
+    a: "The brand doesn't change the math — the bag yield does. For standard Quikrete and Sakrete concrete mixes, one cubic yard takes 45 bags of 80 lb, 60 bags of 60 lb, 72 bags of 50 lb (Quikrete Fast-Setting), or 90 bags of 40 lb mix: bags per yard = 27 ÷ yield per bag. Always confirm against the exact product label.",
+  },
+  {
+    q: "How many bags for a 10×10 slab?",
+    a: "At 4 inches thick: 10 × 10 × 0.333 = 33.33 cubic feet = 1.23 cubic yards, × 45 = 55.56 — round up to 56 bags of 80 lb mix net, 62 with 10% overage.",
+  },
+  {
     q: "Does every concrete bag have the same yield?",
     a: "No. Bag yield varies by product and mix. Use the manufacturer yield when available.",
   },
@@ -49,6 +57,14 @@ const bagTable = [
   { size: "60 lb", perYard: "About 60", tip: "Round up to a whole bag" },
   { size: "80 lb", perYard: "About 45", tip: "Round up and allow overage" },
   { size: "90 lb", perYard: "About 40", tip: "Check regional availability" },
+];
+
+const brandTable = [
+  { brand: "Quikrete 5000", size: "80 lb", yield: "0.60 cu ft", perYard: "45", math: "27 ÷ 0.60" },
+  { brand: "Quikrete Fast-Setting", size: "50 lb", yield: "0.375 cu ft", perYard: "72", math: "27 ÷ 0.375" },
+  { brand: "Sakrete High-Strength", size: "80 lb", yield: "0.60 cu ft", perYard: "45", math: "27 ÷ 0.60" },
+  { brand: "Generic (standard mix)", size: "60 lb", yield: "0.45 cu ft", perYard: "60", math: "27 ÷ 0.45" },
+  { brand: "Generic (standard mix)", size: "40 lb", yield: "0.30 cu ft", perYard: "90", math: "27 ÷ 0.30" },
 ];
 
 export default function ConcreteBagCalculatorPage() {
@@ -75,6 +91,9 @@ export default function ConcreteBagCalculatorPage() {
         <p className="sub">
           Estimate the concrete volume for your slab, walkway, footing, or
           patio and see approximate 60-pound and 80-pound bag counts.
+        </p>
+        <p style={{ fontSize: 14, color: "var(--muted)", marginTop: 10 }}>
+          By the Cubic Yard Calculator team · Last updated October 2026
         </p>
         <div className="answer-box">
           <p>
@@ -105,6 +124,33 @@ export default function ConcreteBagCalculatorPage() {
               ))}
             </tbody>
           </table>
+          <h3 style={{ marginTop: 28 }}>Common brand mixes</h3>
+          <p style={{ color: "var(--ink-soft)", lineHeight: 1.7, marginTop: 0 }}>
+            The brand on the bag doesn&apos;t change the formula — the
+            yield per bag does. Every bags-per-yard figure below is
+            27 ÷ the manufacturer&apos;s published yield:
+          </p>
+          <table className="ref-table">
+            <thead>
+              <tr><th>Product</th><th>Bag size</th><th>Yield / bag</th><th>Bags / yd³</th><th>Math</th></tr>
+            </thead>
+            <tbody>
+              {brandTable.map((r) => (
+                <tr key={`${r.brand}-${r.size}`}>
+                  <td>{r.brand}</td>
+                  <td className="num">{r.size}</td>
+                  <td className="num">{r.yield}</td>
+                  <td className="num">{r.perYard}</td>
+                  <td className="num">{r.math}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.6 }}>
+            Brand names are used for reference only. Cubic Yard Calculator
+            is not affiliated with Quikrete or Sakrete; yields are
+            manufacturer figures — confirm against your exact product label.
+          </p>
           <h3 style={{ marginTop: 28 }}>Ordering tips</h3>
           <ul style={{ color: "var(--ink-soft)", lineHeight: 1.7, paddingLeft: 20, marginBottom: 0 }}>
             <li>Use the yield printed on the exact mix you plan to buy.</li>

@@ -35,6 +35,14 @@ const faqs = [
     a: "About 90 bags. A 40 lb bag yields roughly 0.30 cubic feet, so 27 / 0.30 = 90 bags.",
   },
   {
+    q: "How many bags of Quikrete make a cubic yard?",
+    a: "The brand doesn't change the math — the bag yield does. For standard Quikrete or Sakrete concrete mixes, one cubic yard takes 45 bags of 80 lb (0.60 cu ft yield), 60 of 60 lb (0.45), 72 of 50 lb (0.375, e.g. Quikrete Fast-Setting), or 90 of 40 lb (0.30): bags per yard = 27 ÷ yield per bag. Always confirm against the exact product label.",
+  },
+  {
+    q: "How many bags for a 10×10 slab?",
+    a: "At 4 inches thick: 10 × 10 × 0.333 = 33.33 cubic feet = 1.23 cubic yards, × 45 = 55.56 — round up to 56 bags of 80 lb mix net, 62 with 10% overage. At 6 inches: 1.85 yards → 84 bags net, 93 with overage.",
+  },
+  {
     q: "When should I use bags instead of ready-mix?",
     a: "Bags win for pours under about 1 to 2 cubic yards — fence posts, small pads, repairs. Above that, ready-mix is usually cheaper per yard and far less labor.",
   },
@@ -144,6 +152,94 @@ export default function Guide() {
           bagged vs ready-mix guide
         </a>{" "}
         helps you decide.
+      </p>
+
+      <h2>Bag counts for the five most common slab sizes</h2>
+      <p>
+        Slabs are what most people actually buy bags for, so here is the
+        same math pre-computed for the five slab sizes homeowners pour
+        most — an 8×8 patio, a 10×10 shed pad, a 10×12 small patio, a
+        12×12 patio, and a 20×20 garage floor — at the two standard
+        residential thicknesses, 4 and 6 inches.{" "}
+        <strong>Convention used in both tables:</strong> cubic yards =
+        length × width × (thickness in feet) ÷ 27; then{" "}
+        <strong>Net bags</strong> = round up(yards × 45) for 80 lb bags
+        (0.60 cu ft yield), and <strong>Order</strong> = round up(Net ×
+        1.10) — a 10% waste buffer for spillage, uneven forms, and
+        subgrade. Every figure below is built from the{" "}
+        <a href="/calculators/concrete-calculator/">concrete calculator</a>{" "}
+        site&apos;s manufacturer-yield constants.
+      </p>
+      <table className="ref-table" style={{ margin: "20px 0" }}>
+        <thead>
+          <tr><th>Slab size</th><th>Cubic yards @ 4&Prime;</th><th>Net 80-lb bags</th><th>Order (+10%)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>8&times;8</td><td className="num">0.79</td><td className="num">36</td><td className="num">40</td></tr>
+          <tr><td>10&times;10</td><td className="num">1.23</td><td className="num">56</td><td className="num">62</td></tr>
+          <tr><td>10&times;12</td><td className="num">1.48</td><td className="num">67</td><td className="num">74</td></tr>
+          <tr><td>12&times;12</td><td className="num">1.78</td><td className="num">80</td><td className="num">88</td></tr>
+          <tr><td>20&times;20</td><td className="num">4.94</td><td className="num">223</td><td className="num">246</td></tr>
+        </tbody>
+      </table>
+      <table className="ref-table" style={{ margin: "20px 0" }}>
+        <thead>
+          <tr><th>Slab size</th><th>Cubic yards @ 6&Prime;</th><th>Net 80-lb bags</th><th>Order (+10%)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>8&times;8</td><td className="num">1.19</td><td className="num">54</td><td className="num">60</td></tr>
+          <tr><td>10&times;10</td><td className="num">1.85</td><td className="num">84</td><td className="num">93</td></tr>
+          <tr><td>10&times;12</td><td className="num">2.22</td><td className="num">100</td><td className="num">110</td></tr>
+          <tr><td>12&times;12</td><td className="num">2.67</td><td className="num">120</td><td className="num">132</td></tr>
+          <tr><td>20&times;20</td><td className="num">7.41</td><td className="num">334</td><td className="num">368</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Four inches is the standard for patios, walkways, and shed pads —
+        anything carrying people and light furniture. Step up to 6 inches
+        for driveways, garage floors, and anything with vehicle weight or
+        heavy equipment. If your slab is an odd size or a different
+        thickness, the{" "}
+        <a href="/calculators/concrete-calculator/">concrete calculator</a>{" "}
+        runs the same formula instantly. Two planning notes: most slabs sit
+        on about 4 inches of compacted base — see{" "}
+        <a href="/guides/how-much-gravel-under-a-concrete-slab/">
+          how much gravel under a concrete slab
+        </a>{" "}
+        to size it — and if your site needs regrading or fill before the
+        slab, the{" "}
+        <a href="/calculators/dirt-calculator/">dirt calculator</a>{" "}
+        estimates that volume so you&apos;re not pouring concrete into a
+        low spot.
+      </p>
+
+      <h2>The ~1-yard breakeven rule</h2>
+      <p>
+        The materials math alone settles this: at $6 per 80 lb bag, one
+        cubic yard via bags costs 45 × $6 = <strong>$270 in materials</strong>
+        — before a single hour of mixing — while ready-mix typically runs
+        $125–$195 per yard delivered. On price alone, bags lose at well
+        under a yard. What keeps bags winning below ~1 yard is everything
+        else: ready-mix short-load fees ($50–$200) and plant minimums punish
+        tiny orders, while a couple of bags and a wheelbarrow don&apos;t.
+      </p>
+      <p>
+        At about 1 cubic yard the balance flips for good. A 10×12 slab at
+        4 inches is 1.48 yards — 74 bags to order, haul, and mix, roughly
+        three tons of bag weight through your arms — versus one truck in
+        twenty minutes. Beyond the breakeven, every extra bag is money and
+        sweat you didn&apos;t need to spend. If the project is at or past
+        this size and you&apos;re thinking about hiring it out instead,{" "}
+        <a href="https://calcbid.com/guides/how-to-bid-concrete-slab">
+          get a pro quote
+        </a>{" "}
+        to see what a contractor would charge for your slab. The full
+        bags-vs-delivery decision, including when the short-load fee
+        flips back in bags&apos; favor, is in the{" "}
+        <a href="/guides/bagged-vs-ready-mix-concrete/">
+          bagged vs ready-mix guide
+        </a>
+        .
       </p>
 
       <h2>Bags vs ready-mix: the breakpoint</h2>
