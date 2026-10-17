@@ -57,6 +57,7 @@ export default function Guide() {
       slug="how-much-fill-dirt-to-fill-a-hole"
       calculatorHref="/calculators/fill-dirt-calculator/"
       calculatorLabel="Try the fill dirt calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 

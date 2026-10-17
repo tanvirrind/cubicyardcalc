@@ -61,6 +61,7 @@ export default function Guide() {
       slug="how-much-extra-soil-to-order"
       calculatorHref="/calculators/dirt-calculator/"
       calculatorLabel="Try the dirt calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
