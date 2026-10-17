@@ -58,6 +58,33 @@ COVERAGE_DEPTHS_IN = [1, 2, 3, 4, 6, 12]
 
 # ---------------------------------------------------------------------------
 
+# ReportLab writes a binary marker comment (a literal "%" followed by four
+# high bytes) right after the %PDF header. Our GitHub push pipeline requires
+# valid UTF-8, so replace those four bytes with four ASCII bytes in place.
+# All other byte offsets (xref, trailer) are unaffected because the file
+# length does not change. Non-ASCII *content* (superscripts, middots, etc.)
+# is emitted by ReportLab as ASCII octal escapes (\263 etc.) in WinAnsi
+# encoding, so this header marker is the only non-ASCII source.
+MARKER_NONASCII = b"%\x93\x8c\x8b\x9e"
+MARKER_ASCII = b"%RLAB"
+
+
+def _assert_ascii_safe(path):
+    """Post-process: swap the binary marker for ASCII, then hard-fail if any
+    byte >= 128 remains. Returns the path unchanged."""
+    with open(path, "rb") as fh:
+        data = fh.read()
+    hits = data.count(MARKER_NONASCII)
+    if hits:
+        assert hits == 1, f"expected exactly 1 binary marker, found {hits}"
+        data = data.replace(MARKER_NONASCII, MARKER_ASCII)
+        with open(path, "wb") as fh:
+            fh.write(data)
+    bad = [i for i, b in enumerate(data) if b >= 128]
+    assert not bad, f"non-ASCII bytes remain at {bad[:10]} ({len(bad)} total)"
+    return path
+
+
 ACCENT = colors.HexColor("#14532d")      # deep green header bar
 ACCENT_DEEP = colors.HexColor("#0b3a1f")
 TABLE_HEAD = colors.HexColor("#e8f0e8")
@@ -223,6 +250,7 @@ def build(out_path):
         canvas.drawRightString(LETTER[0] - 0.55 * inch, 0.35 * inch, "Page 1 of 1")
 
     doc.build(story, onFirstPage=on_page, onLaterPages=on_page)
+    _assert_ascii_safe(out_path)
     return out_path
 
 
