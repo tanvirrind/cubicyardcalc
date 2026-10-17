@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { F, SelectF, UnitF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS, WASTE_OPTIONS } from "./Fields";
-import { toFeet, densityLbs, densityOptions, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
+import { F, SelectF, UnitF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS, WASTE_OPTIONS, AREAS_OPTIONS } from "./Fields";
+import { toFeet, densityLbs, densityOptions, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, STONE_BAG_FT3, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
 import { fmtNum, fmt$ } from "../lib/format";
 
 export default function LandscapeRockCalculator() {
@@ -24,9 +24,13 @@ export default function LandscapeRockCalculator() {
   const [delivery, setDelivery] = useState("0");
   const [taxPct, setTaxPct] = useState("0");
   const [waste, setWaste] = useState("10");
+  const [areas, setAreas] = useState("1");
 
 
   const r = useMemo(() => {
+    // Identical-area multiplier: every displayed quantity is scaled by n.
+    // n = 1 (the default) is the identity, so single-area math is untouched.
+    const n = num(areas, 1);
     const dFt = toFeet(depth, depthUnit);
     const areaSqFt = shapeAreaSqFt(shape, {
       length: toFeet(length, lengthUnit),
@@ -40,13 +44,29 @@ export default function LandscapeRockCalculator() {
     const tons = (yards * lbs) / 2000;
     const overage = withOverage(yards, num(waste) / 100);
     const overageTons = withOverage(tons, num(waste) / 100);
+    // Bag count on the overage-included order quantity, like the cost estimate.
+    const stoneBags = Math.ceil((overage * 27) / STONE_BAG_FT3);
     // Cost prices the overage-included order quantity, like the concrete calculator.
     const materialCost = overageTons * num(price);
     const deliv = num(delivery);
-    const tax = (materialCost + deliv) * (num(taxPct) / 100);
-    const total = materialCost + deliv + tax;
-    return { yards, tons, lbs, overage, overageTons, materialCost, deliv, tax, total };
-  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, densityIdx, price, delivery, taxPct, waste]);
+    // Delivery fee is per delivery trip, not per area: material rows scale by
+    // n below, delivery is added once, tax applies to (scaled material + delivery).
+    const scaledMaterial = materialCost * n;
+    const tax = (scaledMaterial + deliv) * (num(taxPct) / 100);
+    const total = scaledMaterial + deliv + tax;
+    return {
+      yards: yards * n,
+      tons: tons * n,
+      lbs,
+      overage: overage * n,
+      overageTons: overageTons * n,
+      stoneBags: stoneBags * n,
+      materialCost: scaledMaterial,
+      deliv: deliv,
+      tax: tax,
+      total: total,
+    };
+  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, densityIdx, price, delivery, taxPct, waste, areas]);
 
   return (
     <div className="calc-layout">
@@ -83,6 +103,7 @@ export default function LandscapeRockCalculator() {
           hint="Weight changes with type; volume does not"
         />
         <SelectF label="Waste & overage" value={waste} set={setWaste} options={WASTE_OPTIONS} hint="Added to the order quantity" />
+        <SelectF label="Identical areas" value={areas} set={setAreas} options={AREAS_OPTIONS} hint="e.g. 3 identical beds" />
         <h3 style={{ marginTop: 26 }}>Cost estimate</h3>
         <div className="field-row">
           <F label="Price per ton ($)" value={price} set={setPrice} hint="Stone yards sell rock by the ton" />
@@ -101,6 +122,7 @@ export default function LandscapeRockCalculator() {
         <Row label="Tonnes" value={fmtNum(r.tons * TONS_TO_TONNES)} />
         <Row label={`With ${waste}% overage`} value={`${fmtNum(r.overage)} yd³`} />
         <Row label="Overage weight" value={`${fmtNum(r.overageTons)} tons`} />
+        <Row label="0.5 ft³ bags (50 lb)" value={r.stoneBags.toLocaleString("en-US")} />
         {r.total > 0 && (
           <>
             <div
@@ -127,6 +149,11 @@ export default function LandscapeRockCalculator() {
             for the selected rock type. Confirm your stone&apos;s density
             with the supplier if it isn&apos;t listed.
           </ResultNote>
+          <div style={{ marginTop: 10 }}>
+            <ResultNote>
+              Bags are approximate — 50-lb bags average ~0.5 ft³; bulk stone varies.
+            </ResultNote>
+          </div>
         </div>
       </div>
     </div>

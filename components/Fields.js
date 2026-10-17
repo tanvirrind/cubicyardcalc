@@ -131,6 +131,14 @@ export const WASTE_OPTIONS = [
   { value: "15", label: "15%" },
 ];
 
+/** Identical-area multiplier options 1..20 for the material calculators.
+ * Rendered with the existing SelectF and applied via num(areas, 1) as a
+ * multiplier on every displayed quantity. Default "1" is the identity. */
+export const AREAS_OPTIONS = Array.from({ length: 20 }, (_, i) => ({
+  value: String(i + 1),
+  label: i === 0 ? "1 (one area)" : String(i + 1),
+}));
+
 /** Per-field linear-unit options for length/width/depth/thickness. Default stays ft/in. */
 export const DIMENSION_OPTIONS = [
   { value: "in", label: "in" },

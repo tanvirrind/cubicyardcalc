@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { F, SelectF, UnitF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS } from "./Fields";
+import { F, SelectF, UnitF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS, AREAS_OPTIONS } from "./Fields";
 import { toFeet, densityLbs, densityOptions, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
 import { fmtNum, fmt$ } from "../lib/format";
 
@@ -35,12 +35,18 @@ export default function FillDirtCalculator() {
   const [densityIdx, setDensityIdx] = useState("0");
   // Default "light" (×1.10) reproduces the calculator's original fixed 10% overage.
   const [settlement, setSettlement] = useState("light");
+  const [areas, setAreas] = useState("1");
   const [price, setPrice] = useState("0");
   const [delivery, setDelivery] = useState("0");
   const [taxPct, setTaxPct] = useState("0");
 
 
   const r = useMemo(() => {
+    // Identical-area multiplier: every displayed quantity is scaled by n.
+    // n = 1 (the default) is the identity, so single-area math is untouched.
+    // The settlement buffer still applies first to the order quantity; the
+    // areas multiplier then scales the final (buffer-included) quantities.
+    const n = num(areas, 1);
     const dFt = toFeet(depth, depthUnit);
     const areaSqFt = shapeAreaSqFt(shape, {
       length: toFeet(length, lengthUnit),
@@ -58,10 +64,24 @@ export default function FillDirtCalculator() {
     // Cost prices the overage-included order quantity, like the concrete calculator.
     const materialCost = overage * num(price);
     const deliv = num(delivery);
-    const tax = (materialCost + deliv) * (num(taxPct) / 100);
-    const total = materialCost + deliv + tax;
-    return { yards, tons, lbs, overage, overageTons, sf, materialCost, deliv, tax, total };
-  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, densityIdx, settlement, price, delivery, taxPct]);
+    // Delivery fee is per delivery trip, not per area: material rows scale by
+    // n below, delivery is added once, tax applies to (scaled material + delivery).
+    const scaledMaterial = materialCost * n;
+    const tax = (scaledMaterial + deliv) * (num(taxPct) / 100);
+    const total = scaledMaterial + deliv + tax;
+    return {
+      yards: yards * n,
+      tons: tons * n,
+      lbs,
+      overage: overage * n,
+      overageTons: overageTons * n,
+      sf,
+      materialCost: scaledMaterial,
+      deliv: deliv,
+      tax: tax,
+      total: total,
+    };
+  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, densityIdx, settlement, price, delivery, taxPct, areas]);
 
   return (
     <div className="calc-layout">
@@ -104,6 +124,7 @@ export default function FillDirtCalculator() {
           options={SETTLEMENT_OPTIONS}
           hint="Fill dirt settles 10–15% — Light or Standard for most jobs; Heavy for deep compacted lifts"
         />
+        <SelectF label="Identical areas" value={areas} set={setAreas} options={AREAS_OPTIONS} hint="e.g. 3 identical beds" />
         <h3 style={{ marginTop: 26 }}>Cost estimate</h3>
         <div className="field-row">
           <F label="Price per cubic yard ($)" value={price} set={setPrice} />

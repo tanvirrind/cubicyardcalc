@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { F, UnitF, SelectF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS, WASTE_OPTIONS } from "./Fields";
+import { F, UnitF, SelectF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS, WASTE_OPTIONS, AREAS_OPTIONS } from "./Fields";
 import { toFeet, densityLbs, densityOptions, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
 import { fmtNum, fmt$ } from "../lib/format";
 
@@ -31,8 +31,12 @@ export default function CubicYardCalculator() {
 
   const [material, setMaterial] = useState("gravel");
   const [waste, setWaste] = useState("10");
+  const [areas, setAreas] = useState("1");
 
   const r = useMemo(() => {
+    // Identical-area multiplier: every displayed quantity is scaled by n.
+    // n = 1 (the default) is the identity, so single-area math is untouched.
+    const n = num(areas, 1);
     const dFt = toFeet(depth, depthUnit);
     const areaSqFt = shapeAreaSqFt(shape, {
       length: toFeet(length, lengthUnit),
@@ -49,10 +53,23 @@ export default function CubicYardCalculator() {
     // Cost prices the overage-included order quantity, like the concrete calculator.
     const materialCost = overage * num(price);
     const deliv = num(delivery);
-    const tax = (materialCost + deliv) * (num(taxPct) / 100);
-    const total = materialCost + deliv + tax;
-    return { yards, feet, overage, lbs, tons, materialCost, deliv, tax, total };
-  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, material, densityIdx, price, delivery, taxPct, waste]);
+    // Delivery fee is per delivery trip, not per area: material rows scale by
+    // n below, delivery is added once, tax applies to (scaled material + delivery).
+    const scaledMaterial = materialCost * n;
+    const tax = (scaledMaterial + deliv) * (num(taxPct) / 100);
+    const total = scaledMaterial + deliv + tax;
+    return {
+      yards: yards * n,
+      feet: feet * n,
+      overage: overage * n,
+      lbs: lbs * n,
+      tons: tons * n,
+      materialCost: scaledMaterial,
+      deliv: deliv,
+      tax: tax,
+      total: total,
+    };
+  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, material, densityIdx, price, delivery, taxPct, waste, areas]);
 
   return (
     <div className="calc-layout">
@@ -95,6 +112,7 @@ export default function CubicYardCalculator() {
           hint="Weight changes with type; volume does not"
         />
         <SelectF label="Waste & overage" value={waste} set={setWaste} options={WASTE_OPTIONS} hint="Added to the order quantity" />
+        <SelectF label="Identical areas" value={areas} set={setAreas} options={AREAS_OPTIONS} hint="e.g. 3 identical beds" />
         <h3 style={{ marginTop: 26 }}>Cost estimate</h3>
         <div className="field-row">
           <F label="Price per cubic yard ($)" value={price} set={setPrice} />

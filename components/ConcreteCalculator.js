@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { F, UnitF, SelectF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS, WASTE_OPTIONS } from "./Fields";
-import { toFeet, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, CONCRETE_BAGS_PER_YARD, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
+import { toFeet, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, CONCRETE_BAGS_PER_YARD, MIX_RATIOS, DRY_VOLUME_FACTOR, CEMENT_LBS_PER_FT3, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
 import { fmtNum, fmt$ } from "../lib/format";
 
 export default function ConcreteCalculator() {
@@ -25,6 +25,12 @@ export default function ConcreteCalculator() {
   const [priceYd, setPriceYd] = useState("150");
   const [delivery, setDelivery] = useState("0");
   const [taxPct, setTaxPct] = useState("0");
+  // Optional mix-ratio breakdown (needs only the wet volume r.yards).
+  const [showMix, setShowMix] = useState(false);
+  const [mixIdx, setMixIdx] = useState("0");
+  const [cementParts, setCementParts] = useState("1");
+  const [sandParts, setSandParts] = useState("2");
+  const [aggParts, setAggParts] = useState("4");
 
   const r = useMemo(() => {
     let yards;
@@ -57,8 +63,24 @@ export default function ConcreteCalculator() {
     const deliv = num(delivery);
     const tax = (material + deliv) * (num(taxPct) / 100);
     const total = material + deliv + tax;
-    return { yards, lbs, tons, overage, bags, material, deliv, tax, total };
-  }, [mode, shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, thickness, thicknessUnit, directYards, waste, priceYd, delivery, taxPct]);
+    // Site-mix breakdown from the wet volume: dry volume = 1.54 × wet,
+    // split by parts. Cement bags use the estimating convention
+    // 1 bag (94 lb) ≈ 1 ft³ of loose cement.
+    const preset = MIX_RATIOS[num(mixIdx, 0)] ?? MIX_RATIOS[0];
+    const mixParts = preset.parts ?? [num(cementParts, 1), num(sandParts, 1), num(aggParts, 1)];
+    const mixTotal = mixParts[0] + mixParts[1] + mixParts[2] || 1;
+    const dryFt3 = yards * 27 * DRY_VOLUME_FACTOR;
+    const cementFt3 = (dryFt3 * mixParts[0]) / mixTotal;
+    const cementBags = Math.ceil((cementFt3 * CEMENT_LBS_PER_FT3) / CEMENT_LBS_PER_FT3);
+    const sandFt3 = (dryFt3 * mixParts[1]) / mixTotal;
+    const sandYd3 = sandFt3 / 27;
+    const sandTons = (sandYd3 * 2700) / 2000;
+    const aggFt3 = (dryFt3 * mixParts[2]) / mixTotal;
+    const aggYd3 = aggFt3 / 27;
+    const aggTons = (aggYd3 * 2800) / 2000;
+    const mix = { dryFt3, cementBags, sandYd3, sandTons, aggYd3, aggTons };
+    return { yards, lbs, tons, overage, bags, material, deliv, tax, total, mix };
+  }, [mode, shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, thickness, thicknessUnit, directYards, waste, priceYd, delivery, taxPct, mixIdx, cementParts, sandParts, aggParts]);
 
   return (
     <div className="calc-layout">
@@ -98,8 +120,35 @@ export default function ConcreteCalculator() {
           <F label="Cubic yards" value={directYards} set={setDirectYards} />
         )}
 
-        <h3 style={{ marginTop: 26 }}>Cost estimate</h3>
-        <div className="field-row">
+        <div style={{ marginTop: 22 }}>
+          <button
+            type="button"
+            className="btn btn-ghost btn-sm"
+            onClick={() => setShowMix((s) => !s)}
+          >
+            {showMix ? "Hide mix breakdown" : "Show mix breakdown (optional)"}
+          </button>
+        </div>
+        {showMix && (
+          <>
+            <SelectF
+              label="Mix ratio (cement : sand : aggregate)"
+              value={mixIdx}
+              set={setMixIdx}
+              options={MIX_RATIOS.map((m, i) => ({ value: String(i), label: m.label }))}
+              hint="Parts by volume"
+            />
+            {mixIdx === String(MIX_RATIOS.length - 1) && (
+              <div className="field-row">
+                <F label="Cement parts" value={cementParts} set={setCementParts} />
+                <F label="Sand parts" value={sandParts} set={setSandParts} />
+                <F label="Aggregate parts" value={aggParts} set={setAggParts} />
+              </div>
+            )}
+          </>
+        )}
+
+        <h3 style={{ marginTop: 26 }}>Cost estimate</h3>        <div className="field-row">
           <F label="Price per cubic yard ($)" value={priceYd} set={setPriceYd} hint="2026 ready-mix: ~$125–$195 delivered" />
           <F label="Delivery fee ($)" value={delivery} set={setDelivery} hint="Short-load fees often $50–$200" />
         </div>
@@ -147,6 +196,32 @@ export default function ConcreteCalculator() {
         <Row label="Delivery" value={fmt$(r.deliv)} />
         <Row label="Tax" value={fmt$(r.tax)} />
         <TotalRow label="Project total" value={fmt$(r.total)} />
+        {showMix && (
+          <>
+            <div
+              style={{
+                fontSize: 13,
+                textTransform: "uppercase",
+                letterSpacing: ".1em",
+                color: "#94a3b8",
+                marginTop: 20,
+                marginBottom: 8,
+              }}
+            >
+              Mix breakdown (approx.)
+            </div>
+            <Row label="Dry volume" value={`${fmtNum(r.mix.dryFt3)} ft³`} />
+            <Row label="Cement (94-lb bags)" value={r.mix.cementBags.toLocaleString("en-US")} />
+            <Row label="Sand" value={`${fmtNum(r.mix.sandYd3)} yd³ (${fmtNum(r.mix.sandTons)} tons)`} />
+            <Row label="Aggregate" value={`${fmtNum(r.mix.aggYd3)} yd³ (${fmtNum(r.mix.aggTons)} tons)`} />
+            <div style={{ marginTop: 12 }}>
+              <ResultNote>
+                Estimating method: 1.54 dry-volume factor; 1 bag ≈ 1 ft³ of
+                loose cement. Order ready-mix, not site-mix, over ~1–2 yards.
+              </ResultNote>
+            </div>
+          </>
+        )}
         <div style={{ marginTop: 18 }}>
           <ResultNote>
             Bags rounded up — you can&apos;t buy a partial bag. Over ~1–2
