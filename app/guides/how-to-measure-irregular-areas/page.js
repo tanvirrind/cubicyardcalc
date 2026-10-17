@@ -56,6 +56,7 @@ export default function Guide() {
       slug="how-to-measure-irregular-areas"
       calculatorHref="/calculators/cubic-yard-calculator/"
       calculatorLabel="Try the cubic yard calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 

@@ -57,6 +57,7 @@ export default function Guide() {
       slug="landscape-fabric-under-rock"
       calculatorHref="/calculators/landscape-rock-calculator/"
       calculatorLabel="Try the landscape rock calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 

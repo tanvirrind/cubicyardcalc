@@ -64,6 +64,7 @@ export default function Guide() {
       slug="how-much-topsoil-for-sod"
       calculatorHref="/calculators/topsoil-calculator/"
       calculatorLabel="Try the topsoil calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
