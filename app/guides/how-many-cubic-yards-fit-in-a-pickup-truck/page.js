@@ -57,6 +57,7 @@ export default function Guide() {
       slug="how-many-cubic-yards-fit-in-a-pickup-truck"
       calculatorHref="/calculators/gravel-to-tons-calculator/"
       calculatorLabel="Try the tons-to-cubic-yards converter"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 

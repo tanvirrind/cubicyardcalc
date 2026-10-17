@@ -64,6 +64,7 @@ export default function Guide() {
       slug="how-many-retaining-wall-blocks-do-i-need"
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 

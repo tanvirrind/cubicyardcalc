@@ -64,6 +64,7 @@ export default function Guide() {
       slug="how-many-bags-of-concrete-per-cubic-yard"
       calculatorHref="/calculators/concrete-calculator/"
       calculatorLabel="Try the concrete calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
