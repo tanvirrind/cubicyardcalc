@@ -117,7 +117,7 @@ export default function Home() {
               Calculate cubic yards
             </Link>
             <Link href="/calculators/" className="btn btn-ghost">
-              All 8 calculators
+              All 23 calculators
             </Link>
           </div>
           <div className="hero-proof">
@@ -176,7 +176,7 @@ export default function Home() {
           <div className="kicker">Calculators</div>
           <h2 className="h2">One site, every bulk material</h2>
           <p className="sub">
-            Twenty free calculators — volume, weight, bag counts, cost, and
+            Twenty-three free calculators — volume, weight, bag counts, cost, and
             conversions, all in one place.
           </p>
           <div className="grid3">

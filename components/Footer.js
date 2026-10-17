@@ -15,6 +15,8 @@ export default function Footer() {
           <Link href="/contact" style={{ color: "inherit" }}>Contact</Link>
           <Link href="/privacy-policy" style={{ color: "inherit" }}>Privacy</Link>
           <Link href="/methodology/" style={{ color: "inherit" }}>Methodology</Link>
+          <Link href="/data-sources/" style={{ color: "inherit" }}>Data sources</Link>
+          <Link href="/cheat-sheet/" style={{ color: "inherit" }}>Cheat sheet</Link>
           <Link href="/editorial-policy/" style={{ color: "inherit" }}>Editorial policy</Link>
         </div>
         <div>

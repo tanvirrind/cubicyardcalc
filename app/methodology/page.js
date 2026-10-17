@@ -324,15 +324,24 @@ export default function MethodologyPage() {
             reflects when it was fixed.
           </p>
           <p>
-            Related:{" "}
-            <Link href="/guides/" style={{ color: "var(--accent-deep)", fontWeight: 700 }}>
+            Related: the{" "}
+            <Link href="/data-sources/" style={{ color: "var(--accent-deep)", fontWeight: 700 }}>
+              data sources page
+            </Link>{" "}
+            publishes the full density, bag-yield, and conversion tables,
+            the{" "}
+            <Link href="/cheat-sheet/" style={{ color: "var(--accent-deep)", fontWeight: 700 }}>
+              printable cheat sheet
+            </Link>{" "}
+            condenses them to one page, and the{" "}
+            <Link href="/guides/" style={{ color: "var(--ink)", fontWeight: 700 }}>
               material guides
             </Link>{" "}
-            and the{" "}
+            and{" "}
             <Link href="/editorial-policy/" style={{ color: "var(--accent-deep)", fontWeight: 700 }}>
               editorial policy
-            </Link>
-            .
+            </Link>{" "}
+            describe the research process.
           </p>
         </div>
 
