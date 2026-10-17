@@ -64,6 +64,7 @@ export default function Guide() {
       slug="how-many-sandbags-do-i-need"
       calculatorHref="/calculators/sand-calculator/"
       calculatorLabel="Try the sand calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 

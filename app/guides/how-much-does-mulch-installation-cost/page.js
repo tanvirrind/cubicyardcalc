@@ -57,6 +57,7 @@ export default function Guide() {
       slug="how-much-does-mulch-installation-cost"
       calculatorHref="/calculators/mulch-calculator/"
       calculatorLabel="Try the mulch calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 

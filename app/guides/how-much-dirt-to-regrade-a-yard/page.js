@@ -56,6 +56,7 @@ export default function Guide() {
       slug="how-much-dirt-to-regrade-a-yard"
       calculatorHref="/calculators/dirt-calculator/"
       calculatorLabel="Try the dirt calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
