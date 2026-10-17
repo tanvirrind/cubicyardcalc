@@ -60,6 +60,7 @@ export default function Guide() {
       slug="how-much-mortar-do-i-need"
       calculatorHref="/calculators/concrete-calculator/"
       calculatorLabel="Try the concrete calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 

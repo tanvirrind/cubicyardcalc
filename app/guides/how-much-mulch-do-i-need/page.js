@@ -57,6 +57,7 @@ export default function Guide() {
       slug="how-much-mulch-do-i-need"
       calculatorHref="/calculators/mulch-calculator/"
       calculatorLabel="Try the mulch calculator"
+      updated="2026-10"
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
