@@ -1,9 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { UnitF, SelectF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS } from "./Fields";
-import { toFeet, cubicYards, withOverage, DENSITIES, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
-import { fmtNum } from "../lib/format";
+import { F, UnitF, SelectF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS } from "./Fields";
+import { toFeet, densityLbs, densityOptions, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
+import { fmtNum, fmt$ } from "../lib/format";
 
 const materialOptions = Object.entries(DENSITIES).map(([value, d]) => ({
   value,
@@ -17,28 +17,60 @@ export default function CubicYardCalculator() {
   const [depthUnit, setDepthUnit] = useState("in");
   const [lengthUnit, setLengthUnit] = useState("ft");
   const [widthUnit, setWidthUnit] = useState("ft");
+  const [shape, setShape] = useState("rect");
+  const [diameter, setDiameter] = useState("10");
+  const [diameterUnit, setDiameterUnit] = useState("ft");
+  const [base, setBase] = useState("10");
+  const [baseUnit, setBaseUnit] = useState("ft");
+  const [height, setHeight] = useState("10");
+  const [heightUnit, setHeightUnit] = useState("ft");
+  const [densityIdx, setDensityIdx] = useState("0");
+  const [price, setPrice] = useState("0");
+  const [delivery, setDelivery] = useState("0");
+  const [taxPct, setTaxPct] = useState("0");
+
   const [material, setMaterial] = useState("gravel");
 
   const r = useMemo(() => {
-    const lFt = toFeet(length, lengthUnit);
-    const wFt = toFeet(width, widthUnit);
     const dFt = toFeet(depth, depthUnit);
-    const yards = cubicYards(lFt, wFt, dFt);
+    const areaSqFt = shapeAreaSqFt(shape, {
+      length: toFeet(length, lengthUnit),
+      width: toFeet(width, widthUnit),
+      diameter: toFeet(diameter, diameterUnit),
+      base: toFeet(base, baseUnit),
+      height: toFeet(height, heightUnit),
+    });
+    const yards = (areaSqFt * dFt) / 27;
     const feet = yards * 27;
     const overage = withOverage(yards);
-    const lbs = yards * (DENSITIES[material]?.lbs ?? 0);
+    const lbs = yards * densityLbs(material, densityIdx);
     const tons = lbs / 2000;
-    return { yards, feet, overage, lbs, tons };
-  }, [length, lengthUnit, width, widthUnit, depth, depthUnit, material]);
+    // Cost prices the overage-included order quantity, like the concrete calculator.
+    const materialCost = overage * num(price);
+    const deliv = num(delivery);
+    const tax = (materialCost + deliv) * (num(taxPct) / 100);
+    const total = materialCost + deliv + tax;
+    return { yards, feet, overage, lbs, tons, materialCost, deliv, tax, total };
+  }, [shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, depth, depthUnit, material, densityIdx, price, delivery, taxPct]);
 
   return (
     <div className="calc-layout">
       <div className="card">
         <h3 style={{ marginTop: 0 }}>Project dimensions</h3>
-        <div className="field-row">
-          <UnitF label="Length" value={length} set={setLength} unit={lengthUnit} setUnit={setLengthUnit} options={DIMENSION_OPTIONS} />
-          <UnitF label="Width" value={width} set={setWidth} unit={widthUnit} setUnit={setWidthUnit} options={DIMENSION_OPTIONS} />
-        </div>
+        <SelectF label="Area shape" value={shape} set={setShape} options={SHAPE_OPTIONS} hint="Rectangle is the default; circle and triangle cover round beds and corners" />
+        {shape === "circle" ? (
+          <UnitF label="Diameter" value={diameter} set={setDiameter} unit={diameterUnit} setUnit={setDiameterUnit} options={DIMENSION_OPTIONS} />
+        ) : shape === "triangle" ? (
+          <div className="field-row">
+            <UnitF label="Base" value={base} set={setBase} unit={baseUnit} setUnit={setBaseUnit} options={DIMENSION_OPTIONS} />
+            <UnitF label="Height" value={height} set={setHeight} unit={heightUnit} setUnit={setHeightUnit} options={DIMENSION_OPTIONS} />
+          </div>
+        ) : (
+          <div className="field-row">
+            <UnitF label="Length" value={length} set={setLength} unit={lengthUnit} setUnit={setLengthUnit} options={DIMENSION_OPTIONS} />
+            <UnitF label="Width" value={width} set={setWidth} unit={widthUnit} setUnit={setWidthUnit} options={DIMENSION_OPTIONS} />
+          </div>
+        )}
         <UnitF
           label="Depth"
           value={depth}
@@ -51,9 +83,24 @@ export default function CubicYardCalculator() {
         <SelectF
           label="Material (for weight estimate)"
           value={material}
-          set={setMaterial}
+          set={(v) => { setMaterial(v); setDensityIdx("0"); }}
           options={materialOptions}
         />
+        <SelectF
+          label="Material type (density)"
+          value={densityIdx}
+          set={setDensityIdx}
+          options={densityOptions(material)}
+          hint="Weight changes with type; volume does not"
+        />
+        <h3 style={{ marginTop: 26 }}>Cost estimate</h3>
+        <div className="field-row">
+          <F label="Price per cubic yard ($)" value={price} set={setPrice} />
+          <F label="Delivery fee ($)" value={delivery} set={setDelivery} />
+        </div>
+        <div className="field-row">
+          <F label="Tax (%)" value={taxPct} set={setTaxPct} />
+        </div>
       </div>
 
       <div className="result-card">
@@ -65,10 +112,30 @@ export default function CubicYardCalculator() {
         <Row label="Weight (tons)" value={fmtNum(r.tons)} />
         <Row label="Tonnes" value={fmtNum(r.tons * TONS_TO_TONNES)} />
         <Row label="With 10% overage" value={`${fmtNum(r.overage)} yd³`} />
+        {r.total > 0 && (
+          <>
+            <div
+              style={{
+                fontSize: 13,
+                textTransform: "uppercase",
+                letterSpacing: ".1em",
+                color: "#94a3b8",
+                marginTop: 20,
+                marginBottom: 8,
+              }}
+            >
+              Cost estimate (order quantity)
+            </div>
+            <Row label="Material" value={fmt$(r.materialCost)} />
+            <Row label="Delivery" value={fmt$(r.deliv)} />
+            <Row label="Tax" value={fmt$(r.tax)} />
+            <TotalRow label="Project total" value={fmt$(r.total)} />
+          </>
+        )}
         <div style={{ marginTop: 18 }}>
           <ResultNote>
-            Formula: length × width × depth (in feet) ÷ 27. Overage covers
-            compaction, spillage and uneven ground.
+            Formula: area in square feet × depth in feet ÷ 27. Overage
+            covers compaction, spillage and uneven ground.
           </ResultNote>
         </div>
       </div>

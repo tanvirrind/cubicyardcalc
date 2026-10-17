@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { F, UnitF, SelectF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS } from "./Fields";
-import { toFeet, cubicYards, withOverage, DENSITIES, CONCRETE_BAGS_PER_YARD, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
+import { toFeet, SHAPE_OPTIONS, shapeAreaSqFt, withOverage, DENSITIES, CONCRETE_BAGS_PER_YARD, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
 import { fmtNum, fmt$ } from "../lib/format";
 
 export default function ConcreteCalculator() {
@@ -13,6 +13,13 @@ export default function ConcreteCalculator() {
   const [lengthUnit, setLengthUnit] = useState("ft");
   const [widthUnit, setWidthUnit] = useState("ft");
   const [thicknessUnit, setThicknessUnit] = useState("in");
+  const [shape, setShape] = useState("rect");
+  const [diameter, setDiameter] = useState("10");
+  const [diameterUnit, setDiameterUnit] = useState("ft");
+  const [base, setBase] = useState("10");
+  const [baseUnit, setBaseUnit] = useState("ft");
+  const [height, setHeight] = useState("10");
+  const [heightUnit, setHeightUnit] = useState("ft");
   const [directYards, setDirectYards] = useState("1");
   const [priceYd, setPriceYd] = useState("150");
   const [delivery, setDelivery] = useState("0");
@@ -21,10 +28,15 @@ export default function ConcreteCalculator() {
   const r = useMemo(() => {
     let yards;
     if (mode === "slab") {
-      const lFt = toFeet(length, lengthUnit);
-      const wFt = toFeet(width, widthUnit);
       const tFt = toFeet(thickness, thicknessUnit);
-      yards = cubicYards(lFt, wFt, tFt);
+      const areaSqFt = shapeAreaSqFt(shape, {
+        length: toFeet(length, lengthUnit),
+        width: toFeet(width, widthUnit),
+        diameter: toFeet(diameter, diameterUnit),
+        base: toFeet(base, baseUnit),
+        height: toFeet(height, heightUnit),
+      });
+      yards = (areaSqFt * tFt) / 27;
     } else {
       yards = num(directYards);
     }
@@ -43,7 +55,7 @@ export default function ConcreteCalculator() {
     const tax = (material + deliv) * (num(taxPct) / 100);
     const total = material + deliv + tax;
     return { yards, lbs, tons, overage, bags, material, deliv, tax, total };
-  }, [mode, length, lengthUnit, width, widthUnit, thickness, thicknessUnit, directYards, priceYd, delivery, taxPct]);
+  }, [mode, shape, length, lengthUnit, width, widthUnit, diameter, diameterUnit, base, baseUnit, height, heightUnit, thickness, thicknessUnit, directYards, priceYd, delivery, taxPct]);
 
   return (
     <div className="calc-layout">
@@ -60,10 +72,20 @@ export default function ConcreteCalculator() {
         />
         {mode === "slab" ? (
           <>
-            <div className="field-row">
-              <UnitF label="Length" value={length} set={setLength} unit={lengthUnit} setUnit={setLengthUnit} options={DIMENSION_OPTIONS} />
-              <UnitF label="Width" value={width} set={setWidth} unit={widthUnit} setUnit={setWidthUnit} options={DIMENSION_OPTIONS} />
-            </div>
+            <SelectF label="Slab shape" value={shape} set={setShape} options={SHAPE_OPTIONS} />
+            {shape === "circle" ? (
+              <UnitF label="Diameter" value={diameter} set={setDiameter} unit={diameterUnit} setUnit={setDiameterUnit} options={DIMENSION_OPTIONS} />
+            ) : shape === "triangle" ? (
+              <div className="field-row">
+                <UnitF label="Base" value={base} set={setBase} unit={baseUnit} setUnit={setBaseUnit} options={DIMENSION_OPTIONS} />
+                <UnitF label="Height" value={height} set={setHeight} unit={heightUnit} setUnit={setHeightUnit} options={DIMENSION_OPTIONS} />
+              </div>
+            ) : (
+              <div className="field-row">
+                <UnitF label="Length" value={length} set={setLength} unit={lengthUnit} setUnit={setLengthUnit} options={DIMENSION_OPTIONS} />
+                <UnitF label="Width" value={width} set={setWidth} unit={widthUnit} setUnit={setWidthUnit} options={DIMENSION_OPTIONS} />
+              </div>
+            )}
             <div className="field-row">
               <UnitF label="Thickness" value={thickness} set={setThickness} unit={thicknessUnit} setUnit={setThicknessUnit} options={DIMENSION_OPTIONS} hint="4 in = patios, 6 in = driveways" />
             </div>
