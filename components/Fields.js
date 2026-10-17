@@ -121,8 +121,11 @@ export function ResultNote({ children }) {
   return <div style={{ fontSize: 12.5, color: "#94a3b8" }}>{children}</div>;
 }
 
-export const DEPTH_OPTIONS = [
-  { value: "ft", label: "ft" },
+/** Per-field linear-unit options for length/width/depth/thickness. Default stays ft/in. */
+export const DIMENSION_OPTIONS = [
   { value: "in", label: "in" },
+  { value: "ft", label: "ft" },
   { value: "yd", label: "yd" },
+  { value: "cm", label: "cm" },
+  { value: "m", label: "m" },
 ];
