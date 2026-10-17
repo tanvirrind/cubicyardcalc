@@ -121,6 +121,16 @@ export function ResultNote({ children }) {
   return <div style={{ fontSize: 12.5, color: "#94a3b8" }}>{children}</div>;
 }
 
+/** Standardized waste/overage options for the material calculators.
+ * Each calculator renders these with the existing SelectF and applies
+ * the selection via withOverage(qty, num(waste) / 100). */
+export const WASTE_OPTIONS = [
+  { value: "0", label: "None (0%)" },
+  { value: "5", label: "5%" },
+  { value: "10", label: "10% (recommended)" },
+  { value: "15", label: "15%" },
+];
+
 /** Per-field linear-unit options for length/width/depth/thickness. Default stays ft/in. */
 export const DIMENSION_OPTIONS = [
   { value: "in", label: "in" },
