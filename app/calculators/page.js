@@ -21,7 +21,7 @@ export const metadata = {
   openGraph: {
     title: "Free Cubic Yard Calculators — Concrete, Mulch & More | Cubic Yard Calculator",
     description:
-      "Twenty-nine free bulk-material calculators: concrete, gravel, mulch, sand, dirt, topsoil, rock, asphalt, pavers, brick, sod, project cost estimators, bag converters and more.",
+      "Thirty free bulk-material calculators: concrete, gravel, mulch, sand, dirt, topsoil, rock, asphalt, pavers, brick, sod, project cost estimators, bag converters and more.",
     url: "https://cubicyardcalculator.site/calculators/",
   },
 };
@@ -47,6 +47,7 @@ const calcs = [
   { name: "Cu ft → cubic yards", note: "Two-way volume converter", href: "/calculators/cubic-feet-to-cubic-yards-calculator/" },
   { name: "Square yard calculator", note: "Sq ft → sq yd area tool", href: "/calculators/square-yard-calculator/" },
   { name: "Tons → cubic yards", note: "Two-way weight converter", href: "/calculators/tons-to-cubic-yards-calculator/" },
+  { name: "Cubic yards → tons", note: "Weight converter, any material", href: "/calculators/cubic-yards-to-tons-calculator/" },
   { name: "Pea gravel calculator", note: "Walkways, patios & dog runs", href: "/calculators/pea-gravel-calculator/" },
   { name: "Post hole concrete calculator", note: "Bags per hole, post deducted", href: "/calculators/post-hole-concrete-calculator/" },
   { name: "m² → square yards", note: "Two-way area converter", href: "/calculators/square-meters-to-square-yards-calculator/" },

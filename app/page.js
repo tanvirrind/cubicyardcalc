@@ -94,6 +94,7 @@ const calcs = [
   { name: "Cu ft → cubic yards", note: "Two-way volume converter", href: "/calculators/cubic-feet-to-cubic-yards-calculator/" },
   { name: "Square yard calculator", note: "Sq ft → sq yd area tool", href: "/calculators/square-yard-calculator/" },
   { name: "Tons → cubic yards", note: "Two-way weight converter", href: "/calculators/tons-to-cubic-yards-calculator/" },
+  { name: "Cubic yards → tons", note: "Weight converter, any material", href: "/calculators/cubic-yards-to-tons-calculator/" },
   { name: "Paver calculator", note: "Pavers, gravel base & sand", href: "/calculators/paver-calculator/" },
   { name: "Brick calculator", note: "Bricks & mortar bags", href: "/calculators/brick-calculator/" },
   { name: "Sod calculator", note: "Rolls & pallets", href: "/calculators/sod-calculator/" },
@@ -123,7 +124,7 @@ export default function Home() {
               Calculate cubic yards
             </Link>
             <Link href="/calculators/" className="btn btn-ghost">
-              All 29 calculators
+              All 30 calculators
             </Link>
           </div>
           <div className="hero-proof">
@@ -182,7 +183,7 @@ export default function Home() {
           <div className="kicker">Calculators</div>
           <h2 className="h2">One site, every bulk material</h2>
           <p className="sub">
-            Twenty-nine free calculators — volume, weight, bag counts, cost, and
+            Thirty free calculators — volume, weight, bag counts, cost, and
             conversions, all in one place.
           </p>
           <div className="grid3">

@@ -17,6 +17,7 @@ const routes = [
   { path: "/calculators/cubic-feet-to-cubic-yards-calculator/", priority: 0.9, changeFrequency: "weekly" },
   { path: "/calculators/square-yard-calculator/", priority: 0.9, changeFrequency: "weekly" },
   { path: "/calculators/tons-to-cubic-yards-calculator/", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/calculators/cubic-yards-to-tons-calculator/", priority: 0.9, changeFrequency: "weekly" },
   { path: "/calculators/fill-dirt-calculator/", priority: 0.9, changeFrequency: "weekly" },
   { path: "/calculators/topsoil-calculator/", priority: 0.9, changeFrequency: "weekly" },
   { path: "/calculators/landscape-rock-calculator/", priority: 0.9, changeFrequency: "weekly" },
