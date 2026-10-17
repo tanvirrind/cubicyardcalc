@@ -5,6 +5,16 @@ const SITE_URL = "https://cubicyardcalculator.site";
 
 // Shared shell for /guides articles: breadcrumb, headline, Article schema,
 // and a CTA box pointing at the relevant calculator.
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+/** "2026-10-12" or "2026-10" -> "October 2026" (month-year granularity only). */
+function monthYear(v) {
+  const m = /^(\d{4})-(\d{2})/.exec(v || "");
+  if (!m) return null;
+  const mi = parseInt(m[2], 10);
+  if (mi < 1 || mi > 12) return null;
+  return `${MONTHS[mi - 1]} ${m[1]}`;
+}
+
 export default function GuideArticle({
   title,
   description,
@@ -40,6 +50,11 @@ export default function GuideArticle({
         <div className="kicker">Material guide</div>
         <h1 className="h2" style={{ maxWidth: 720 }}>{title}</h1>
         <p className="sub" style={{ maxWidth: 680 }}>{description}</p>
+        {monthYear(updated) && (
+          <p style={{ fontSize: 14, color: "var(--muted)", marginTop: 10, marginBottom: 0 }}>
+            By the Cubic Yard Calculator team · Last updated {monthYear(updated)}
+          </p>
+        )}
         <div className="guide-body" style={{ maxWidth: 720, lineHeight: 1.75, fontSize: 17 }}>
           {children}
         </div>

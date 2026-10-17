@@ -14,6 +14,15 @@ export default function Footer() {
           <Link href="/about" style={{ color: "inherit" }}>About</Link>
           <Link href="/contact" style={{ color: "inherit" }}>Contact</Link>
           <Link href="/privacy-policy" style={{ color: "inherit" }}>Privacy</Link>
+          <Link href="/methodology/" style={{ color: "inherit" }}>Methodology</Link>
+          <Link href="/editorial-policy/" style={{ color: "inherit" }}>Editorial policy</Link>
+        </div>
+        <div>
+          <strong style={{ color: "var(--ink)" }}>Try our other tools</strong>
+          <div className="footer-links" style={{ marginTop: 6 }}>
+            <a href="https://calcbid.com" style={{ color: "inherit" }}>CalcBid</a>
+            <a href="https://solarcalculatorhub.com" style={{ color: "inherit" }}>Solar Calculator Hub</a>
+          </div>
         </div>
         <div>© {new Date().getFullYear()} Cubic Yard Calculator. All rights reserved.</div>
       </div>
