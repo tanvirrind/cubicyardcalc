@@ -22,6 +22,8 @@ export default function GuideArticle({
   updated,
   calculatorHref,
   calculatorLabel,
+  toc,
+  references,
   children,
 }) {
   const url = `${SITE_URL}/guides/${slug}/`;
@@ -55,9 +57,31 @@ export default function GuideArticle({
             By the Cubic Yard Calculator team · Last updated {monthYear(updated)}
           </p>
         )}
+        {toc && toc.length > 0 && (
+          <nav aria-label="On this page" className="card" style={{ maxWidth: 720, padding: "20px 26px", marginBottom: 28 }}>
+            <h2 style={{ marginTop: 0, fontSize: 18 }}>On this page</h2>
+            <ul style={{ margin: "8px 0 0", paddingLeft: 20 }}>
+              {toc.map((t) => (
+                <li key={t.id} style={{ marginBottom: 6 }}>
+                  <a href={`#${t.id}`}>{t.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
         <div className="guide-body" style={{ maxWidth: 720, lineHeight: 1.75, fontSize: 17 }}>
           {children}
         </div>
+        {references && references.length > 0 && (
+          <section style={{ maxWidth: 720, marginTop: 40 }}>
+            <h2 id="references">References</h2>
+            <ul style={{ paddingLeft: 20, color: "var(--ink-soft)", fontSize: 15 }}>
+              {references.map((r, i) => (
+                <li key={i} style={{ marginBottom: 8 }}>{r}</li>
+              ))}
+            </ul>
+          </section>
+        )}
         <div className="card" style={{ marginTop: 44, maxWidth: 720, padding: "28px 30px" }}>
           <h3 style={{ marginTop: 0 }}>Run your own numbers</h3>
           <p style={{ color: "var(--ink-soft)" }}>
