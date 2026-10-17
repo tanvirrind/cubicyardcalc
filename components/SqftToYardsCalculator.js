@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { F, UnitF, SelectF, ResultHead, Row, TotalRow, ResultNote, num, DEPTH_OPTIONS } from "./Fields";
-import { toFeet, cubicYards, withOverage, DENSITIES } from "../lib/calc";
+import { F, UnitF, SelectF, ResultHead, Row, TotalRow, ResultNote, num, DIMENSION_OPTIONS } from "./Fields";
+import { toFeet, cubicYards, withOverage, DENSITIES, YD3_TO_M3, TONS_TO_TONNES } from "../lib/calc";
 import { fmtNum } from "../lib/format";
 
 const materialOptions = Object.entries(DENSITIES).map(([value, d]) => ({
@@ -35,7 +35,7 @@ export default function SqftToYardsCalculator() {
           set={setDepth}
           unit={depthUnit}
           setUnit={setDepthUnit}
-          options={DEPTH_OPTIONS}
+          options={DIMENSION_OPTIONS}
           hint="Depth is required — area alone can't become volume"
         />
         <SelectF
@@ -49,8 +49,10 @@ export default function SqftToYardsCalculator() {
       <div className="result-card">
         <ResultHead>Conversion</ResultHead>
         <TotalRow label="Cubic yards" value={fmtNum(r.yards)} />
+        <Row label="Cubic meters" value={fmtNum(r.yards * YD3_TO_M3)} />
         <Row label="Cubic feet" value={fmtNum(r.feet)} />
         <Row label="Weight (tons)" value={fmtNum(r.tons)} />
+        <Row label="Weight (tonnes)" value={fmtNum(r.tons * TONS_TO_TONNES)} />
         <Row label="With 10% overage" value={`${fmtNum(r.overage)} yd³`} />
         <div style={{ marginTop: 18 }}>
           <ResultNote>
