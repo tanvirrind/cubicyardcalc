@@ -61,10 +61,27 @@ export default function Guide() {
       calculatorHref="/calculators/concrete-calculator/"
       calculatorLabel="Try the concrete calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-5-step-bag-count-formula", label: "The 5-step bag-count formula" },
+        { id: "bags-by-brick-and-block-type", label: "Bags by brick and block type" },
+        { id: "joint-thickness-multiplier", label: "Joint-thickness multiplier" },
+        { id: "80-lb-vs-60-lb-bags", label: "80-lb vs 60-lb bags" },
+        { id: "type-n-vs-s-vs-m-which-mortar", label: "Type N vs S vs M: which mortar?" },
+        { id: "bagged-pre-mix-vs-site-mix-the-cost-math", label: "Bagged pre-mix vs site-mix: the cost math" },
+        { id: "mixing-and-water-tips", label: "Mixing and water tips" },
+        { id: "the-10-waste-factor", label: "The 10% waste factor" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Bag yields and coverage: manufacturer product data (Quikrete, Sakrete) for 80-lb and 60-lb mortar mix yields.",
+        "ASTM C270 — mortar types and proportions, including the strength grades for Type N, S, M, and O mortar referenced in the selection table.",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         For <strong>1,000 standard modular bricks</strong> with 3/8-inch
         joints, you need <strong>33–34 eighty-pound bags of Type N mortar
@@ -86,7 +103,7 @@ export default function Guide() {
         same wall.
       </p>
 
-      <h2>The 5-step bag-count formula</h2>
+      <h2 id="the-5-step-bag-count-formula">The 5-step bag-count formula</h2>
       <p>
         Every estimate below follows the same chain. Run it once and the
         tables make sense forever:
@@ -113,7 +130,7 @@ export default function Guide() {
         25.2 → <strong>order 26 bags</strong>.
       </p>
 
-      <h2>Bags by brick and block type</h2>
+      <h2 id="bags-by-brick-and-block-type">Bags by brick and block type</h2>
       <p>
         Coverage per 80-lb bag of Type N assumes 3/8-inch joints and single-wythe
         construction. Per-1,000 counts are net, and the &ldquo;order&rdquo;
@@ -149,7 +166,7 @@ export default function Guide() {
         modular bricks or 6–7 blocks per bag instead of 30 and 8.
       </p>
 
-      <h2>Joint-thickness multiplier</h2>
+      <h2 id="joint-thickness-multiplier">Joint-thickness multiplier</h2>
       <p>
         The tables assume the standard <strong>3/8-inch joint</strong>. Go
         thicker and mortar consumption climbs fast, because the joint is a
@@ -172,7 +189,7 @@ export default function Guide() {
         mortar quantity.
       </p>
 
-      <h2>80-lb vs 60-lb bags</h2>
+      <h2 id="80-lb-vs-60-lb-bags">80-lb vs 60-lb bags</h2>
       <p>
         Bagged mortar mix comes in several sizes, but 80-lb and 60-lb bags
         dominate the shelves. A 60-lb bag yields about 0.42 cubic feet — three
@@ -195,7 +212,7 @@ export default function Guide() {
         mixer-based crew job, 80-lb bags win on fewer trips.
       </p>
 
-      <h2>Type N vs S vs M: which mortar?</h2>
+      <h2 id="type-n-vs-s-vs-m-which-mortar">Type N vs S vs M: which mortar?</h2>
       <p>
         Mortar type is chosen by <strong>where the wall lives</strong>, not by
         how strong you want it to feel. Stronger isn&apos;t always better —
@@ -222,7 +239,7 @@ export default function Guide() {
         the units do.
       </p>
 
-      <h2>Bagged pre-mix vs site-mix: the cost math</h2>
+      <h2 id="bagged-pre-mix-vs-site-mix-the-cost-math">Bagged pre-mix vs site-mix: the cost math</h2>
       <p>
         You can buy mortar as ready-to-mix bags (sand + cement + lime, just
         add water) or mix it on site from portland cement and mason sand in
@@ -254,7 +271,7 @@ export default function Guide() {
         covers when bagged concrete stops making sense.
       </p>
 
-      <h2>Mixing and water tips</h2>
+      <h2 id="mixing-and-water-tips">Mixing and water tips</h2>
       <p>
         Bad mixing wastes more mortar than bad estimating. Mix in{" "}
         <strong>small batches you can use within 2 to 2½ hours</strong> —
@@ -270,7 +287,7 @@ export default function Guide() {
         water ratio off batch to batch.
       </p>
 
-      <h2>The 10% waste factor</h2>
+      <h2 id="the-10-waste-factor">The 10% waste factor</h2>
       <p>
         Mortar waste isn&apos;t optional — it&apos;s structural to how masonry
         works. Mortar squeezes out of joints and gets struck off, drops fall
@@ -283,7 +300,7 @@ export default function Guide() {
         opened bag does not — humidity kills it in weeks.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Using concrete mix for joints.</strong> The gravel aggregate
         won&apos;t fit a 3/8-inch joint and the bond is wrong — mortar for

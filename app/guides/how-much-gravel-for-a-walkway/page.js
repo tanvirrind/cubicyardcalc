@@ -57,10 +57,30 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "depth-4-inches-is-the-standard", label: "Depth: 4 inches is the standard" },
+        { id: "project-size-table-2-inch-depth", label: "Project-size table: 2-inch depth" },
+        { id: "project-size-table-4-inch-depth", label: "Project-size table: 4-inch depth" },
+        { id: "choosing-the-surface-pea-gravel-vs-crushed-stone-vs-decomposed-granite", label: "Choosing the surface: pea gravel vs crushed stone vs decomposed granite" },
+        { id: "edging-and-landscape-fabric", label: "Edging and landscape fabric" },
+        { id: "when-the-path-needs-a-base-layer", label: "When the path needs a base layer" },
+        { id: "curved-and-irregular-paths", label: "Curved and irregular paths" },
+        { id: "maintenance-the-annual-top-up", label: "Maintenance: the annual top-up" },
+        { id: "bulk-vs-bags", label: "Bulk vs bags" },
+        { id: "weeds-in-a-gravel-path", label: "Weeds in a gravel path" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Aggregate gradations: ASTM C33 aggregate density ranges and standard stone gradations, including #57 stone.",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         A <strong>3-foot-wide walkway at 4 inches deep</strong> — the standard
         for a real path — needs about <strong>0.74 cubic yards of gravel per
@@ -70,7 +90,7 @@ export default function Guide() {
         path in the tables below.
       </p>
 
-      <h2>Depth: 4 inches is the standard</h2>
+      <h2 id="depth-4-inches-is-the-standard">Depth: 4 inches is the standard</h2>
       <p>
         <strong>4 inches</strong> is the depth for a walkway you&apos;ll
         actually walk on daily: it resists kicking and displacement, hides
@@ -84,7 +104,7 @@ export default function Guide() {
         stone base goes under it and gets its own calculation.
       </p>
 
-      <h2>Project-size table: 2-inch depth</h2>
+      <h2 id="project-size-table-2-inch-depth">Project-size table: 2-inch depth</h2>
       <p>
         Light-use garden paths. Yards first (how bulk is sold), tons for
         weight-priced loads (gravel ≈ 2,800 lb/yd&sup3;, so multiply yards by
@@ -102,7 +122,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Project-size table: 4-inch depth</h2>
+      <h2 id="project-size-table-4-inch-depth">Project-size table: 4-inch depth</h2>
       <p>
         The recommended depth for real walkways. Same columns — yards, tons,
         bags, and what to actually order:
@@ -127,7 +147,7 @@ export default function Guide() {
         runs the same formula on your dimensions.
       </p>
 
-      <h2>Choosing the surface: pea gravel vs crushed stone vs decomposed granite</h2>
+      <h2 id="choosing-the-surface-pea-gravel-vs-crushed-stone-vs-decomposed-granite">Choosing the surface: pea gravel vs crushed stone vs decomposed granite</h2>
       <p>
         This guide is the <strong>quantity playbook</strong>; the material
         decision is its own topic, which we compare head-to-head in our{" "}
@@ -156,7 +176,7 @@ export default function Guide() {
         actually mean for a path.
       </p>
 
-      <h2>Edging and landscape fabric</h2>
+      <h2 id="edging-and-landscape-fabric">Edging and landscape fabric</h2>
       <p>
         Gravel without edging is a future raking chore. Install{" "}
         <strong>rigid edging</strong> (steel, aluminum, or stone) on both
@@ -171,7 +191,7 @@ export default function Guide() {
         <a href="/guides/landscape-fabric-under-rock/">landscape fabric under rock guide</a>.
       </p>
 
-      <h2>When the path needs a base layer</h2>
+      <h2 id="when-the-path-needs-a-base-layer">When the path needs a base layer</h2>
       <p>
         The tables above cover the <strong>surface gravel layer</strong> —
         enough for garden paths on firm, well-drained soil. But a main
@@ -186,7 +206,7 @@ export default function Guide() {
         sinking into mud after the first rainy season.
       </p>
 
-      <h2>Curved and irregular paths</h2>
+      <h2 id="curved-and-irregular-paths">Curved and irregular paths</h2>
       <p>
         For a curved path, measure the <strong>length along the
         centerline</strong> of the curve (a garden hose laid along the route
@@ -199,7 +219,7 @@ export default function Guide() {
         side of the overage.
       </p>
 
-      <h2>Maintenance: the annual top-up</h2>
+      <h2 id="maintenance-the-annual-top-up">Maintenance: the annual top-up</h2>
       <p>
         Even a well-built gravel path loses stone: feet kick it aside, rain
         washes fines away, and a little settles into the base each year.
@@ -212,7 +232,7 @@ export default function Guide() {
         paths are really just edging that shifted and let the stone escape.
       </p>
 
-      <h2>Bulk vs bags</h2>
+      <h2 id="bulk-vs-bags">Bulk vs bags</h2>
       <p>
         The crossover point is roughly <strong>30 feet of path</strong>. A
         0.5-cu-ft bag at ~$5 means a 70-foot path at 4 inches (140 bags)
@@ -223,7 +243,7 @@ export default function Guide() {
         cheaper than a second trip.
       </p>
 
-      <h2>Weeds in a gravel path</h2>
+      <h2 id="weeds-in-a-gravel-path">Weeds in a gravel path</h2>
       <p>
         Fabric stops weeds from below, but wind-blown seeds land <strong>on
         top</strong> of the gravel and sprout in the dust that settles
@@ -237,7 +257,7 @@ export default function Guide() {
         walkways.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Going too thin.</strong> Two inches on a daily-use walkway
         migrates and shows the ground — use 4. <strong>Skipping edging.</strong>{" "}

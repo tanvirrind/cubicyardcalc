@@ -57,10 +57,29 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "zone-1-the-compacted-base", label: "Zone 1: the compacted base" },
+        { id: "zone-2-the-drainage-backfill", label: "Zone 2: the drainage backfill" },
+        { id: "the-math-two-simple-formulas", label: "The math: two simple formulas" },
+        { id: "worked-examples-by-wall-size", label: "Worked examples by wall size" },
+        { id: "why-the-10-15-overage-matters", label: "Why the 10–15% overage matters" },
+        { id: "order-57-angular-stone", label: "Order #57 angular stone" },
+        { id: "yards-to-tons-for-ordering", label: "Yards to tons for ordering" },
+        { id: "what-about-walls-over-4-feet", label: "What about walls over 4 feet?" },
+        { id: "fabric-caps-and-finishing-touches", label: "Fabric, caps, and finishing touches" },
+        { id: "delivery-and-placement-tips", label: "Delivery and placement tips" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Aggregate gradations: ASTM C33 aggregate density ranges and standard stone gradations, including #57 stone.",
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Gravel for a retaining wall goes in <strong>two zones</strong>: a{" "}
         <strong>4–6 inch compacted base</strong> under the first course of
@@ -74,7 +93,7 @@ export default function Guide() {
         for both zones.
       </p>
 
-      <h2>Zone 1: the compacted base</h2>
+      <h2 id="zone-1-the-compacted-base">Zone 1: the compacted base</h2>
       <p>
         The base trench sits under the wall and a little beyond it: dig it{" "}
         <strong>about 12 inches wider than the wall block</strong> — roughly
@@ -93,7 +112,7 @@ export default function Guide() {
         sits on this, and every course above inherits its mistakes.
       </p>
 
-      <h2>Zone 2: the drainage backfill</h2>
+      <h2 id="zone-2-the-drainage-backfill">Zone 2: the drainage backfill</h2>
       <p>
         Behind the wall, place a <strong>minimum 12-inch-wide zone of clean
         angular gravel</strong> from the base all the way up to within a few
@@ -116,7 +135,7 @@ export default function Guide() {
         covers pipe sizing and slope if you want the full treatment.
       </p>
 
-      <h2>The math: two simple formulas</h2>
+      <h2 id="the-math-two-simple-formulas">The math: two simple formulas</h2>
       <p>
         Compute each zone separately, then add them. Per linear foot of wall:
       </p>
@@ -136,7 +155,7 @@ export default function Guide() {
         <strong>4.44 cubic yards</strong>.
       </p>
 
-      <h2>Worked examples by wall size</h2>
+      <h2 id="worked-examples-by-wall-size">Worked examples by wall size</h2>
       <p>
         Base figures assume a 2-foot-wide, 6-inch-deep trench; backfill
         assumes the 12-inch minimum zone. The &ldquo;order&rdquo; column adds
@@ -162,7 +181,7 @@ export default function Guide() {
         handles the base and backfill zones in one pass.
       </p>
 
-      <h2>Why the 10–15% overage matters</h2>
+      <h2 id="why-the-10-15-overage-matters">Why the 10–15% overage matters</h2>
       <p>
         Compaction is the silent quantity-eater. Six inches of loose gravel
         tamps down to roughly five inches — the particles settle into a
@@ -173,7 +192,7 @@ export default function Guide() {
         delivery fee that costs more than the extra half yard would have.
       </p>
 
-      <h2>Order #57 angular stone</h2>
+      <h2 id="order-57-angular-stone">Order #57 angular stone</h2>
       <p>
         One product does both jobs: <strong>clean #57 stone</strong> —
         angular crushed rock about ½ to 1 inch, washed free of dust. The
@@ -190,7 +209,7 @@ export default function Guide() {
         <a href="/guides/gravel-size-chart/">gravel size chart</a>.
       </p>
 
-      <h2>Yards to tons for ordering</h2>
+      <h2 id="yards-to-tons-for-ordering">Yards to tons for ordering</h2>
       <p>
         Bulk stone is often priced per ton. Gravel weighs about 2,800 pounds
         per cubic yard, so <strong>multiply yards by 1.4</strong>:
@@ -209,7 +228,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>What about walls over 4 feet?</h2>
+      <h2 id="what-about-walls-over-4-feet">What about walls over 4 feet?</h2>
       <p>
         Everything above assumes a wall up to about 4 feet tall — the range
         most DIY and residential projects stay in. Taller walls change the
@@ -226,7 +245,7 @@ export default function Guide() {
         friendlier to build.
       </p>
 
-      <h2>Fabric, caps, and finishing touches</h2>
+      <h2 id="fabric-caps-and-finishing-touches">Fabric, caps, and finishing touches</h2>
       <p>
         Place <strong>non-woven geotextile fabric</strong> between the
         backfill gravel and the soil behind it — it keeps silt from migrating
@@ -240,7 +259,7 @@ export default function Guide() {
         water off the wall face and keep the top course from shifting.
       </p>
 
-      <h2>Delivery and placement tips</h2>
+      <h2 id="delivery-and-placement-tips">Delivery and placement tips</h2>
       <p>
         Bulk stone arrives in a dump truck or dump trailer — know your access
         before you order. A full-size dump truck needs roughly 10–12 feet of
@@ -255,7 +274,7 @@ export default function Guide() {
         and muddy stone contaminates the drainage zone.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Rounded stone.</strong> Pea gravel migrates and packs —
         angular #57 is the standard. <strong>Compacting the backfill.</strong>{" "}

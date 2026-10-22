@@ -58,10 +58,26 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "pad-size-chart-shed-footprint-yards-and-tons", label: "Pad-size chart: shed footprint → yards and tons" },
+        { id: "depth-rules-4-6-or-8-inches", label: "Depth rules: 4, 6, or 8 inches?" },
+        { id: "the-right-stone-why-57", label: "The right stone: why #57" },
+        { id: "build-steps-fabric-edging-lifts", label: "Build steps: fabric, edging, lifts" },
+        { id: "freeze-thaw-note", label: "Freeze-thaw note" },
+        { id: "delivery-and-cost-reality", label: "Delivery and cost reality" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Aggregate gradations: ASTM C33 aggregate density ranges and standard stone gradations, including #57 stone.",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Make the pad <strong>12 inches larger than the shed on every
         side</strong> (the shed footprint plus 2 feet each way), and plan on
@@ -73,7 +89,7 @@ export default function Guide() {
         compaction eats roughly 10–20% of loose volume.
       </p>
 
-      <h2>Pad-size chart: shed footprint → yards and tons</h2>
+      <h2 id="pad-size-chart-shed-footprint-yards-and-tons">Pad-size chart: shed footprint → yards and tons</h2>
       <p>
         Pad footprint = shed dimensions plus 12 inches on each side. Tons =
         yards × 1.4 (gravel runs about 2,800 lbs per cubic yard). Add 10–20%
@@ -100,7 +116,7 @@ export default function Guide() {
         result against any row before ordering.)
       </p>
 
-      <h2>Depth rules: 4, 6, or 8 inches?</h2>
+      <h2 id="depth-rules-4-6-or-8-inches">Depth rules: 4, 6, or 8 inches?</h2>
       <p>
         Depth here means <strong>compacted depth</strong>. Use{" "}
         <strong>4 inches</strong> on firm, well-drained soil in mild
@@ -113,7 +129,7 @@ export default function Guide() {
         about 20–25% deeper than the finished depth, then compact down to it.
       </p>
 
-      <h2>The right stone: why #57</h2>
+      <h2 id="the-right-stone-why-57">The right stone: why #57</h2>
       <p>
         <strong>#57 stone</strong> is angular crushed rock, roughly 1/2 to 1
         inch across. The angular faces lock together under compaction, and
@@ -130,7 +146,7 @@ export default function Guide() {
         won&apos;t get a surprise load of something else.
       </p>
 
-      <h2>Build steps: fabric, edging, lifts</h2>
+      <h2 id="build-steps-fabric-edging-lifts">Build steps: fabric, edging, lifts</h2>
       <p>
         <strong>1. Mark and strip.</strong> Lay out the pad footprint and
         remove sod and topsoil down about 6 inches so the stone sits on
@@ -150,7 +166,7 @@ export default function Guide() {
         level before the walls go up.
       </p>
 
-      <h2>Freeze-thaw note</h2>
+      <h2 id="freeze-thaw-note">Freeze-thaw note</h2>
       <p>
         In cold climates, water trapped under a pad freezes, expands, and
         heaves one corner of the shed — the classic spring &ldquo;why is my
@@ -164,7 +180,7 @@ export default function Guide() {
         project, same layer logic.
       </p>
 
-      <h2>Delivery and cost reality</h2>
+      <h2 id="delivery-and-cost-reality">Delivery and cost reality</h2>
       <p>
         At 1.4 tons per yard, most shed pads need a dump-truck delivery —
         the 4.36-ton load for a 10×12 shed at 6 inches is about what a
@@ -177,7 +193,7 @@ export default function Guide() {
         wheelbarrow distance of the pad, or the savings evaporate into labor.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Pad exactly the shed size.</strong> Water drips off the roof
         edge and lands on bare soil, eroding the perimeter; the extra 12

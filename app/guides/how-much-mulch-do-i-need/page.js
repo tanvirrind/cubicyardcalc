@@ -58,10 +58,25 @@ export default function Guide() {
       calculatorHref="/calculators/mulch-calculator/"
       calculatorLabel="Try the mulch calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "pick-the-right-depth-first", label: "Pick the right depth first" },
+        { id: "coverage-what-one-cubic-yard-buys-you", label: "Coverage: what one cubic yard buys you" },
+        { id: "bags-per-cubic-yard", label: "Bags per cubic yard" },
+        { id: "coverage-per-bag", label: "Coverage per bag" },
+        { id: "bags-vs-bulk-the-real-math", label: "Bags vs bulk: the real math" },
+        { id: "worked-example-a-200-sq-ft-bed-at-3-inches", label: "Worked example: a 200 sq ft bed at 3 inches" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+        "Bag coverage: manufacturer-stated bag volumes (1, 1.5, 2, and 3 cu ft) used for the bags-per-yard conversions.",
+        "Mulch depth guidance: standard horticultural guidance for bed mulch depth and clearance from trunks and stems.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Multiply bed length × width × mulch depth in feet, then divide by 27.
         A 200 sq ft bed at 3 inches deep: (200 × 0.25) / 27 ={" "}
@@ -70,7 +85,7 @@ export default function Guide() {
         100 for a rough 3-inch figure in yards: 300 sq ft ≈ 2.78 yards.
       </p>
 
-      <h2>Pick the right depth first</h2>
+      <h2 id="pick-the-right-depth-first">Pick the right depth first</h2>
       <p>
         Depth is where most estimates go wrong. Use <strong>2 inches</strong>{" "}
         when refreshing beds that already have mulch — you&apos;re topping up,
@@ -83,7 +98,7 @@ export default function Guide() {
         total shouldn&apos;t pass 4 inches.
       </p>
 
-      <h2>Coverage: what one cubic yard buys you</h2>
+      <h2 id="coverage-what-one-cubic-yard-buys-you">Coverage: what one cubic yard buys you</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Depth</th><th>Area covered by 1 cubic yard</th></tr>
@@ -101,7 +116,7 @@ export default function Guide() {
         agrees (216 / 108 = 2).
       </p>
 
-      <h2>Bags per cubic yard</h2>
+      <h2 id="bags-per-cubic-yard">Bags per cubic yard</h2>
       <p>
         One cubic yard is 27 cubic feet — divide 27 by the bag size:
       </p>
@@ -117,7 +132,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Coverage per bag</h2>
+      <h2 id="coverage-per-bag">Coverage per bag</h2>
       <p>
         Buying bags? Skip the yard math and work straight from the bag.
         Coverage per bag at common depths:
@@ -138,7 +153,7 @@ export default function Guide() {
         so <strong>9 bags</strong>.
       </p>
 
-      <h2>Bags vs bulk: the real math</h2>
+      <h2 id="bags-vs-bulk-the-real-math">Bags vs bulk: the real math</h2>
       <p>
         Bulk mulch is usually cheaper once you pass about 2 to 3 cubic yards.
         A yard of bulk hardwood mulch often costs less than the 14 bags of
@@ -151,7 +166,7 @@ export default function Guide() {
         choice.
       </p>
 
-      <h2>Worked example: a 200 sq ft bed at 3 inches</h2>
+      <h2 id="worked-example-a-200-sq-ft-bed-at-3-inches">Worked example: a 200 sq ft bed at 3 inches</h2>
       <p>
         Volume: (200 × 0.25) / 27 = <strong>1.85 cubic yards</strong>. In 2 cu
         ft bags: 1.85 × 13.5 = 25 bags; round up and add 10% overage →{" "}
@@ -160,7 +175,7 @@ export default function Guide() {
         check: 200 / 108 = 1.85 — the table agrees.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Mulching too deep.</strong> More than 4 inches total can
         suffocate roots. <strong>Forgetting bed edges.</strong> Mulch migrates

@@ -61,10 +61,28 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "depth-by-slab-use", label: "Depth by slab use" },
+        { id: "the-math-one-worked-example", label: "The math: one worked example" },
+        { id: "yards-and-tons-by-footprint-4-inch-base", label: "Yards and tons by footprint: 4-inch base" },
+        { id: "yards-and-tons-by-footprint-6-inch-base", label: "Yards and tons by footprint: 6-inch base" },
+        { id: "which-gravel-to-order-and-which-to-refuse", label: "Which gravel to order — and which to refuse" },
+        { id: "vapor-and-moisture-barrier-note", label: "Vapor and moisture barrier note" },
+        { id: "compaction-in-lifts-the-step-that-decides-everything", label: "Compaction in lifts — the step that decides everything" },
+        { id: "what-the-gravel-base-costs", label: "What the gravel base costs" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Aggregate gradations: ASTM C33 aggregate density ranges and standard stone gradations, including #57 stone.",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Put <strong>4 inches of compacted gravel under patios, walkways, and
         shed pads</strong>, and <strong>6 inches under driveways, parking pads,
@@ -77,7 +95,7 @@ export default function Guide() {
         compact it in lifts.
       </p>
 
-      <h2>Depth by slab use</h2>
+      <h2 id="depth-by-slab-use">Depth by slab use</h2>
       <p>
         Depth is decided by load, not by preference. The gravel sits{" "}
         <em>under</em> the concrete — the slab itself (typically 4 inches for
@@ -102,7 +120,7 @@ export default function Guide() {
         stone so the gravel does not sink into the mud over the seasons.
       </p>
 
-      <h2>The math: one worked example</h2>
+      <h2 id="the-math-one-worked-example">The math: one worked example</h2>
       <p>
         Convert depth to feet first — <strong>4 inches = ⅓ foot, 6 inches =
         ½ foot</strong> — then it is a single multiplication:
@@ -129,7 +147,7 @@ export default function Guide() {
         handles the pour.
       </p>
 
-      <h2>Yards and tons by footprint: 4-inch base</h2>
+      <h2 id="yards-and-tons-by-footprint-4-inch-base">Yards and tons by footprint: 4-inch base</h2>
       <p>
         Tons use gravel&apos;s 2,800 lbs/yd³ (×1.4). The &ldquo;order&rdquo;
         column adds 10% overage, rounded to what suppliers sell:
@@ -148,7 +166,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Yards and tons by footprint: 6-inch base</h2>
+      <h2 id="yards-and-tons-by-footprint-6-inch-base">Yards and tons by footprint: 6-inch base</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Footprint (ft)</th><th>Sq ft</th><th>Yards</th><th>Tons</th><th>Order</th></tr>
@@ -169,7 +187,7 @@ export default function Guide() {
         a per-ton one.
       </p>
 
-      <h2>Which gravel to order — and which to refuse</h2>
+      <h2 id="which-gravel-to-order-and-which-to-refuse">Which gravel to order — and which to refuse</h2>
       <p>
         Two products are correct for a slab sub-base. <strong>#57 stone</strong>{" "}
         — clean, angular crushed rock about ½ to 1 inch — drains freely and
@@ -190,7 +208,7 @@ export default function Guide() {
         finished surface rather than a sub-base.
       </p>
 
-      <h2>Vapor and moisture barrier note</h2>
+      <h2 id="vapor-and-moisture-barrier-note">Vapor and moisture barrier note</h2>
       <p>
         For any <strong>interior slab</strong> — garage, basement, workshop —
         lay <strong>10-mil polyethylene sheeting</strong> over the compacted
@@ -203,7 +221,7 @@ export default function Guide() {
         through the gravel base is the moisture strategy there.
       </p>
 
-      <h2>Compaction in lifts — the step that decides everything</h2>
+      <h2 id="compaction-in-lifts-the-step-that-decides-everything">Compaction in lifts — the step that decides everything</h2>
       <p>
         Gravel only becomes a base once it is compacted, and compaction only
         reaches a few inches deep per pass. Place the stone in{" "}
@@ -217,7 +235,7 @@ export default function Guide() {
         damp stone packs tighter than dry.
       </p>
 
-      <h2>What the gravel base costs</h2>
+      <h2 id="what-the-gravel-base-costs">What the gravel base costs</h2>
       <p>
         Typical U.S. ranges for the stone itself, before the concrete:
       </p>
@@ -242,7 +260,7 @@ export default function Guide() {
         covers every common material on one chart.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Pea gravel as sub-base.</strong> Rounded stone migrates —
         angular #57 or crusher run only. <strong>One deep lift.</strong>{" "}

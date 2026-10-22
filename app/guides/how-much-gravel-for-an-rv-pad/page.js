@@ -57,10 +57,27 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10-13"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "tons-and-cubic-yards-by-rig-class", label: "Tons and cubic yards by rig class" },
+        { id: "choose-the-right-depth-first", label: "Choose the right depth first" },
+        { id: "two-layers-base-stone-vs-top-stone", label: "Two layers: base stone vs top stone" },
+        { id: "landscape-fabric-on-soft-soil", label: "Landscape fabric on soft soil" },
+        { id: "drainage-slope-the-invisible-half-of-the-pad", label: "Drainage slope: the invisible half of the pad" },
+        { id: "what-it-costs-typical-2026-us", label: "What it costs (typical 2026 US)" },
+        { id: "ordering-and-delivery-tips", label: "Ordering and delivery tips" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Aggregate gradations: ASTM C33 aggregate density ranges and standard stone gradations, including #57 stone.",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Gravel is ordered by the <strong>ton</strong>. Find your volume
         first: length × width × (depth in inches ÷ 12) ÷ 27 gives cubic
@@ -75,7 +92,7 @@ export default function Guide() {
         A motorhomes respectively.
       </p>
 
-      <h2>Tons and cubic yards by rig class</h2>
+      <h2 id="tons-and-cubic-yards-by-rig-class">Tons and cubic yards by rig class</h2>
       <p>
         Find your rig class below and read across to your target depth.
         Each cell shows cubic yards, then tons. Figures assume a flat
@@ -101,7 +118,7 @@ export default function Guide() {
         get it.
       </p>
 
-      <h2>Choose the right depth first</h2>
+      <h2 id="choose-the-right-depth-first">Choose the right depth first</h2>
       <p>
         <strong>4 inches</strong> works as a refresh layer over an
         existing firm base — or for occasional overnight parking on ground
@@ -116,7 +133,7 @@ export default function Guide() {
         walkway.
       </p>
 
-      <h2>Two layers: base stone vs top stone</h2>
+      <h2 id="two-layers-base-stone-vs-top-stone">Two layers: base stone vs top stone</h2>
       <p>
         A pad that survives years of parked weight is two materials with
         two jobs, each compacted before the next goes down:
@@ -142,7 +159,7 @@ export default function Guide() {
         tire turns on it.
       </p>
 
-      <h2>Landscape fabric on soft soil</h2>
+      <h2 id="landscape-fabric-on-soft-soil">Landscape fabric on soft soil</h2>
       <p>
         If your ground is clay, low-lying, or holds water after rain, lay{" "}
         <strong>woven geotextile fabric</strong> on the graded soil before
@@ -155,7 +172,7 @@ export default function Guide() {
         base.
       </p>
 
-      <h2>Drainage slope: the invisible half of the pad</h2>
+      <h2 id="drainage-slope-the-invisible-half-of-the-pad">Drainage slope: the invisible half of the pad</h2>
       <p>
         Grade the finished pad at about a <strong>2% slope</strong> —
         roughly <strong>¼ inch per foot</strong> — away from where the
@@ -167,7 +184,7 @@ export default function Guide() {
         and a pond under 12 tons of RV is a rut factory.
       </p>
 
-      <h2>What it costs (typical 2026 US)</h2>
+      <h2 id="what-it-costs-typical-2026-us">What it costs (typical 2026 US)</h2>
       <p>
         Crusher-run gravel typically runs <strong>$30 to $55 per
         ton</strong> delivered (typical 2026 US). That 12×40 Class A pad
@@ -179,7 +196,7 @@ export default function Guide() {
         layer and compaction in the afternoon.
       </p>
 
-      <h2>Ordering and delivery tips</h2>
+      <h2 id="ordering-and-delivery-tips">Ordering and delivery tips</h2>
       <p>
         Buy <strong>loose by the ton from a quarry or landscape
         supplier</strong> — bagged gravel costs several times more and
@@ -195,7 +212,7 @@ export default function Guide() {
         grading, so you are not trenching through a finished pad.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Pea gravel anywhere tires go.</strong> It migrates from
         day one. <strong>One thin layer over clay.</strong> Four inches
