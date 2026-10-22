@@ -54,10 +54,21 @@ export default function Guide() {
       calculatorHref="/calculators/cubic-yard-calculator/"
       calculatorLabel="Try the cubic yard calculator"
       updated="2026-10-12"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "loads-per-cubic-yard-by-wheelbarrow-size", label: "Loads per cubic yard by wheelbarrow size" },
+        { id: "struck-vs-heaped-the-capacity-that-actually-matters", label: "Struck vs heaped: the capacity that actually matters" },
+        { id: "weight-per-load-the-safety-numbers", label: "Weight per load: the safety numbers" },
+        { id: "practical-guidance-barrows-trips-and-shovelfuls", label: "Practical guidance: barrows, trips, and shovelfuls" },
+      ]}
+      references={[
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         A cubic yard is <strong>27 cubic feet</strong> — divide 27 by your
         wheelbarrow&apos;s struck capacity in cubic feet. The standard 6 cu ft
@@ -67,7 +78,7 @@ export default function Guide() {
         covered below.
       </p>
 
-      <h2>Loads per cubic yard by wheelbarrow size</h2>
+      <h2 id="loads-per-cubic-yard-by-wheelbarrow-size">Loads per cubic yard by wheelbarrow size</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Wheelbarrow size (struck)</th><th>Loads per cubic yard</th></tr>
@@ -91,7 +102,7 @@ export default function Guide() {
         <strong>9 trips</strong>.
       </p>
 
-      <h2>Struck vs heaped: the capacity that actually matters</h2>
+      <h2 id="struck-vs-heaped-the-capacity-that-actually-matters">Struck vs heaped: the capacity that actually matters</h2>
       <p>
         Wheelbarrow ratings are <strong>struck capacity</strong> — filled level
         with the rim. A <strong>heaped load</strong>, mounded above the rim,
@@ -109,7 +120,7 @@ export default function Guide() {
         the next section show exactly why.
       </p>
 
-      <h2>Weight per load: the safety numbers</h2>
+      <h2 id="weight-per-load-the-safety-numbers">Weight per load: the safety numbers</h2>
       <p>
         Weight per cubic foot comes straight from the material densities:{" "}
         gravel 103.7 lbs, sand 100 lbs, topsoil 88.9 lbs, fill dirt 81.5 lbs,
@@ -140,7 +151,7 @@ export default function Guide() {
         full load of gravel up a plank into a truck bed.
       </p>
 
-      <h2>Practical guidance: barrows, trips, and shovelfuls</h2>
+      <h2 id="practical-guidance-barrows-trips-and-shovelfuls">Practical guidance: barrows, trips, and shovelfuls</h2>
       <p>
         For moving dense material any distance, a{" "}
         <strong>two-wheel contractor barrow</strong> is worth the upgrade —

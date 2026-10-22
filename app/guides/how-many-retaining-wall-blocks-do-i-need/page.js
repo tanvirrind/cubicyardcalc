@@ -65,10 +65,28 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-formula", label: "The formula" },
+        { id: "block-face-coverage-by-retail-size", label: "Block face coverage, by retail size" },
+        { id: "worked-example-30-3-foot-wall-16-8-inch-block", label: "Worked example: 30 × 3-foot wall, 16×8-inch block" },
+        { id: "block-counts-by-wall-size-16-8-inch-block", label: "Block counts by wall size: 16×8-inch block" },
+        { id: "block-counts-by-wall-size-12-8-inch-block", label: "Block counts by wall size: 12×8-inch block" },
+        { id: "block-counts-by-wall-size-12-4-inch-landscape-block", label: "Block counts by wall size: 12×4-inch landscape block" },
+        { id: "cap-blocks-the-separate-count", label: "Cap blocks: the separate count" },
+        { id: "don-t-forget-the-drainage-gravel", label: "Don't forget the drainage gravel" },
+        { id: "diy-vs-pro-what-the-money-does", label: "DIY vs pro: what the money does" },
+        { id: "common-counting-mistakes", label: "Common counting mistakes" },
+      ]}
+      references={[
+        "Block face dimensions and coverage: manufacturer product data for standard segmental retaining-wall block sizes.",
+        "Standard segmental wall-building practice: buried first course, drainage backfill, and course setback.",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Count blocks by <strong>square feet of wall face, not by linear
         feet</strong> — and include the <strong>buried first course</strong>.
@@ -81,7 +99,7 @@ export default function Guide() {
         <strong>22 caps</strong> at 18-inch cap width.
       </p>
 
-      <h2>The formula</h2>
+      <h2 id="the-formula">The formula</h2>
       <p>
         One line does the whole job:
       </p>
@@ -99,7 +117,7 @@ export default function Guide() {
         the occasional cracked unit.
       </p>
 
-      <h2>Block face coverage, by retail size</h2>
+      <h2 id="block-face-coverage-by-retail-size">Block face coverage, by retail size</h2>
       <p>
         Manufacturers list block by nominal inches; what matters for
         counting is the <strong>face area each block covers</strong>. These
@@ -122,7 +140,7 @@ export default function Guide() {
         nominal numbers above for estimating.
       </p>
 
-      <h2>Worked example: 30 &times; 3-foot wall, 16&times;8-inch block</h2>
+      <h2 id="worked-example-30-3-foot-wall-16-8-inch-block">Worked example: 30 &times; 3-foot wall, 16&times;8-inch block</h2>
       <p>
         Every step, shown:
       </p>
@@ -141,7 +159,7 @@ export default function Guide() {
         <strong>order 124 blocks</strong>.
       </p>
 
-      <h2>Block counts by wall size: 16&times;8-inch block</h2>
+      <h2 id="block-counts-by-wall-size-16-8-inch-block">Block counts by wall size: 16&times;8-inch block</h2>
       <p>
         Effective face includes the 6-inch buried course, rounded for
         estimating. The &ldquo;blocks&rdquo; column is the exact count; the{" "}
@@ -159,7 +177,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Block counts by wall size: 12&times;8-inch block</h2>
+      <h2 id="block-counts-by-wall-size-12-8-inch-block">Block counts by wall size: 12&times;8-inch block</h2>
       <p>
         Same walls, narrower block — 1.50 blocks per square foot:
       </p>
@@ -175,7 +193,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Block counts by wall size: 12&times;4-inch landscape block</h2>
+      <h2 id="block-counts-by-wall-size-12-4-inch-landscape-block">Block counts by wall size: 12&times;4-inch landscape block</h2>
       <p>
         Landscape block is small — 3 blocks per square foot — so counts climb
         fast. Reserve it for short garden walls and edging:
@@ -192,7 +210,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Cap blocks: the separate count</h2>
+      <h2 id="cap-blocks-the-separate-count">Cap blocks: the separate count</h2>
       <p>
         Caps are counted by <strong>length, not area</strong>:
       </p>
@@ -222,7 +240,7 @@ export default function Guide() {
         covers roughly 10–15 caps, so a 30-foot wall takes about two tubes.
       </p>
 
-      <h2>Don&apos;t forget the drainage gravel</h2>
+      <h2 id="don-t-forget-the-drainage-gravel">Don&apos;t forget the drainage gravel</h2>
       <p>
         Blocks are only half the material list. Every wall needs the{" "}
         <strong>compacted gravel base</strong> under the first course and the{" "}
@@ -252,7 +270,7 @@ export default function Guide() {
         <a href="/calculators/concrete-calculator/">concrete calculator</a>.
       </p>
 
-      <h2>DIY vs pro: what the money does</h2>
+      <h2 id="diy-vs-pro-what-the-money-does">DIY vs pro: what the money does</h2>
       <p>
         These are <strong>general ranges, not quotes</strong> — block brand
         and region move the real numbers:
@@ -278,7 +296,7 @@ export default function Guide() {
         insurance against a wall that fails.
       </p>
 
-      <h2>Common counting mistakes</h2>
+      <h2 id="common-counting-mistakes">Common counting mistakes</h2>
       <p>
         <strong>Skipping the buried course.</strong> It adds 10–15 sq ft of
         face on a typical run — a whole course you will be short.{" "}

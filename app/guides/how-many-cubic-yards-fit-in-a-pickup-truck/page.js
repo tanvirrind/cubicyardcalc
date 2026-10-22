@@ -58,10 +58,24 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-to-tons-calculator/"
       calculatorLabel="Try the tons-to-cubic-yards converter"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "pickup-bed-capacity-by-bed-size", label: "Pickup bed capacity by bed size" },
+        { id: "the-real-limit-weight-not-volume", label: "The real limit: weight, not volume" },
+        { id: "utility-and-dump-trailer-capacity", label: "Utility and dump trailer capacity" },
+        { id: "dump-truck-capacity-by-axle-configuration", label: "Dump truck capacity by axle configuration" },
+        { id: "ordering-a-delivery-instead-of-hauling", label: "Ordering a delivery instead of hauling" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         A standard <strong>6.5-foot pickup bed holds about 2 cubic yards</strong>{" "}
         level full, or roughly 3 yards heaped. A 5-foot short bed holds about
@@ -73,7 +87,7 @@ export default function Guide() {
         payload) can carry.
       </p>
 
-      <h2>Pickup bed capacity by bed size</h2>
+      <h2 id="pickup-bed-capacity-by-bed-size">Pickup bed capacity by bed size</h2>
       <p>
         Capacity depends on interior length, width, and wall height. These are
         realistic working figures measured level full at the bed rails, plus
@@ -96,7 +110,7 @@ export default function Guide() {
         will already have blown past your payload.
       </p>
 
-      <h2>The real limit: weight, not volume</h2>
+      <h2 id="the-real-limit-weight-not-volume">The real limit: weight, not volume</h2>
       <p>
         Here&apos;s the insight most capacity charts skip: <strong>one cubic
         yard of dense material weighs far more than the volume suggests</strong>.
@@ -135,7 +149,7 @@ export default function Guide() {
         half-ton.
       </p>
 
-      <h2>Utility and dump trailer capacity</h2>
+      <h2 id="utility-and-dump-trailer-capacity">Utility and dump trailer capacity</h2>
       <p>
         Trailers add volume, but the same weight rule applies — a
         trailer&apos;s <strong>GVWR</strong> (gross vehicle weight rating) caps
@@ -160,7 +174,7 @@ export default function Guide() {
         versus shoveling for an hour.
       </p>
 
-      <h2>Dump truck capacity by axle configuration</h2>
+      <h2 id="dump-truck-capacity-by-axle-configuration">Dump truck capacity by axle configuration</h2>
       <p>
         When you order bulk delivery, the truck that shows up matters for
         both how much arrives per load and whether it can reach your site:
@@ -183,7 +197,7 @@ export default function Guide() {
         prices without the yard count.
       </p>
 
-      <h2>Ordering a delivery instead of hauling</h2>
+      <h2 id="ordering-a-delivery-instead-of-hauling">Ordering a delivery instead of hauling</h2>
       <p>
         Do the trip math honestly. Hauling gravel yourself at 0.6 yards per
         trip means five trips for 3 yards — plus load time, fuel, and wear.
@@ -199,7 +213,7 @@ export default function Guide() {
         keep.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Counting volume only.</strong> The bed fits 2 yards; the
         suspension doesn&apos;t. <strong>Forgetting the trailer&apos;s own

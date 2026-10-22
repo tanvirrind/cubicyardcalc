@@ -73,10 +73,25 @@ export default function Guide() {
       calculatorHref="/calculators/concrete-calculator/"
       calculatorLabel="Try the concrete calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "how-the-math-works", label: "How the math works" },
+        { id: "worked-example-a-10-10-slab-at-4-inches", label: "Worked example: a 10×10 slab at 4 inches" },
+        { id: "bag-counts-by-common-project", label: "Bag counts by common project" },
+        { id: "bag-counts-for-the-five-most-common-slab-sizes", label: "Bag counts for the five most common slab sizes" },
+        { id: "the-1-yard-breakeven-rule", label: "The ~1-yard breakeven rule" },
+        { id: "bags-vs-ready-mix-the-breakpoint", label: "Bags vs ready-mix: the breakpoint" },
+        { id: "the-real-cost-math", label: "The real cost math" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Bag yields: manufacturer product data (Quikrete, Sakrete).",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         One cubic yard of concrete equals 27 cubic feet. Divide 27 by the
         yield of a single bag and you get the count per yard. Here it is in
@@ -102,7 +117,7 @@ export default function Guide() {
         most people buy.
       </p>
 
-      <h2>How the math works</h2>
+      <h2 id="how-the-math-works">How the math works</h2>
       <p>
         A bag's yield is the volume of finished concrete it produces, which
         is much less than the volume of dry mix in the bag — mixing and
@@ -114,7 +129,7 @@ export default function Guide() {
         verified-but-rounded figures and always round your order up.
       </p>
 
-      <h2>Worked example: a 10×10 slab at 4 inches</h2>
+      <h2 id="worked-example-a-10-10-slab-at-4-inches">Worked example: a 10×10 slab at 4 inches</h2>
       <p>
         Volume first: 10 × 10 × 0.333 = 33.3 cubic feet, ÷ 27 ={" "}
         <strong>1.23 cubic yards</strong>. In 80 lb bags: 1.23 × 45 = 55.5 —
@@ -124,7 +139,7 @@ export default function Guide() {
         very attractive.
       </p>
 
-      <h2>Bag counts by common project</h2>
+      <h2 id="bag-counts-by-common-project">Bag counts by common project</h2>
       <p>
         Most people don&apos;t buy &ldquo;a cubic yard of bags&rdquo; — they
         buy for a project. Same math, pre-computed, using 80 lb bags (yield
@@ -154,7 +169,7 @@ export default function Guide() {
         helps you decide.
       </p>
 
-      <h2>Bag counts for the five most common slab sizes</h2>
+      <h2 id="bag-counts-for-the-five-most-common-slab-sizes">Bag counts for the five most common slab sizes</h2>
       <p>
         Slabs are what most people actually buy bags for, so here is the
         same math pre-computed for the five slab sizes homeowners pour
@@ -213,7 +228,7 @@ export default function Guide() {
         low spot.
       </p>
 
-      <h2>The ~1-yard breakeven rule</h2>
+      <h2 id="the-1-yard-breakeven-rule">The ~1-yard breakeven rule</h2>
       <p>
         The materials math alone settles this: at $6 per 80 lb bag, one
         cubic yard via bags costs 45 × $6 = <strong>$270 in materials</strong>
@@ -242,7 +257,7 @@ export default function Guide() {
         .
       </p>
 
-      <h2>Bags vs ready-mix: the breakpoint</h2>
+      <h2 id="bags-vs-ready-mix-the-breakpoint">Bags vs ready-mix: the breakpoint</h2>
       <p>
         Bags make sense for small, irregular pours — fence posts, small pads,
         repairs — where the ready-mix minimum and short-load fee would punish
@@ -254,7 +269,7 @@ export default function Guide() {
         ready-mix orders under about 4 yards; for tiny pours, bags still win.
       </p>
 
-      <h2>The real cost math</h2>
+      <h2 id="the-real-cost-math">The real cost math</h2>
       <p>
         Ready-mix typically runs $125–$195 per cubic yard delivered (2026,
         region-dependent). Compare that against the bag route: bags-per-yard ×
@@ -264,7 +279,7 @@ export default function Guide() {
         bag is money and sweat you didn't need to spend.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Forgetting the overage.</strong> Forms leak and subgrade is
         never perfectly level — 10% extra is the industry standard.{" "}

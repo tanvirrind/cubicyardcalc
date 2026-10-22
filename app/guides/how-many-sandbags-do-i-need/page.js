@@ -65,10 +65,28 @@ export default function Guide() {
       calculatorHref="/calculators/sand-calculator/"
       calculatorLabel="Try the sand calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-bag-math-bags-per-100-linear-feet", label: "The bag math: bags per 100 linear feet" },
+        { id: "how-the-estimate-works-the-pyramid-arithmetic", label: "How the estimate works (the pyramid arithmetic)" },
+        { id: "bags-for-shorter-runs", label: "Bags for shorter runs" },
+        { id: "how-much-sand-to-order", label: "How much sand to order" },
+        { id: "bagged-vs-bulk-sand-when-bulk-wins", label: "Bagged vs bulk sand: when bulk wins" },
+        { id: "how-full-to-fill-each-bag", label: "How full to fill each bag" },
+        { id: "bag-types-and-sizes", label: "Bag types and sizes" },
+        { id: "how-to-stack-a-sandbag-wall-that-holds", label: "How to stack a sandbag wall that holds" },
+        { id: "check-for-free-sandbags-before-you-buy", label: "Check for free sandbags before you buy" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Sandbag sizes, fill levels, and stacking: standard flood-control practice for 14×26-inch bags filled one-half to two-thirds.",
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         For standard <strong>14&times;26 inch sandbags</strong> laid
         lengthwise in a staggered pyramid, plan on{" "}
@@ -82,7 +100,7 @@ export default function Guide() {
         add 10% to every order for damaged bags and restocking.
       </p>
 
-      <h2>The bag math: bags per 100 linear feet</h2>
+      <h2 id="the-bag-math-bags-per-100-linear-feet">The bag math: bags per 100 linear feet</h2>
       <p>
         Sandbag counts grow faster than wall height because a taller wall
         needs a wider base. The table below uses the staggered-pyramid
@@ -105,7 +123,7 @@ export default function Guide() {
         50 ft, 1 ft wall needs about 300 bags.
       </p>
 
-      <h2>How the estimate works (the pyramid arithmetic)</h2>
+      <h2 id="how-the-estimate-works-the-pyramid-arithmetic">How the estimate works (the pyramid arithmetic)</h2>
       <p>
         The derivation uses stated assumptions so you can adjust it to your
         wall: a filled 14&times;26 inch bag laid flat is about{" "}
@@ -134,7 +152,7 @@ export default function Guide() {
         above stay the same.
       </p>
 
-      <h2>Bags for shorter runs</h2>
+      <h2 id="bags-for-shorter-runs">Bags for shorter runs</h2>
       <p>
         Most homeowner projects are a doorway, a garage mouth, or a short
         stretch of foundation — not 100 feet. Scale the per-100-ft figures
@@ -159,7 +177,7 @@ export default function Guide() {
         have the bag count.
       </p>
 
-      <h2>How much sand to order</h2>
+      <h2 id="how-much-sand-to-order">How much sand to order</h2>
       <p>
         Suppliers commonly figure <strong>about 80 filled sandbags per
         cubic yard of sand</strong> — a filled 14&times;26 inch bag holds
@@ -190,7 +208,7 @@ export default function Guide() {
         covers what that means for trucks and trailers.
       </p>
 
-      <h2>Bagged vs bulk sand: when bulk wins</h2>
+      <h2 id="bagged-vs-bulk-sand-when-bulk-wins">Bagged vs bulk sand: when bulk wins</h2>
       <p>
         This decision is about logistics more than unit price — bulk sand is
         cheaper per yard at essentially any quantity. A 50 lb bag of
@@ -212,7 +230,7 @@ export default function Guide() {
         option.
       </p>
 
-      <h2>How full to fill each bag</h2>
+      <h2 id="how-full-to-fill-each-bag">How full to fill each bag</h2>
       <p>
         <strong>One-half to two-thirds full</strong> is the rule, and it
         matters more than it sounds. A half-filled bag drapes and molds
@@ -226,7 +244,7 @@ export default function Guide() {
         stacks. Keep a consistent fill — uneven bags make an uneven wall.
       </p>
 
-      <h2>Bag types and sizes</h2>
+      <h2 id="bag-types-and-sizes">Bag types and sizes</h2>
       <p>
         The <strong>standard 14&times;26 inch woven polypropylene bag</strong>{" "}
         is what every table on this page assumes — it&apos;s the flood-fight
@@ -243,7 +261,7 @@ export default function Guide() {
         kills stored bags.
       </p>
 
-      <h2>How to stack a sandbag wall that holds</h2>
+      <h2 id="how-to-stack-a-sandbag-wall-that-holds">How to stack a sandbag wall that holds</h2>
       <p>
         Clear debris and vegetation from the wall line first — bags conform
         to the ground, and a lumpy base makes a leaky wall. Lay the bottom
@@ -261,7 +279,7 @@ export default function Guide() {
         bridged gaps closed.
       </p>
 
-      <h2>Check for free sandbags before you buy</h2>
+      <h2 id="check-for-free-sandbags-before-you-buy">Check for free sandbags before you buy</h2>
       <p>
         During flood threats, many counties, cities, and fire districts run{" "}
         <strong>free sandbag and sand distribution sites</strong> — usually
@@ -278,7 +296,7 @@ export default function Guide() {
         can.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Overfilling the bags.</strong> Two-thirds max — rigid bags
         don&apos;t seal. <strong>Stacking seams in line.</strong> Stagger

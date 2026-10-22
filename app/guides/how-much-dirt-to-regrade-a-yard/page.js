@@ -57,10 +57,24 @@ export default function Guide() {
       calculatorHref="/calculators/dirt-calculator/"
       calculatorLabel="Try the dirt calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "wedge-math-for-the-drainage-slope", label: "Wedge math for the drainage slope" },
+        { id: "lawn-leveling-thin-layers-not-one-pour", label: "Lawn leveling: thin layers, not one pour" },
+        { id: "fill-dirt-below-topsoil-on-top", label: "Fill dirt below, topsoil on top" },
+        { id: "the-15-20-compaction-add-on", label: "The 15–20% compaction add-on" },
+        { id: "measure-the-drop-before-you-order", label: "Measure the drop before you order" },
+        { id: "when-to-call-a-grader", label: "When to call a grader" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Standard residential grading practice: 6 inches of fall over the first 10 feet from the foundation, with compaction in 6–12-inch lifts.",
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Regrading a slope is wedge math:{" "}
         <strong>cubic yards = (½ &times; run in ft &times; drop in ft &times; length in ft) /
@@ -75,7 +89,7 @@ export default function Guide() {
         holes guide</a> instead.
       </p>
 
-      <h2>Wedge math for the drainage slope</h2>
+      <h2 id="wedge-math-for-the-drainage-slope">Wedge math for the drainage slope</h2>
       <p>
         The standard foundation drainage grade is <strong>6 inches of fall
         over the first 10 feet</strong> away from the house (about a 5%
@@ -112,7 +126,7 @@ export default function Guide() {
         gracefully and are easier to mow, at the cost of more material.
       </p>
 
-      <h2>Lawn leveling: thin layers, not one pour</h2>
+      <h2 id="lawn-leveling-thin-layers-not-one-pour">Lawn leveling: thin layers, not one pour</h2>
       <p>
         Leveling a bumpy lawn uses different math from the wedge: uniform
         depth over the whole area. The rule is <strong>¼ to ½ inch per
@@ -141,7 +155,7 @@ export default function Guide() {
         tons on a big lawn.
       </p>
 
-      <h2>Fill dirt below, topsoil on top</h2>
+      <h2 id="fill-dirt-below-topsoil-on-top">Fill dirt below, topsoil on top</h2>
       <p>
         For any regrade that ends in grass, the layering order is fixed:{" "}
         <strong>fill dirt for the bulk, 4–6 inches of topsoil on top.</strong>{" "}
@@ -163,7 +177,7 @@ export default function Guide() {
         both materials separately.
       </p>
 
-      <h2>The 15–20% compaction add-on</h2>
+      <h2 id="the-15-20-compaction-add-on">The 15–20% compaction add-on</h2>
       <p>
         Dirt arrives loose — up to a third of a load can be air. Dumped into
         a wedge without compaction, it settles <strong>15–30% over the first
@@ -176,7 +190,7 @@ export default function Guide() {
         grade well but needs the higher end of the overage.
       </p>
 
-      <h2>Measure the drop before you order</h2>
+      <h2 id="measure-the-drop-before-you-order">Measure the drop before you order</h2>
       <p>
         The wedge math only works with real numbers. Stretch a string line
         tight between two stakes — one at the foundation, one 10 feet out —
@@ -189,7 +203,7 @@ export default function Guide() {
         separately.
       </p>
 
-      <h2>When to call a grader</h2>
+      <h2 id="when-to-call-a-grader">When to call a grader</h2>
       <p>
         DIY regrading tops out around 5–10 yards with a wheelbarrow and a
         plate compactor rental. Call a professional with a skid steer or
@@ -202,7 +216,7 @@ export default function Guide() {
         time.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Grading toward the house.</strong> The whole point is fall
         away from the foundation — verify with a level as you go.{" "}
