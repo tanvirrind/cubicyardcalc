@@ -61,10 +61,27 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "head-to-head-comparison", label: "Head-to-head comparison" },
+        { id: "what-rca-actually-is-and-the-size-to-order", label: "What RCA actually is — and the size to order" },
+        { id: "the-density-difference-yards-are-the-same-tons-are-not", label: "The density difference: yards are the same, tons are not" },
+        { id: "how-much-to-order-both-materials-standard-driveways", label: "How much to order: both materials, standard driveways" },
+        { id: "cost-comparison-material-and-installed", label: "Cost comparison: material and installed" },
+        { id: "the-15-year-maintenance-model", label: "The 15-year maintenance model" },
+        { id: "where-rca-is-not-available", label: "Where RCA is not available" },
+        { id: "installation-notes-that-apply-to-both", label: "Installation notes that apply to both" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "Typical driveway installation practice — compacted lifts, geotextile over clay, crowning and edging.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         For a driveway, <strong>crushed concrete (recycled concrete aggregate, RCA)</strong>{" "}
         and <strong>virgin crushed gravel</strong> are functionally close: both
@@ -81,7 +98,7 @@ export default function Guide() {
         wins.
       </p>
 
-      <h2>Head-to-head comparison</h2>
+      <h2 id="head-to-head-comparison">Head-to-head comparison</h2>
       <p>
         Scored for a typical residential driveway — a 2-car, 24×40-foot drive
         at 4 inches of compacted material:
@@ -108,7 +125,7 @@ export default function Guide() {
         logistics</strong> — not on whether the driveway will hold a truck.
       </p>
 
-      <h2>What RCA actually is — and the size to order</h2>
+      <h2 id="what-rca-actually-is-and-the-size-to-order">What RCA actually is — and the size to order</h2>
       <p>
         Recycled concrete aggregate is demolition concrete — old sidewalks,
         foundations, parking lots — run through an industrial crusher and
@@ -122,7 +139,7 @@ export default function Guide() {
         dust, not like a demolition site.
       </p>
 
-      <h2>The density difference: yards are the same, tons are not</h2>
+      <h2 id="the-density-difference-yards-are-the-same-tons-are-not">The density difference: yards are the same, tons are not</h2>
       <p>
         Volume is volume — a 2-car driveway needs the same cubic yards
         regardless of material. But the scale tickets differ because RCA is
@@ -147,7 +164,7 @@ export default function Guide() {
         converting an RCA order.
       </p>
 
-      <h2>How much to order: both materials, standard driveways</h2>
+      <h2 id="how-much-to-order-both-materials-standard-driveways">How much to order: both materials, standard driveways</h2>
       <p>
         All figures at <strong>4 inches compacted depth</strong> with 10%
         overage built into the &ldquo;order&rdquo; column for compaction loss
@@ -172,7 +189,7 @@ export default function Guide() {
         <a href="/guides/how-much-gravel-for-a-driveway/">driveway gravel guide</a>.
       </p>
 
-      <h2>Cost comparison: material and installed</h2>
+      <h2 id="cost-comparison-material-and-installed">Cost comparison: material and installed</h2>
       <p>
         Typical U.S. ranges, 2026. The material spread is real but delivery
         distance is the hidden variable — a $30/ton delivered RCA load from
@@ -198,7 +215,7 @@ export default function Guide() {
         is most of the budget.
       </p>
 
-      <h2>The 15-year maintenance model</h2>
+      <h2 id="the-15-year-maintenance-model">The 15-year maintenance model</h2>
       <p>
         Neither driveway is install-and-forget. This model assumes a 2-car
         driveway in a four-season climate, DIY labor valued at zero, and a
@@ -227,7 +244,7 @@ export default function Guide() {
         better and it is available everywhere.
       </p>
 
-      <h2>Where RCA is not available</h2>
+      <h2 id="where-rca-is-not-available">Where RCA is not available</h2>
       <p>
         RCA exists where demolition happens — metro areas and their crushing
         operations. In rural areas, or anywhere the nearest crusher is 50+
@@ -245,7 +262,7 @@ export default function Guide() {
         <a href="/guides/crushed-stone-vs-pea-gravel/">crushed stone vs pea gravel</a>.
       </p>
 
-      <h2>Installation notes that apply to both</h2>
+      <h2 id="installation-notes-that-apply-to-both">Installation notes that apply to both</h2>
       <p>
         The material choice matters less than the build. Excavate to firm
         subgrade, lay <strong>woven geotextile fabric</strong> over clay or
@@ -259,7 +276,7 @@ export default function Guide() {
         early; uncompacted RCA and uncompacted gravel both rut the same way.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Ordering by tons without checking density.</strong> Tons
         tickets differ between materials — order by yards, convert with the

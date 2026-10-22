@@ -54,10 +54,23 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10-12"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "crushed-stone-vs-pea-gravel-side-by-side", label: "Crushed stone vs pea gravel, side by side" },
+        { id: "which-stone-for-which-job", label: "Which stone for which job" },
+        { id: "quantity-math-by-project", label: "Quantity math by project" },
+        { id: "cost-comparison-honestly-it-is-a-tie", label: "Cost comparison: honestly, it is a tie" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "ASTM C33 aggregate density ranges",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         <strong>Driveways and anything that must hold firm under load:
         crushed stone.</strong> Its angular faces interlock and compact
@@ -75,7 +88,7 @@ export default function Guide() {
         calculator</a>.
       </p>
 
-      <h2>Crushed stone vs pea gravel, side by side</h2>
+      <h2 id="crushed-stone-vs-pea-gravel-side-by-side">Crushed stone vs pea gravel, side by side</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Factor</th><th>Crushed stone</th><th>Pea gravel</th></tr>
@@ -98,7 +111,7 @@ export default function Guide() {
         below.
       </p>
 
-      <h2>Which stone for which job</h2>
+      <h2 id="which-stone-for-which-job">Which stone for which job</h2>
       <p>
         <strong>Driveway (regular vehicle traffic) → crushed stone.</strong>{" "}
         Use 3/4-inch stone or crusher-run at 3–4 inches deep, compacted in
@@ -134,7 +147,7 @@ export default function Guide() {
         drainable, and forgiving. Just plan on topping up occasionally.
       </p>
 
-      <h2>Quantity math by project</h2>
+      <h2 id="quantity-math-by-project">Quantity math by project</h2>
       <p>
         The formula is always length × width × depth in feet, divided by
         27. With 2,800 lbs per cubic yard, gravel converts at{" "}
@@ -162,7 +175,7 @@ export default function Guide() {
         pea gravel, so let the job, not the price, decide.
       </p>
 
-      <h2>Cost comparison: honestly, it is a tie</h2>
+      <h2 id="cost-comparison-honestly-it-is-a-tie">Cost comparison: honestly, it is a tie</h2>
       <p>
         Both materials typically run $30–55 per ton delivered in 2026 US
         pricing, and at 1.4 tons per yard that is about $42–77 per cubic
@@ -176,7 +189,7 @@ export default function Guide() {
         stone that stays in place is the cheaper stone.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Pea gravel on slopes.</strong> Round stones plus gravity
         equals migration — on any meaningful slope, pea gravel walks

@@ -62,10 +62,25 @@ export default function Guide() {
       calculatorHref="/calculators/asphalt-calculator/"
       calculatorLabel="Try the asphalt calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "head-to-head-cost-table", label: "Head-to-head cost table" },
+        { id: "the-worked-example-one-20-40-ft-driveway-both-materials", label: "The worked example: one 20×40 ft driveway, both materials" },
+        { id: "lifespan-maintenance-where-the-real-difference-lives", label: "Lifespan & maintenance: where the real difference lives" },
+        { id: "climate-freeze-thaw-heat-and-the-snow-plow", label: "Climate: freeze-thaw, heat, and the snow plow" },
+        { id: "resale-curb-appeal-hoa-permits", label: "Resale, curb appeal, HOA & permits" },
+        { id: "decision-flowchart-which-one-should-you-pick", label: "Decision flowchart: which one should you pick?" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "Typical residential installation practice for asphalt and concrete driveways — thickness, compacted stone base, jointing, sealcoating and resealing intervals.",
+        "Material densities and bag yields: published bulk-material density tables and manufacturer product data cross-checked against supplier data (see /data-sources/).",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         For a typical US two-car driveway, <strong>asphalt costs $4–$8 per
         square foot installed</strong> and <strong>plain concrete costs $8–$15
@@ -80,7 +95,7 @@ export default function Guide() {
         crew are a contractor&apos;s game.
       </p>
 
-      <h2>Head-to-head cost table</h2>
+      <h2 id="head-to-head-cost-table">Head-to-head cost table</h2>
       <p>
         Installed prices below are typical US ranges for a straightforward
         residential job with standard site prep — excavation, a compacted
@@ -145,7 +160,7 @@ export default function Guide() {
         material and labor prices vary widely by metro.
       </p>
 
-      <h2>The worked example: one 20×40 ft driveway, both materials</h2>
+      <h2 id="the-worked-example-one-20-40-ft-driveway-both-materials">The worked example: one 20×40 ft driveway, both materials</h2>
       <p>
         Take a standard two-car driveway — 20 feet wide, 40 feet long, 800
         square feet — and run it through both of our calculators with the
@@ -197,7 +212,7 @@ export default function Guide() {
         comparison — you can supply concrete&apos;s labor yourself, but you
         cannot realistically supply asphalt&apos;s.
       </p>
-      <h2>Lifespan &amp; maintenance: where the real difference lives</h2>
+      <h2 id="lifespan-maintenance-where-the-real-difference-lives">Lifespan &amp; maintenance: where the real difference lives</h2>
       <p>
         Upfront price gets all the attention; maintenance decides what the
         driveway actually costs you. Asphalt and concrete age in completely
@@ -236,7 +251,7 @@ export default function Guide() {
         driveway that mostly leaves you alone</strong>.
       </p>
 
-      <h2>Climate: freeze-thaw, heat, and the snow plow</h2>
+      <h2 id="climate-freeze-thaw-heat-and-the-snow-plow">Climate: freeze-thaw, heat, and the snow plow</h2>
       <p>
         Material choice is partly a weather decision. Neither material wins
         everywhere.
@@ -271,7 +286,7 @@ export default function Guide() {
         driveway edges before the first storm.
       </p>
 
-      <h2>Resale, curb appeal, HOA &amp; permits</h2>
+      <h2 id="resale-curb-appeal-hoa-permits">Resale, curb appeal, HOA &amp; permits</h2>
       <p>
         <strong>Resale and curb appeal.</strong> Concrete reads as the
         premium choice — its clean, light surface and the option of stamped
@@ -305,7 +320,7 @@ export default function Guide() {
         tear-out, which dwarfs the permit fee.
       </p>
 
-      <h2>Decision flowchart: which one should you pick?</h2>
+      <h2 id="decision-flowchart-which-one-should-you-pick">Decision flowchart: which one should you pick?</h2>
       <p>
         Work through these in order — the first &ldquo;yes&rdquo; that
         decides it, decides it.
@@ -353,7 +368,7 @@ export default function Guide() {
         fraction of either paved option.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Comparing installed quotes to DIY material math.</strong>{" "}
         They are different games — the table above keeps them in separate

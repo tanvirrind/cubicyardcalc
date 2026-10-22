@@ -57,10 +57,24 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10-13"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-master-chart-every-common-size-decoded", label: "The master chart: every common size, decoded" },
+        { id: "regional-names-same-bin-different-label", label: "Regional names: same bin, different label" },
+        { id: "the-two-question-buying-shortcut", label: "The two-question buying shortcut" },
+        { id: "what-to-tell-the-quarry-exact-script", label: "What to tell the quarry (exact script)" },
+        { id: "ordering-math-from-this-chart-to-a-tonnage-quote", label: "Ordering math: from this chart to a tonnage quote" },
+        { id: "common-mistakes-this-chart-prevents", label: "Common mistakes this chart prevents" },
+      ]}
+      references={[
+        "Aggregate sizing: ASTM C33 aggregate gradations for #57, #8, #3/#4 and related stone sizes.",
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Regional product names and quarry practice: supplier listings for crusher run, 21A, quarry process and dense grade, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Almost every gravel decision comes down to two families.{" "}
         <strong>Clean crushed stone</strong> (#57, #8, #3) has the dust
@@ -77,7 +91,7 @@ export default function Guide() {
         labels — the chart below translates them for you.
       </p>
 
-      <h2>The master chart: every common size, decoded</h2>
+      <h2 id="the-master-chart-every-common-size-decoded">The master chart: every common size, decoded</h2>
       <p>
         Find the stone, read across for what it looks like, how it
         behaves, and where it belongs. The last column gives you the
@@ -153,7 +167,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Regional names: same bin, different label</h2>
+      <h2 id="regional-names-same-bin-different-label">Regional names: same bin, different label</h2>
       <p>
         Gravel naming follows quarry tradition, not national standards, so
         the same material can sound like four different products. When
@@ -171,7 +185,7 @@ export default function Guide() {
         The answer tells you everything about how it will behave.
       </p>
 
-      <h2>The two-question buying shortcut</h2>
+      <h2 id="the-two-question-buying-shortcut">The two-question buying shortcut</h2>
       <p>
         Staring at the chart and still unsure? Answer these in order.
         <strong>One:</strong> will it be driven or walked on heavily? If
@@ -185,7 +199,7 @@ export default function Guide() {
         clean stone under a car scatters like marbles.
       </p>
 
-      <h2>What to tell the quarry (exact script)</h2>
+      <h2 id="what-to-tell-the-quarry-exact-script">What to tell the quarry (exact script)</h2>
       <p>
         Quarries sell by the ton and quote faster when you sound like you
         know the drill. Say: <em>&ldquo;I need [quantity] tons of
@@ -202,7 +216,7 @@ export default function Guide() {
         sense for patching.
       </p>
 
-      <h2>Ordering math: from this chart to a tonnage quote</h2>
+      <h2 id="ordering-math-from-this-chart-to-a-tonnage-quote">Ordering math: from this chart to a tonnage quote</h2>
       <p>
         Once the chart has told you <em>which</em> stone, the order is
         simple arithmetic. Cubic yards = length × width × (depth in
@@ -219,7 +233,7 @@ export default function Guide() {
         runs the same math with your dimensions in one click.
       </p>
 
-      <h2>Common mistakes this chart prevents</h2>
+      <h2 id="common-mistakes-this-chart-prevents">Common mistakes this chart prevents</h2>
       <p>
         <strong>Pea gravel driveways.</strong> It looks charming in the
         photos and migrates to the lawn within a month — round stone

@@ -58,10 +58,31 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "head-to-head-comparison", label: "Head-to-head comparison" },
+        { id: "the-naming-confusion-read-before-ordering", label: "The naming confusion (read before ordering)" },
+        { id: "depth-and-quantity-guidance-per-use", label: "Depth and quantity guidance per use" },
+        { id: "stabilizer-worth-it", label: "Stabilizer: worth it?" },
+        { id: "where-each-one-wins", label: "Where each one wins" },
+        { id: "regional-availability-note", label: "Regional availability note" },
+        { id: "which-is-easier-to-diy", label: "Which is easier to DIY?" },
+        { id: "worked-cost-example-a-12-16-ft-patio", label: "Worked cost example: a 12 × 16 ft patio" },
+        { id: "maintenance-calendar", label: "Maintenance calendar" },
+        { id: "dg-and-dogs", label: "DG and dogs" },
+        { id: "can-you-combine-dg-and-gravel", label: "Can you combine DG and gravel?" },
+        { id: "dg-vs-crushed-stone-for-driveways", label: "DG vs crushed stone for driveways" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "Typical installation practice for decomposed granite and gravel surfaces — compacted lifts, edging, depth and stabilizer guidance.",
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Decomposed granite (DG) compacts into a firm, almost trail-like
         surface — great for paths and patios where you want stable footing.
@@ -75,7 +96,7 @@ export default function Guide() {
         different products.
       </p>
 
-      <h2>Head-to-head comparison</h2>
+      <h2 id="head-to-head-comparison">Head-to-head comparison</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Factor</th><th>Decomposed granite</th><th>Gravel (pea / crushed)</th></tr>
@@ -96,7 +117,7 @@ export default function Guide() {
         occasional rake-back of stones that wandered onto the lawn.
       </p>
 
-      <h2>The naming confusion (read before ordering)</h2>
+      <h2 id="the-naming-confusion-read-before-ordering">The naming confusion (read before ordering)</h2>
       <p>
         Suppliers use "granite" loosely, and the three products behave very
         differently:
@@ -125,7 +146,7 @@ export default function Guide() {
         granite.
       </p>
 
-      <h2>Depth and quantity guidance per use</h2>
+      <h2 id="depth-and-quantity-guidance-per-use">Depth and quantity guidance per use</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Use</th><th>DG depth (compacted)</th><th>Gravel depth</th><th>Example quantity</th></tr>
@@ -146,7 +167,7 @@ export default function Guide() {
         the first delivery truck.
       </p>
 
-      <h2>Stabilizer: worth it?</h2>
+      <h2 id="stabilizer-worth-it">Stabilizer: worth it?</h2>
       <p>
         DG stabilizer is a resin binder mixed into the fines (or sprayed on
         after install) that glues particles together — dramatically cutting
@@ -159,7 +180,7 @@ export default function Guide() {
         comparison honestly before committing a whole driveway.
       </p>
 
-      <h2>Where each one wins</h2>
+      <h2 id="where-each-one-wins">Where each one wins</h2>
       <p>
         <strong>Paths and patios:</strong> DG wins — stable underfoot,
         wheelchair- and stroller-friendly, and the warm color suits gardens.{" "}
@@ -172,7 +193,7 @@ export default function Guide() {
         as a walking surface, not a bed dressing.
       </p>
 
-      <h2>Regional availability note</h2>
+      <h2 id="regional-availability-note">Regional availability note</h2>
       <p>
         DG is abundant and cheap in the <strong>West and Southwest — CA, AZ,
         TX, NM</strong> — where granite weathers naturally and quarries are
@@ -185,7 +206,7 @@ export default function Guide() {
         premium for the name when crushed fines do the job.
       </p>
 
-      <h2>Which is easier to DIY?</h2>
+      <h2 id="which-is-easier-to-diy">Which is easier to DIY?</h2>
       <p>
         <strong>Gravel is the easier DIY project.</strong> Dump it, spread
         it, rake it level — done in an afternoon. DG demands more craft:
@@ -198,7 +219,7 @@ export default function Guide() {
         gravel forgives everything.
       </p>
 
-      <h2>Worked cost example: a 12 × 16 ft patio</h2>
+      <h2 id="worked-cost-example-a-12-16-ft-patio">Worked cost example: a 12 × 16 ft patio</h2>
       <p>
         From the depth table: 192 sq ft at 3 inches = 1.78 yards — order{" "}
         <strong>2 yards</strong>. <strong>DG route:</strong> 2 yd × $45 =
@@ -212,7 +233,7 @@ export default function Guide() {
         rake-backs. Neither is "cheap forever" — pick your maintenance.
       </p>
 
-      <h2>Maintenance calendar</h2>
+      <h2 id="maintenance-calendar">Maintenance calendar</h2>
       <p>
         <strong>DG:</strong> re-grade with a landscape rake each spring to
         fix winter ruts and low spots; top up with 0.5–1 inch of fresh DG
@@ -224,7 +245,7 @@ export default function Guide() {
         tired within two seasons without it.
       </p>
 
-      <h2>DG and dogs</h2>
+      <h2 id="dg-and-dogs">DG and dogs</h2>
       <p>
         DG is a popular choice for dog runs — it packs firm enough that
         paws stay clean and it drains well. Two caveats: fine DG dust can
@@ -235,7 +256,7 @@ export default function Guide() {
         pads, and make waste cleanup miserable.
       </p>
 
-      <h2>Can you combine DG and gravel?</h2>
+      <h2 id="can-you-combine-dg-and-gravel">Can you combine DG and gravel?</h2>
       <p>
         Absolutely — and the best-looking landscapes often do. Use DG for
         the walking surfaces (paths, patio floor) and gravel for the
@@ -247,7 +268,7 @@ export default function Guide() {
         gravel's job.
       </p>
 
-      <h2>DG vs crushed stone for driveways</h2>
+      <h2 id="dg-vs-crushed-stone-for-driveways">DG vs crushed stone for driveways</h2>
       <p>
         For driveways specifically, there's a third contender worth naming:{" "}
         <a href="/guides/crushed-stone-vs-pea-gravel/">crushed stone</a>{" "}
@@ -260,7 +281,7 @@ export default function Guide() {
         natural look with far better weather tolerance.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Ordering DG for a drainage project.</strong> Fines plus
         water plus filter fabric equals a clogged system.{" "}

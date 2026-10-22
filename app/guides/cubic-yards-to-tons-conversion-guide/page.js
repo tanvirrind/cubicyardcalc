@@ -63,10 +63,23 @@ export default function Guide() {
       calculatorHref="/calculators/tons-to-cubic-yards-calculator/"
       calculatorLabel="Try the tons converter"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "why-tons-and-yards-are-different-things", label: "Why tons and yards are different things" },
+        { id: "the-density-table", label: "The density table" },
+        { id: "both-formulas-with-examples", label: "Both formulas, with examples" },
+        { id: "how-suppliers-actually-bill", label: "How suppliers actually bill" },
+        { id: "truck-limits-weight-vs-volume", label: "Truck limits: weight vs volume" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         One ton of gravel is about <strong>0.71 cubic yards</strong>. One ton
         of mulch is about <strong>2.50 cubic yards</strong>. There is no
@@ -76,7 +89,7 @@ export default function Guide() {
         table below bookmarked.
       </p>
 
-      <h2>Why tons and yards are different things</h2>
+      <h2 id="why-tons-and-yards-are-different-things">Why tons and yards are different things</h2>
       <p>
         A ton measures weight; a cubic yard measures volume. A yard of mulch
         is light and fluffy, a yard of concrete is a two-ton block — the
@@ -87,7 +100,7 @@ export default function Guide() {
         is under half a yard.
       </p>
 
-      <h2>The density table</h2>
+      <h2 id="the-density-table">The density table</h2>
       <p>
         Typical dry bulk densities — the same numbers that power the
         converter on this site. Actual material varies with moisture,
@@ -109,7 +122,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Both formulas, with examples</h2>
+      <h2 id="both-formulas-with-examples">Both formulas, with examples</h2>
       <p>
         <strong>Tons → yards:</strong> yards = tons ÷ density. Three tons of
         gravel at 1.4 tons/yard: 3 ÷ 1.4 = <strong>2.14 cubic yards</strong>.{" "}
@@ -125,7 +138,7 @@ export default function Guide() {
         by the ton but quote mulch by the yard.
       </p>
 
-      <h2>How suppliers actually bill</h2>
+      <h2 id="how-suppliers-actually-bill">How suppliers actually bill</h2>
       <p>
         Stone yards usually quote gravel, rock, and sand <strong>by the
         ton</strong> because truck scales make weight easy to verify.
@@ -136,7 +149,7 @@ export default function Guide() {
         convert first — then compare.
       </p>
 
-      <h2>Truck limits: weight vs volume</h2>
+      <h2 id="truck-limits-weight-vs-volume">Truck limits: weight vs volume</h2>
       <p>
         A truck rated for 10 tons carries about 7 yards of gravel but 20
         yards of mulch — volume and weight limits hit at different points.
@@ -146,7 +159,7 @@ export default function Guide() {
         a &ldquo;small&rdquo; 3-yard gravel order is 4.2 tons.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Using one density for everything.</strong> The material
         setting is the whole calculation.{" "}

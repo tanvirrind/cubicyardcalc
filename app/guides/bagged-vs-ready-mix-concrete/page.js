@@ -53,10 +53,28 @@ export default function Guide() {
       calculatorHref="/calculators/concrete-calculator/"
       calculatorLabel="Try the concrete calculator"
       updated="2026-10-12"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "cost-per-cubic-yard-head-to-head", label: "Cost per cubic yard, head to head" },
+        { id: "the-break-even-chart-by-project-size", label: "The break-even chart by project size" },
+        { id: "the-labor-math-nobody-shows-you", label: "The labor math nobody shows you" },
+        { id: "quality-the-hidden-truck-advantage", label: "Quality: the hidden truck advantage" },
+        { id: "worked-example-a-12-12-ft-patio-at-4-inches", label: "Worked example: a 12 × 12 ft patio at 4 inches" },
+        { id: "if-you-go-the-bag-route-rent-the-mixer", label: "If you go the bag route: rent the mixer" },
+        { id: "what-the-plant-asks-when-you-order", label: "What the plant asks when you order" },
+        { id: "when-the-truck-can-t-reach-you", label: "When the truck can't reach you" },
+        { id: "decision-checklist", label: "Decision checklist" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Bag yields: manufacturer product data (Quikrete, Sakrete).",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "Typical ready-mix plant ordering practice — short-load fees, mix strength and slump guidance from supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         <strong>Bags win under about 1 to 2 cubic yards; the truck wins
         above it.</strong> Bagged concrete costs roughly $225 to $315 per
@@ -68,7 +86,7 @@ export default function Guide() {
         That is the gray zone — and this guide settles it.
       </p>
 
-      <h2>Cost per cubic yard, head to head</h2>
+      <h2 id="cost-per-cubic-yard-head-to-head">Cost per cubic yard, head to head</h2>
       <p>
         One cubic yard needs 45 eighty-pound bags (27 cu ft ÷ 0.60 cu ft
         yield per bag). Multiply by your local bag price:
@@ -95,7 +113,7 @@ export default function Guide() {
         <a href="/guides/how-many-bags-of-concrete-per-cubic-yard/">how many bags of concrete per cubic yard</a>.
       </p>
 
-      <h2>The break-even chart by project size</h2>
+      <h2 id="the-break-even-chart-by-project-size">The break-even chart by project size</h2>
       <p>
         Rules of thumb that hold across most US markets:
       </p>
@@ -119,7 +137,7 @@ export default function Guide() {
         threshold <em>and</em> its fee before you decide.
       </p>
 
-      <h2>The labor math nobody shows you</h2>
+      <h2 id="the-labor-math-nobody-shows-you">The labor math nobody shows you</h2>
       <p>
         An 80-lb bag takes roughly 5 minutes to mix, pour, and place by
         hand with a wheelbarrow mixer — and that is when you are fresh.
@@ -131,7 +149,7 @@ export default function Guide() {
         your back gets a vote.
       </p>
 
-      <h2>Quality: the hidden truck advantage</h2>
+      <h2 id="quality-the-hidden-truck-advantage">Quality: the hidden truck advantage</h2>
       <p>
         Plant-mixed concrete is batched by weight and computer, so every
         cubic yard is the same mix — the same strength, the same
@@ -142,7 +160,7 @@ export default function Guide() {
         stepping stone or a mailbox post, nobody cares.
       </p>
 
-      <h2>Worked example: a 12 × 12 ft patio at 4 inches</h2>
+      <h2 id="worked-example-a-12-12-ft-patio-at-4-inches">Worked example: a 12 × 12 ft patio at 4 inches</h2>
       <p>
         Volume: (12 × 12 × 0.333) / 27 = <strong>1.78 cubic yards</strong>.
         The bag route: 1.78 × 45 = <strong>80 bags</strong> of 80-lb mix —
@@ -156,7 +174,7 @@ export default function Guide() {
         calculator.)
       </p>
 
-      <h2>If you go the bag route: rent the mixer</h2>
+      <h2 id="if-you-go-the-bag-route-rent-the-mixer">If you go the bag route: rent the mixer</h2>
       <p>
         Hand-mixing in a wheelbarrow caps you at that 15-to-25-bag
         day. An <strong>electric drum mixer</strong> — typically $40
@@ -171,7 +189,7 @@ export default function Guide() {
         whole day turns into a race against the set.
       </p>
 
-      <h2>What the plant asks when you order</h2>
+      <h2 id="what-the-plant-asks-when-you-order">What the plant asks when you order</h2>
       <p>
         If you go ready-mix, the dispatcher needs four things: the{" "}
         <strong>volume in cubic yards</strong> (add 5–10% waste — forms
@@ -186,7 +204,7 @@ export default function Guide() {
         waiting-time charges, and concrete waits for no one.
       </p>
 
-      <h2>When the truck can&apos;t reach you</h2>
+      <h2 id="when-the-truck-can-t-reach-you">When the truck can&apos;t reach you</h2>
       <p>
         Some sites defeat the mixer: long setbacks, soft ground, or a
         backyard patio behind the house. Options, in order of cost: have
@@ -200,7 +218,7 @@ export default function Guide() {
         and a disaster on pour day.
       </p>
 
-      <h2>Decision checklist</h2>
+      <h2 id="decision-checklist">Decision checklist</h2>
       <p>
         <strong>Go with bags if:</strong> the job is under ~1 yard; the
         site has no truck access; you are doing fence posts or a small
@@ -214,7 +232,7 @@ export default function Guide() {
         number, the truck wins on time and quality.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Ordering a full truck for 1 yard.</strong> The short-load
         fee turns cheap concrete expensive — run the all-in number.{" "}
