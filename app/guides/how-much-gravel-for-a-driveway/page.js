@@ -53,10 +53,27 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10-12"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "tons-and-cubic-yards-by-driveway-size", label: "Tons and cubic yards by driveway size" },
+        { id: "choose-the-right-depth-first", label: "Choose the right depth first" },
+        { id: "build-it-in-three-layers-the-build-that-survives", label: "Build it in three layers — the build that survives" },
+        { id: "geotextile-fabric-on-soft-soil", label: "Geotextile fabric on soft soil" },
+        { id: "what-it-costs-typical-2026-us", label: "What it costs (typical 2026 US)" },
+        { id: "order-loose-and-order-a-little-extra", label: "Order loose, and order a little extra" },
+        { id: "crown-and-drainage-the-invisible-half-of-the-job", label: "Crown and drainage: the invisible half of the job" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "ASTM C33 aggregate density ranges",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "Typical gravel driveway installation practice — three compacted layers, geotextile over soft soil, crowning and drainage.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Gravel is ordered by the <strong>ton</strong>, not the cubic yard.
         Figure your volume first: length × width × (depth in inches ÷ 12) ÷
@@ -70,7 +87,7 @@ export default function Guide() {
         does the whole conversion for you.
       </p>
 
-      <h2>Tons and cubic yards by driveway size</h2>
+      <h2 id="tons-and-cubic-yards-by-driveway-size">Tons and cubic yards by driveway size</h2>
       <p>
         Find your driveway size below and read across to your target depth.
         Each cell shows cubic yards, then tons. These figures assume a flat
@@ -96,7 +113,7 @@ export default function Guide() {
         balloons.
       </p>
 
-      <h2>Choose the right depth first</h2>
+      <h2 id="choose-the-right-depth-first">Choose the right depth first</h2>
       <p>
         Depth is the number that decides everything else, and it depends on
         what you&apos;re doing. A <strong>3-inch top-up</strong> refreshes a
@@ -110,7 +127,7 @@ export default function Guide() {
         cheap, and doing it twice is not.
       </p>
 
-      <h2>Build it in three layers — the build that survives</h2>
+      <h2 id="build-it-in-three-layers-the-build-that-survives">Build it in three layers — the build that survives</h2>
       <p>
         The driveways that last decades are not one thick pour of gravel.
         They are three purpose-built layers, each compacted before the next
@@ -137,8 +154,15 @@ export default function Guide() {
         choice</strong> — it looks lovely, then migrates to the lawn every
         time a tire turns on it.
       </p>
+      <p>
+        The base layer is where the quantity math matters most: for depth
+        tables, the cubic-yard formula, tons conversions by stone type, and
+        the compaction adjustment, see our{" "}
+        <a href="/guides/how-much-sub-base-do-i-need/">sub-base quantity
+        guide</a>.
+      </p>
 
-      <h2>Geotextile fabric on soft soil</h2>
+      <h2 id="geotextile-fabric-on-soft-soil">Geotextile fabric on soft soil</h2>
       <p>
         If your ground is clay, low-lying, or squelches after rain, lay{" "}
         <strong>woven geotextile fabric</strong> on the graded soil before
@@ -151,7 +175,7 @@ export default function Guide() {
         builders lay it regardless.
       </p>
 
-      <h2>What it costs (typical 2026 US)</h2>
+      <h2 id="what-it-costs-typical-2026-us">What it costs (typical 2026 US)</h2>
       <p>
         Crusher-run gravel typically runs <strong>$30 to $55 per
         ton</strong> delivered (typical 2026 US), with rural quarries near
@@ -165,7 +189,7 @@ export default function Guide() {
         cheapest money you will ever spend on a driveway.
       </p>
 
-      <h2>Order loose, and order a little extra</h2>
+      <h2 id="order-loose-and-order-a-little-extra">Order loose, and order a little extra</h2>
       <p>
         Buy driveway stone <strong>loose by the ton from a quarry or
         landscape supplier</strong>, not in big-box bags — bagged gravel
@@ -181,7 +205,7 @@ export default function Guide() {
         firm pad if needed.
       </p>
 
-      <h2>Crown and drainage: the invisible half of the job</h2>
+      <h2 id="crown-and-drainage-the-invisible-half-of-the-job">Crown and drainage: the invisible half of the job</h2>
       <p>
         A flat driveway is a pond. Grade the surface with a slight{" "}
         <strong>crown</strong> — the center 1 to 2 inches higher than the
@@ -192,7 +216,7 @@ export default function Guide() {
         wearing a stone disguise.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>One layer, any depth.</strong> A single thick layer of one
         stone size never compacts properly — it shifts, ruts, and washes.

@@ -58,10 +58,28 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "gravel-per-linear-foot-by-trench-size", label: "Gravel per linear foot, by trench size" },
+        { id: "worked-example-an-80-foot-drain", label: "Worked example: an 80-foot drain" },
+        { id: "choose-the-right-stone-57-not-pea-gravel", label: "Choose the right stone: #57, not pea gravel" },
+        { id: "yards-to-tons-for-ordering", label: "Yards to tons for ordering" },
+        { id: "install-fabric-wrap-and-1-slope", label: "Install: fabric wrap and 1% slope" },
+        { id: "where-does-the-water-go", label: "Where does the water go?" },
+        { id: "call-811-before-you-dig", label: "Call 811 before you dig" },
+        { id: "how-much-fabric-do-you-need", label: "How much fabric do you need?" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "ASTM C33 aggregate density ranges",
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+        "Typical French drain installation practice — drainage-aggregate selection (#57 washed stone), non-woven geotextile wrap, and a 1% slope to the outlet.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         The standard residential French drain — a <strong>10&times;12 inch
         trench with 4-inch pipe</strong> — takes about{" "}
@@ -72,7 +90,7 @@ export default function Guide() {
         volume, divided by 27.
       </p>
 
-      <h2>Gravel per linear foot, by trench size</h2>
+      <h2 id="gravel-per-linear-foot-by-trench-size">Gravel per linear foot, by trench size</h2>
       <p>
         Cubic feet per foot is the number to remember, because every drain
         length scales from it. The pipe&apos;s own volume is subtracted
@@ -98,7 +116,7 @@ export default function Guide() {
         handles any trench size.
       </p>
 
-      <h2>Worked example: an 80-foot drain</h2>
+      <h2 id="worked-example-an-80-foot-drain">Worked example: an 80-foot drain</h2>
       <p>
         An 80-foot run with a 12&times;18 inch trench and 4-inch pipe: 1.41
         cu ft per foot × 80 = <strong>113 cubic feet</strong> — that&apos;s
@@ -108,7 +126,7 @@ export default function Guide() {
         <strong>6.3 tons</strong>.
       </p>
 
-      <h2>Choose the right stone: #57, not pea gravel</h2>
+      <h2 id="choose-the-right-stone-57-not-pea-gravel">Choose the right stone: #57, not pea gravel</h2>
       <p>
         The standard is <strong>#57 stone</strong>: angular, washed crushed
         rock roughly ½ to 1 inch. The angular faces lock together while
@@ -121,7 +139,7 @@ export default function Guide() {
         magic phrase.
       </p>
 
-      <h2>Yards to tons for ordering</h2>
+      <h2 id="yards-to-tons-for-ordering">Yards to tons for ordering</h2>
       <p>
         Bulk stone is often priced per ton: gravel weighs about 2,800 lb per
         cubic yard, so <strong>multiply yards by 1.4</strong>. Quick
@@ -140,7 +158,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Install: fabric wrap and 1% slope</h2>
+      <h2 id="install-fabric-wrap-and-1-slope">Install: fabric wrap and 1% slope</h2>
       <p>
         Quantity is only half the job — a drain installed wrong stops
         working. <strong>Line the trench with non-woven geotextile fabric
@@ -155,7 +173,7 @@ export default function Guide() {
         with stone, then wrap the fabric closed and top with soil or sod.
       </p>
 
-      <h2>Where does the water go?</h2>
+      <h2 id="where-does-the-water-go">Where does the water go?</h2>
       <p>
         A French drain is only as good as its outlet. The three standard
         endings: <strong>daylight</strong> — the pipe exits downhill above
@@ -168,7 +186,7 @@ export default function Guide() {
         you dig, because a drain with no exit just moves the puddle.
       </p>
 
-      <h2>Call 811 before you dig</h2>
+      <h2 id="call-811-before-you-dig">Call 811 before you dig</h2>
       <p>
         This costs nothing and avoids cutting a gas or fiber line. In most
         US states you call 811 a few business days before digging and
@@ -178,7 +196,7 @@ export default function Guide() {
         desk settles it.
       </p>
 
-      <h2>How much fabric do you need?</h2>
+      <h2 id="how-much-fabric-do-you-need">How much fabric do you need?</h2>
       <p>
         Size the fabric from the trench&apos;s perimeter. A 12&times;18 inch
         trench has about 3.5 feet of perimeter (12 + 18 + 18 inches, plus a
@@ -191,7 +209,7 @@ export default function Guide() {
         the burrito wrap needs to be continuous to keep silt out.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Rounded stone.</strong> Pea gravel migrates and compacts —
         #57 angular is the standard. <strong>Skipping fabric.</strong> Silt

@@ -58,10 +58,31 @@ export default function Guide() {
       calculatorHref="/calculators/mulch-calculator/"
       calculatorLabel="Try the mulch calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "per-yard-installed-rates-what-s-included", label: "Per-yard installed rates: what's included" },
+        { id: "diy-vs-pro-cost-by-project-size", label: "DIY vs pro: cost by project size" },
+        { id: "add-on-pricing-usually-not-in-the-per-yard-quote", label: "Add-on pricing (usually NOT in the per-yard quote)" },
+        { id: "when-pro-makes-sense-blown-in-mulch", label: "When pro makes sense: blown-in mulch" },
+        { id: "regional-cost-snapshot", label: "Regional cost snapshot" },
+        { id: "what-drives-your-quote-up-or-down", label: "What drives your quote up or down" },
+        { id: "bags-vs-bulk-for-small-diy-jobs", label: "Bags vs bulk for small DIY jobs" },
+        { id: "how-long-does-installation-take", label: "How long does installation take" },
+        { id: "questions-to-ask-installers", label: "Questions to ask installers" },
+        { id: "how-to-lower-your-installation-cost", label: "How to lower your installation cost" },
+        { id: "red-flags-in-mulch-quotes", label: "Red flags in mulch quotes" },
+        { id: "do-you-tip-mulch-installers", label: "Do you tip mulch installers?" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+        "Typical mulch installation practice — 3-inch depth for new beds, 2-inch refresh depth, blown-in installation and minimum service charges.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Expect <strong>$55 to $100 per cubic yard, installed and
         all-in</strong> — material, delivery, and spreading labor in one
@@ -76,7 +97,7 @@ export default function Guide() {
         they're different things.
       </p>
 
-      <h2>Per-yard installed rates: what's included</h2>
+      <h2 id="per-yard-installed-rates-what-s-included">Per-yard installed rates: what's included</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Rate component</th><th>Typical range</th></tr>
@@ -98,7 +119,7 @@ export default function Guide() {
         minimums (often 3–5 yards) matter so much.
       </p>
 
-      <h2>DIY vs pro: cost by project size</h2>
+      <h2 id="diy-vs-pro-cost-by-project-size">DIY vs pro: cost by project size</h2>
       <p>
         Quantities assume 3-inch depth (the standard for new beds — get your
         exact quantity from our{" "}
@@ -127,7 +148,7 @@ export default function Guide() {
         actually undercut hand-spreading quotes.
       </p>
 
-      <h2>Add-on pricing (usually NOT in the per-yard quote)</h2>
+      <h2 id="add-on-pricing-usually-not-in-the-per-yard-quote">Add-on pricing (usually NOT in the per-yard quote)</h2>
       <p>
         <strong>Bed edging:</strong> $2–$5 per linear foot, or $150–$300
         flat for an average job. Fresh-cut edges are what make new mulch
@@ -151,7 +172,7 @@ export default function Guide() {
         mulch is upselling, not helping.
       </p>
 
-      <h2>When pro makes sense: blown-in mulch</h2>
+      <h2 id="when-pro-makes-sense-blown-in-mulch">When pro makes sense: blown-in mulch</h2>
       <p>
         Blown-in mulch — material fired through a hose from a truck-mounted
         blower — changes the economics at scale. A two-person crew finishes
@@ -164,7 +185,7 @@ export default function Guide() {
         suffer.
       </p>
 
-      <h2>Regional cost snapshot</h2>
+      <h2 id="regional-cost-snapshot">Regional cost snapshot</h2>
       <p>
         Installed rates vary more by region than by mulch type. Typical 2026
         all-in ranges per cubic yard, installed:
@@ -189,7 +210,7 @@ export default function Guide() {
         scarcest.
       </p>
 
-      <h2>What drives your quote up or down</h2>
+      <h2 id="what-drives-your-quote-up-or-down">What drives your quote up or down</h2>
       <p>
         <strong>Access difficulty.</strong> Beds 100 feet from the driveway
         with no path cost more — wheelbarrow time is labor time. Blown-in
@@ -205,7 +226,7 @@ export default function Guide() {
         often come in 10–15% lower.
       </p>
 
-      <h2>Bags vs bulk for small DIY jobs</h2>
+      <h2 id="bags-vs-bulk-for-small-diy-jobs">Bags vs bulk for small DIY jobs</h2>
       <p>
         For beds under ~100 sq ft, skip bulk delivery entirely — the $50–$75
         delivery fee eats the savings. A 2 cu ft bag covers 8 sq ft at 3
@@ -218,7 +239,7 @@ export default function Guide() {
         need</a> guide.)
       </p>
 
-      <h2>How long does installation take</h2>
+      <h2 id="how-long-does-installation-take">How long does installation take</h2>
       <p>
         A two-person hand crew spreads roughly <strong>1–2 yards per person
         per hour</strong> including wheelbarrow time — so a 4-yard job is a
@@ -229,7 +250,7 @@ export default function Guide() {
         3 yards, the quote is padded.
       </p>
 
-      <h2>Questions to ask installers</h2>
+      <h2 id="questions-to-ask-installers">Questions to ask installers</h2>
       <p>
         <strong>1. What's included per yard?</strong> Material, delivery,
         spreading, cleanup — or is delivery extra? <strong>2. What depth do
@@ -243,7 +264,7 @@ export default function Guide() {
         And if blown, what's the minimum yardage?
       </p>
 
-      <h2>How to lower your installation cost</h2>
+      <h2 id="how-to-lower-your-installation-cost">How to lower your installation cost</h2>
       <p>
         <strong>Order the material yourself, hire labor-only.</strong>{" "}
         Landscapers mark up mulch 20–50%. Buy bulk direct from the yard and
@@ -259,7 +280,7 @@ export default function Guide() {
         finishes in hours.
       </p>
 
-      <h2>Red flags in mulch quotes</h2>
+      <h2 id="red-flags-in-mulch-quotes">Red flags in mulch quotes</h2>
       <p>
         <strong>No depth guarantee.</strong> A quote that doesn't state
         inches is a quote for a thin spread. <strong>Landscape fabric
@@ -274,7 +295,7 @@ export default function Guide() {
         discount isn't real.
       </p>
 
-      <h2>Do you tip mulch installers?</h2>
+      <h2 id="do-you-tip-mulch-installers">Do you tip mulch installers?</h2>
       <p>
         Not expected, but appreciated for good work — $20–$50 per crew
         member for a job well done is the common range. Tips don't change
@@ -284,7 +305,7 @@ export default function Guide() {
         deposit is normal for large jobs).
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Comparing material prices to installed quotes.</strong> The
         $35/yard bulk price isn't a competing quote — it's one ingredient of

@@ -62,10 +62,26 @@ export default function Guide() {
       calculatorHref="/calculators/dirt-calculator/"
       calculatorLabel="Try the dirt calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-fluff-factor-in-plain-english", label: "The fluff factor, in plain English" },
+        { id: "settlement-rates-by-material", label: "Settlement rates by material" },
+        { id: "order-buffers-by-project-type", label: "Order buffers by project type" },
+        { id: "worked-examples", label: "Worked examples" },
+        { id: "rain-settling-vs-mechanical-compaction", label: "Rain settling vs mechanical compaction" },
+        { id: "leftover-soil-vs-the-top-off-order", label: "Leftover soil vs the top-off order" },
+        { id: "yards-to-tons-for-ordering", label: "Yards to tons for ordering" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Typical soil settlement and compaction practice — loose-to-compacted volume allowances and compacting fill in 6–12 inch lifts.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Order <strong>10–20% more soil than your calculated volume</strong> —
         that&apos;s the industry buffer rule, and it exists because a
@@ -77,7 +93,7 @@ export default function Guide() {
         almost always worth more than the extra yard costs.
       </p>
 
-      <h2>The fluff factor, in plain English</h2>
+      <h2 id="the-fluff-factor-in-plain-english">The fluff factor, in plain English</h2>
       <p>
         Bulk soil is sold by the <strong>loose cubic yard</strong> — the
         volume it occupies fluffed up in the truck bed, full of air from
@@ -98,7 +114,7 @@ export default function Guide() {
         process deliberately.
       </p>
 
-      <h2>Settlement rates by material</h2>
+      <h2 id="settlement-rates-by-material">Settlement rates by material</h2>
       <p>
         Different materials carry different amounts of air and pack down
         differently. These are industry rules of thumb, not lab measurements
@@ -125,7 +141,7 @@ export default function Guide() {
         the finished depth.
       </p>
 
-      <h2>Order buffers by project type</h2>
+      <h2 id="order-buffers-by-project-type">Order buffers by project type</h2>
       <p>
         Material is half the story; what you&apos;re building with it is the
         other half. A raised bed and a pool fill both use &ldquo;dirt,&rdquo;
@@ -145,7 +161,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Worked examples</h2>
+      <h2 id="worked-examples">Worked examples</h2>
       <p>
         <strong>Raised bed, 8 × 4 ft, 1 ft deep.</strong> Volume: 32 cu ft =
         1.19 cubic yards. Topsoil at a 15% buffer: 1.19 × 1.15 = 1.37 →{" "}
@@ -179,7 +195,7 @@ export default function Guide() {
         handle the volume math — then apply the buffer from the tables above.
       </p>
 
-      <h2>Rain settling vs mechanical compaction</h2>
+      <h2 id="rain-settling-vs-mechanical-compaction">Rain settling vs mechanical compaction</h2>
       <p>
         Both collapse the air out of soil, but they are not interchangeable.{" "}
         <strong>Rain settles soil unevenly</strong> — low spots collect
@@ -196,7 +212,7 @@ export default function Guide() {
         compacting helps particles slide into place — damp, not muddy.
       </p>
 
-      <h2>Leftover soil vs the top-off order</h2>
+      <h2 id="leftover-soil-vs-the-top-off-order">Leftover soil vs the top-off order</h2>
       <p>
         The buffer rule means you&apos;ll sometimes have soil left over —
         that&apos;s the design working, not a mistake. <strong>Keep the
@@ -216,7 +232,7 @@ export default function Guide() {
         ever buy.
       </p>
 
-      <h2>Yards to tons for ordering</h2>
+      <h2 id="yards-to-tons-for-ordering">Yards to tons for ordering</h2>
       <p>
         Bulk soil is often priced by the yard but hauled by weight — and
         truck capacity is a weight limit. Convert with the material&apos;s
@@ -241,7 +257,7 @@ export default function Guide() {
         than the yardage suggests.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Ordering exact calculated yards.</strong> The fluff factor
         guarantees a shortfall — the buffer isn&apos;t optional padding,

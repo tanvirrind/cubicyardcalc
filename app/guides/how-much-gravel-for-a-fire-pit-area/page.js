@@ -58,10 +58,31 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "circle-size-chart-yards-tons-and-cost", label: "Circle-size chart: yards, tons, and cost" },
+        { id: "the-layer-stack-that-stays-stable", label: "The layer stack that stays stable" },
+        { id: "the-safety-rule-competitors-underplay", label: "The safety rule competitors underplay" },
+        { id: "worked-example-a-12-ft-circle-at-3-surface-4-base", label: "Worked example: a 12 ft circle at 3″ surface + 4″ base" },
+        { id: "cost-per-project-surface-base", label: "Cost per project (surface + base)" },
+        { id: "pea-gravel-vs-other-surface-materials", label: "Pea gravel vs other surface materials" },
+        { id: "build-order-step-by-step", label: "Build order: step by step" },
+        { id: "maintenance-keeping-it-good", label: "Maintenance: keeping it good" },
+        { id: "can-you-put-a-fire-pit-on-an-existing-patio", label: "Can you put a fire pit on an existing patio?" },
+        { id: "permits-and-local-rules", label: "Permits and local rules" },
+        { id: "what-about-a-square-or-rectangular-fire-pit-area", label: "What about a square or rectangular fire pit area?" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "ASTM C33 aggregate density ranges",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "Typical fire pit installation practice — compacted crushed-stone base with a 2–3 inch surface layer, and heat-safety guidance keeping rounded stone out of the burn zone.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         For a <strong>12 ft diameter circle</strong> — the most popular fire
         pit size — you need about <strong>1 cubic yard</strong> (1.5 tons) of
@@ -73,7 +94,7 @@ export default function Guide() {
         gravel on top — not one thick layer of one material.
       </p>
 
-      <h2>Circle-size chart: yards, tons, and cost</h2>
+      <h2 id="circle-size-chart-yards-tons-and-cost">Circle-size chart: yards, tons, and cost</h2>
       <p>
         Surface layer only (the visible pea gravel or decorative rock).
         Tons assume gravel at 2,800 lbs per cubic yard.
@@ -96,7 +117,7 @@ export default function Guide() {
         for the surface layer; the base layer adds its own cost below.
       </p>
 
-      <h2>The layer stack that stays stable</h2>
+      <h2 id="the-layer-stack-that-stays-stable">The layer stack that stays stable</h2>
       <p>
         <strong>Layer 1 — 4 to 6 inches of compacted 3/4″ crushed
         stone.</strong> This is the structural layer. Angular crushed stone
@@ -121,7 +142,7 @@ export default function Guide() {
         never compacts, so it can't be the foundation layer.
       </p>
 
-      <h2>The safety rule competitors underplay</h2>
+      <h2 id="the-safety-rule-competitors-underplay">The safety rule competitors underplay</h2>
       <p>
         <strong>Do not put rounded stone — pea gravel, river rock, polished
         stone — inside the burn area.</strong> Porous stone can absorb water;
@@ -135,7 +156,7 @@ export default function Guide() {
         local burn codes before the first fire.
       </p>
 
-      <h2>Worked example: a 12 ft circle at 3″ surface + 4″ base</h2>
+      <h2 id="worked-example-a-12-ft-circle-at-3-surface-4-base">Worked example: a 12 ft circle at 3″ surface + 4″ base</h2>
       <p>
         Area = π × 6² = <strong>113.1 sq ft</strong>. Surface: 113.1 ×
         (3/12) ÷ 27 = <strong>1.05 cubic yards</strong> of pea gravel (1.5
@@ -145,7 +166,7 @@ export default function Guide() {
         against the chart: the 12 ft row at 3″ reads 1.05 yards — it matches.
       </p>
 
-      <h2>Cost per project (surface + base)</h2>
+      <h2 id="cost-per-project-surface-base">Cost per project (surface + base)</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Circle diameter</th><th>Total material (yd³)</th><th>Typical project cost</th></tr>
@@ -166,7 +187,7 @@ export default function Guide() {
         go lumpy.
       </p>
 
-      <h2>Pea gravel vs other surface materials</h2>
+      <h2 id="pea-gravel-vs-other-surface-materials">Pea gravel vs other surface materials</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Surface material</th><th>Underfoot</th><th>Migration</th><th>Typical cost</th></tr>
@@ -187,7 +208,7 @@ export default function Guide() {
         shredded tires, it's combustible, and embers will find it.
       </p>
 
-      <h2>Build order: step by step</h2>
+      <h2 id="build-order-step-by-step">Build order: step by step</h2>
       <p>
         <strong>1. Mark the circle.</strong> Drive a center stake, tie a
         string at half the diameter (6 ft string for a 12 ft circle), and
@@ -222,7 +243,7 @@ export default function Guide() {
         overhanging trees.
       </p>
 
-      <h2>Maintenance: keeping it good</h2>
+      <h2 id="maintenance-keeping-it-good">Maintenance: keeping it good</h2>
       <p>
         A fire pit area is low-maintenance, not no-maintenance. Rake the
         surface level each spring — chairs and feet create low spots. Top up
@@ -234,7 +255,7 @@ export default function Guide() {
         an hour in August.
       </p>
 
-      <h2>Can you put a fire pit on an existing patio?</h2>
+      <h2 id="can-you-put-a-fire-pit-on-an-existing-patio">Can you put a fire pit on an existing patio?</h2>
       <p>
         Yes — and it's simpler. On an existing concrete or paver patio, skip
         the crushed-stone base entirely: the patio <em>is</em> the base. Lay
@@ -247,7 +268,7 @@ export default function Guide() {
         concrete, which can spall (chip and flake) under intense heat.
       </p>
 
-      <h2>Permits and local rules</h2>
+      <h2 id="permits-and-local-rules">Permits and local rules</h2>
       <p>
         Before you order a single yard: many municipalities require a
         permit for permanent fire pits, and some ban open wood burning
@@ -259,7 +280,7 @@ export default function Guide() {
         order on a finished project.
       </p>
 
-      <h2>What about a square or rectangular fire pit area?</h2>
+      <h2 id="what-about-a-square-or-rectangular-fire-pit-area">What about a square or rectangular fire pit area?</h2>
       <p>
         Not everyone wants a circle. For squares and rectangles, volume =
         length × width × depth in feet ÷ 27. A 12×12 ft square pad at 3
@@ -271,7 +292,7 @@ export default function Guide() {
         easier to edge with straight timber or block.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Rounded stone in the burn zone.</strong> Covered above — the
         single dangerous mistake. <strong>One thick layer of pea gravel

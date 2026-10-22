@@ -58,10 +58,26 @@ export default function Guide() {
       calculatorHref="/calculators/fill-dirt-calculator/"
       calculatorLabel="Try the fill dirt calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "worked-examples-across-scenarios", label: "Worked examples across scenarios" },
+        { id: "the-compaction-rule-order-10-20-extra", label: "The compaction rule (order +10–20% extra)" },
+        { id: "filling-an-old-swimming-pool", label: "Filling an old swimming pool" },
+        { id: "fill-dirt-then-topsoil-the-layering-order", label: "Fill dirt, then topsoil: the layering order" },
+        { id: "how-many-truckloads-is-that", label: "How many truckloads is that?" },
+        { id: "cost-context", label: "Cost context" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "Typical fill and compaction practice — compacting fill in 6–12 inch lifts, with a 4–6 inch topsoil finish layer for lawn areas.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         <strong>Yards = (length × width × depth in feet) / 27</strong>, then
         order <strong>10–20% extra</strong> because loose fill settles as it
@@ -72,7 +88,7 @@ export default function Guide() {
         but dirt arrives loose and full of air.
       </p>
 
-      <h2>Worked examples across scenarios</h2>
+      <h2 id="worked-examples-across-scenarios">Worked examples across scenarios</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Scenario</th><th>Dimensions</th><th>Cubic yards</th><th>Tons (×1.1)</th><th>Order (+15%)</th></tr>
@@ -95,7 +111,7 @@ export default function Guide() {
         doesn&apos;t compact like clean fill.
       </p>
 
-      <h2>The compaction rule (order +10–20% extra)</h2>
+      <h2 id="the-compaction-rule-order-10-20-extra">The compaction rule (order +10–20% extra)</h2>
       <p>
         Here&apos;s why the extra matters. Dirt delivered loose is full of
         air voids — up to a third of its volume can be nothing. Dump it in a
@@ -111,7 +127,7 @@ export default function Guide() {
         stays where you put it.
       </p>
 
-      <h2>Filling an old swimming pool</h2>
+      <h2 id="filling-an-old-swimming-pool">Filling an old swimming pool</h2>
       <p>
         A 16×32 pool averaging 5 feet deep holds about <strong>95 cubic
         yards</strong> of void (16 × 32 × 5 / 27 = 94.8) — before the
@@ -131,7 +147,7 @@ export default function Guide() {
         first truck arrives.
       </p>
 
-      <h2>Fill dirt, then topsoil: the layering order</h2>
+      <h2 id="fill-dirt-then-topsoil-the-layering-order">Fill dirt, then topsoil: the layering order</h2>
       <p>
         For any fill that ends in lawn, the layering is: <strong>fill dirt
         for the bulk, topsoil for the top 4–6 inches.</strong> Fill dirt is
@@ -146,7 +162,7 @@ export default function Guide() {
         the two materials.
       </p>
 
-      <h2>How many truckloads is that?</h2>
+      <h2 id="how-many-truckloads-is-that">How many truckloads is that?</h2>
       <p>
         A tri-axle dump truck hauls roughly 18–20 yards of fill dirt per
         load (about 20–22 tons at 1.1 tons/yard). So the 13-yard low-spot
@@ -161,7 +177,7 @@ export default function Guide() {
         weighs over 3 tons).
       </p>
 
-      <h2>Cost context</h2>
+      <h2 id="cost-context">Cost context</h2>
       <p>
         Bulk fill dirt typically runs <strong>$10–30 per cubic yard</strong>,
         with delivery fees of $50–150 depending on distance and load size.
@@ -175,7 +191,7 @@ export default function Guide() {
         a load.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Ordering the exact void volume.</strong> The #1
         under-ordering mistake — the surface sinks within a year.{" "}

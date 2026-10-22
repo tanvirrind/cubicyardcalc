@@ -65,10 +65,28 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-formula-one-worked-example", label: "The formula (one worked example)" },
+        { id: "gravel-for-a-dog-run-at-3-inch-depth", label: "Gravel for a dog run at 3 inch depth" },
+        { id: "gravel-for-a-dog-run-at-4-inch-depth", label: "Gravel for a dog run at 4 inch depth" },
+        { id: "bagged-vs-bulk-the-crossover", label: "Bagged vs bulk: the crossover" },
+        { id: "best-material-for-a-dog-run-compared", label: "Best material for a dog run, compared" },
+        { id: "why-pea-gravel-usually-wins", label: "Why pea gravel usually wins" },
+        { id: "installing-it-right-edging-fabric-and-slope", label: "Installing it right: edging, fabric, and slope" },
+        { id: "cleaning-and-refreshing", label: "Cleaning and refreshing" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "ASTM C33 aggregate density ranges",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+        "Typical dog run installation practice — 3–4 inch pea gravel depth over woven landscape fabric, with edging and a slight drainage slope.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         A dog run wants <strong>3 to 4 inches of 3/8 inch pea gravel</strong>{" "}
         over woven landscape fabric, inside solid edging. A{" "}
@@ -81,7 +99,7 @@ export default function Guide() {
         spillage.
       </p>
 
-      <h2>The formula (one worked example)</h2>
+      <h2 id="the-formula-one-worked-example">The formula (one worked example)</h2>
       <p>
         Gravel volume is length &times; width &times; depth, all in feet,
         divided by 27 for cubic yards. Remember that{" "}
@@ -97,7 +115,7 @@ export default function Guide() {
         runs it for any size you type in.
       </p>
 
-      <h2>Gravel for a dog run at 3 inch depth</h2>
+      <h2 id="gravel-for-a-dog-run-at-3-inch-depth">Gravel for a dog run at 3 inch depth</h2>
       <p>
         Three inches suits small to medium dogs and runs that see moderate
         use. Bag counts assume standard 0.5 cu ft bags of pea gravel:
@@ -114,7 +132,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Gravel for a dog run at 4 inch depth</h2>
+      <h2 id="gravel-for-a-dog-run-at-4-inch-depth">Gravel for a dog run at 4 inch depth</h2>
       <p>
         Four inches is the better call for large breeds, multi-dog runs, and
         any run that gets heavy daily use — the extra inch keeps paws off
@@ -140,7 +158,7 @@ export default function Guide() {
         converts either direction.
       </p>
 
-      <h2>Bagged vs bulk: the crossover</h2>
+      <h2 id="bagged-vs-bulk-the-crossover">Bagged vs bulk: the crossover</h2>
       <p>
         A 0.5 cu ft bag of pea gravel typically runs $5–$7 at a home center,
         so one cubic yard in bags costs roughly $270–$380 (54 bags), versus
@@ -154,7 +172,7 @@ export default function Guide() {
         on price the moment a delivery fee is less than the bagged markup.
       </p>
 
-      <h2>Best material for a dog run, compared</h2>
+      <h2 id="best-material-for-a-dog-run-compared">Best material for a dog run, compared</h2>
       <p>
         Four materials show up in dog runs. Here&apos;s how they actually
         compare on the things that matter — paws, drainage, cleanup, and
@@ -186,7 +204,7 @@ export default function Guide() {
         batch can&apos;t be composted away.
       </p>
 
-      <h2>Why pea gravel usually wins</h2>
+      <h2 id="why-pea-gravel-usually-wins">Why pea gravel usually wins</h2>
       <p>
         Pea gravel is the consensus pick because it&apos;s the only option
         that&apos;s good at everything rather than great at one thing. The{" "}
@@ -203,7 +221,7 @@ export default function Guide() {
         what the numbers mean.
       </p>
 
-      <h2>Installing it right: edging, fabric, and slope</h2>
+      <h2 id="installing-it-right-edging-fabric-and-slope">Installing it right: edging, fabric, and slope</h2>
       <p>
         A dog run fails from the bottom up, so the install order matters:
       </p>
@@ -228,7 +246,7 @@ export default function Guide() {
         position and washes off quarry dust.
       </p>
 
-      <h2>Cleaning and refreshing</h2>
+      <h2 id="cleaning-and-refreshing">Cleaning and refreshing</h2>
       <p>
         Daily scooping is non-negotiable — waste left on gravel breaks down
         into the voids and becomes odor you can&apos;t rake out. Hose the
@@ -244,7 +262,7 @@ export default function Guide() {
         the fabric, and start clean.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Crushed angular stone.</strong> It&apos;s cheaper and locks
         tight, but your dog&apos;s paws pay for it daily — pea gravel is the
