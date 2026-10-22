@@ -57,10 +57,25 @@ export default function Guide() {
       calculatorHref="/calculators/landscape-rock-calculator/"
       calculatorLabel="Try the landscape rock calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-channel-cross-section-method", label: "The channel cross-section method" },
+        { id: "what-size-rock-match-it-to-the-creek-width", label: "What size rock: match it to the creek width" },
+        { id: "layering-base-gravel-river-rock-boulders", label: "Layering: base gravel, river rock, boulders" },
+        { id: "landscape-fabric-under-the-rock", label: "Landscape fabric under the rock" },
+        { id: "slope-the-creek-must-actually-drain", label: "Slope: the creek must actually drain" },
+        { id: "cost-per-ton-ordering-tips", label: "Cost-per-ton ordering tips" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Site's published density variants (lib/calc.js)",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         <strong>Cubic yards = (width &times; depth &times; length in ft) / 27</strong>,{" "}
         then <strong>tons = yards &times; 2.25</strong> (rock runs 4,500 lbs per
@@ -71,7 +86,7 @@ export default function Guide() {
         separately.
       </p>
 
-      <h2>The channel cross-section method</h2>
+      <h2 id="the-channel-cross-section-method">The channel cross-section method</h2>
       <p>
         A dry creek bed is a shallow channel, so its volume is the channel
         cross-section (width &times; depth) times its length — the same rectangle
@@ -106,7 +121,7 @@ export default function Guide() {
         measuring guide</a>.
       </p>
 
-      <h2>What size rock: match it to the creek width</h2>
+      <h2 id="what-size-rock-match-it-to-the-creek-width">What size rock: match it to the creek width</h2>
       <p>
         Scale is the whole aesthetic — and the engineering. Rock too small
         migrates downstream in the first storm; rock too large looks like a
@@ -132,7 +147,7 @@ export default function Guide() {
         from a quarry list you don&apos;t recognize.
       </p>
 
-      <h2>Layering: base gravel, river rock, boulders</h2>
+      <h2 id="layering-base-gravel-river-rock-boulders">Layering: base gravel, river rock, boulders</h2>
       <p>
         A creek bed is three layers, ordered and installed bottom-up:
       </p>
@@ -158,7 +173,7 @@ export default function Guide() {
         boulders.
       </p>
 
-      <h2>Landscape fabric under the rock</h2>
+      <h2 id="landscape-fabric-under-the-rock">Landscape fabric under the rock</h2>
       <p>
         Fabric is not optional here: without it, the base gravel sinks into
         the soil within a season and mud pumps up through the rock every
@@ -171,7 +186,7 @@ export default function Guide() {
         that keep fabric from sliding.
       </p>
 
-      <h2>Slope: the creek must actually drain</h2>
+      <h2 id="slope-the-creek-must-actually-drain">Slope: the creek must actually drain</h2>
       <p>
         A dry creek bed is drainage infrastructure pretending to be
         landscaping — give it <strong>at least 1–2% fall</strong> (1–2 feet
@@ -184,7 +199,7 @@ export default function Guide() {
         hold it in place.
       </p>
 
-      <h2>Cost-per-ton ordering tips</h2>
+      <h2 id="cost-per-ton-ordering-tips">Cost-per-ton ordering tips</h2>
       <p>
         Bulk river rock typically runs <strong>$35–75 per ton</strong> at the
         quarry, with delivery of $50–150 per load depending on distance.
@@ -200,7 +215,7 @@ export default function Guide() {
         two half-tons of different stone cost more per ton than one full ton.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Rock that&apos;s too small for the slope.</strong> 1-inch
         rock in a drainage creek ends up in the storm drain.{" "}

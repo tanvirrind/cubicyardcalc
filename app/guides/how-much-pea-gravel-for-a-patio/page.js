@@ -65,10 +65,28 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10"
+      toc={[
+        { id: "not-pavers-the-loose-gravel-distinction", label: "Not pavers — the loose-gravel distinction" },
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-two-layers-and-why-you-need-both", label: "The two layers, and why you need both" },
+        { id: "the-math-one-formula-two-depths", label: "The math: one formula, two depths" },
+        { id: "crushed-base-table-4-inches-compacted", label: "Crushed base table (4 inches, compacted)" },
+        { id: "pea-gravel-top-table-2-5-inches-loose", label: "Pea gravel top table (2.5 inches, loose)" },
+        { id: "when-bags-beat-bulk", label: "When bags beat bulk" },
+        { id: "edging-is-not-optional", label: "Edging is not optional" },
+        { id: "stone-size-and-color-options", label: "Stone size and color options" },
+        { id: "installation-sequence-that-actually-works", label: "Installation sequence that actually works" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "ASTM C33 aggregate density ranges",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>Not pavers — the loose-gravel distinction</h2>
+      <h2 id="not-pavers-the-loose-gravel-distinction">Not pavers — the loose-gravel distinction</h2>
       <p>
         Everything here is for <strong>loose pea gravel patios</strong>: stone
         poured over a compacted base, raked flat, and held in by edging. The
@@ -81,7 +99,7 @@ export default function Guide() {
         loose gravel.
       </p>
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         A loose-gravel patio has <strong>two layers</strong>: a{" "}
         <strong>4-inch compacted base of crusher run</strong> and a{" "}
@@ -95,7 +113,7 @@ export default function Guide() {
         15–25% settlement the loose layer loses as it beds in.
       </p>
 
-      <h2>The two layers, and why you need both</h2>
+      <h2 id="the-two-layers-and-why-you-need-both">The two layers, and why you need both</h2>
       <p>
         <strong>Layer 1 — the crushed base (4 inches, compacted).</strong>{" "}
         Dense-grade crusher run or &ldquo;road base&rdquo; — crushed stone
@@ -123,7 +141,7 @@ export default function Guide() {
         compactor.
       </p>
 
-      <h2>The math: one formula, two depths</h2>
+      <h2 id="the-math-one-formula-two-depths">The math: one formula, two depths</h2>
       <p>
         Cubic yards = length × width × (depth in feet) ÷ 27. Run it twice —
         once at 4 inches (⅓ foot) for the base, once at 2.5 inches (0.2083
@@ -141,7 +159,7 @@ export default function Guide() {
         what the yard sells — bulk is sold by the full or half yard.
       </p>
 
-      <h2>Crushed base table (4 inches, compacted)</h2>
+      <h2 id="crushed-base-table-4-inches-compacted">Crushed base table (4 inches, compacted)</h2>
       <p>
         Base volume is the compacted target; the &ldquo;order&rdquo; column
         adds 10% for compaction loss (4 inches of loose stone tamps down to
@@ -162,7 +180,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Pea gravel top table (2.5 inches, loose)</h2>
+      <h2 id="pea-gravel-top-table-2-5-inches-loose">Pea gravel top table (2.5 inches, loose)</h2>
       <p>
         Loose pea gravel settles <strong>15–25% in the first year</strong> as
         it beds into the base and foot traffic shakes it down — that&apos;s
@@ -190,7 +208,7 @@ export default function Guide() {
         inches for the top.
       </p>
 
-      <h2>When bags beat bulk</h2>
+      <h2 id="when-bags-beat-bulk">When bags beat bulk</h2>
       <p>
         Big-box pea gravel comes in 0.5-cubic-foot bags, so{" "}
         <strong>bags per yard = 27 ÷ 0.5 = 54</strong>. The crossover is pure
@@ -211,7 +229,7 @@ export default function Guide() {
         essentially every time.</strong>
       </p>
 
-      <h2>Edging is not optional</h2>
+      <h2 id="edging-is-not-optional">Edging is not optional</h2>
       <p>
         A loose-gravel patio without edging is a temporary gravel pile.
         Install a rigid edge <strong>before</strong> the base goes down:{" "}
@@ -225,7 +243,7 @@ export default function Guide() {
         it heaves, leans, and the gravel migrates out within a season.
       </p>
 
-      <h2>Stone size and color options</h2>
+      <h2 id="stone-size-and-color-options">Stone size and color options</h2>
       <p>
         <strong>Size:</strong> ⅜-inch pea gravel is the patio standard —
         smooth, comfortable underfoot, and fine enough to rake level easily.
@@ -247,7 +265,7 @@ export default function Guide() {
         is a barefoot zone.
       </p>
 
-      <h2>Installation sequence that actually works</h2>
+      <h2 id="installation-sequence-that-actually-works">Installation sequence that actually works</h2>
       <p>
         <strong>1.</strong> Mark the outline, strip sod and topsoil 6 inches
         deep (base + top + edging depth). <strong>2.</strong> Grade the soil
@@ -270,7 +288,7 @@ export default function Guide() {
         handles the heavier stone classes.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Skipping the base.</strong> Pea gravel straight on dirt
         disappears into mud — the 4-inch crushed base is the patio.{" "}

@@ -57,10 +57,28 @@ export default function Guide() {
       calculatorHref="/calculators/sand-calculator/"
       calculatorLabel="Try the sand calculator"
       updated="2026-10-13"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "square-sandbox-bag-table", label: "Square sandbox bag table" },
+        { id: "round-sandbox-bag-table", label: "Round sandbox bag table" },
+        { id: "pick-the-right-depth-first", label: "Pick the right depth first" },
+        { id: "bags-vs-bulk-the-cost-breakpoint", label: "Bags vs bulk: the cost breakpoint" },
+        { id: "what-to-buy-play-sand-washed-and-screened", label: "What to buy: play sand, washed and screened" },
+        { id: "prep-the-box-before-the-sand", label: "Prep the box before the sand" },
+        { id: "fill-level-and-settle", label: "Fill, level, and settle" },
+        { id: "when-to-refresh-the-sand", label: "When to refresh the sand" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "ASTM C33 aggregate density ranges",
+        "Sand-type classes (play sand washed and screened vs. paver and masonry sands): supplier product classifications.",
+        "Typical sandbox fill depths (4–8 inches) and 50-lb bag volume conventions: retailer and manufacturer guidance classes.",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Sandbox math starts in cubic feet: length × width × (depth in
         inches ÷ 12). Divide by 27 for cubic yards. Then the magic number
@@ -74,7 +92,7 @@ export default function Guide() {
         it to the surrounding yard.
       </p>
 
-      <h2>Square sandbox bag table</h2>
+      <h2 id="square-sandbox-bag-table">Square sandbox bag table</h2>
       <p>
         Bag counts for the three most common square sizes at 4, 6, and 8
         inches of sand. Each cell shows cubic yards, then the number of
@@ -91,7 +109,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Round sandbox bag table</h2>
+      <h2 id="round-sandbox-bag-table">Round sandbox bag table</h2>
       <p>
         For round or octagonal boxes, use the diameter. Same layout: cubic
         yards, then 50-lb bags, rounded up.
@@ -114,7 +132,7 @@ export default function Guide() {
         does the area math for you.
       </p>
 
-      <h2>Pick the right depth first</h2>
+      <h2 id="pick-the-right-depth-first">Pick the right depth first</h2>
       <p>
         <strong>4 inches</strong> is the minimum for a toddler box — enough
         to scoop, and shallow enough that little legs climb in and out
@@ -128,7 +146,7 @@ export default function Guide() {
         lawn.
       </p>
 
-      <h2>Bags vs bulk: the cost breakpoint</h2>
+      <h2 id="bags-vs-bulk-the-cost-breakpoint">Bags vs bulk: the cost breakpoint</h2>
       <p>
         Bagged play sand (50-lb bags, typically $4 to $6 each in 2026)
         wins for small jobs because it is clean, labeled, and easy to
@@ -146,7 +164,7 @@ export default function Guide() {
         masonry sand.
       </p>
 
-      <h2>What to buy: play sand, washed and screened</h2>
+      <h2 id="what-to-buy-play-sand-washed-and-screened">What to buy: play sand, washed and screened</h2>
       <p>
         Sandbox sand should be labeled <strong>play sand</strong> — washed,
         screened, and low in dust. Skip coarse paver sand (too rough) and
@@ -159,7 +177,7 @@ export default function Guide() {
         back.
       </p>
 
-      <h2>Prep the box before the sand</h2>
+      <h2 id="prep-the-box-before-the-sand">Prep the box before the sand</h2>
       <p>
         Lay <strong>landscape fabric</strong> — not plastic sheeting —
         across the bottom of the frame before the sand goes in. The fabric
@@ -172,7 +190,7 @@ export default function Guide() {
         remove more sand than any formula accounts for.
       </p>
 
-      <h2>Fill, level, and settle</h2>
+      <h2 id="fill-level-and-settle">Fill, level, and settle</h2>
       <p>
         Cut the bags open at the box and pour — do not haul loose sand
         across the yard in buckets if you can avoid it. Spread with a
@@ -188,7 +206,7 @@ export default function Guide() {
         store run.
       </p>
 
-      <h2>When to refresh the sand</h2>
+      <h2 id="when-to-refresh-the-sand">When to refresh the sand</h2>
       <p>
         Plan on topping up <strong>1 to 2 inches every spring</strong> —
         play sand compacts, washes, and walks away on shoes and pails.
@@ -201,7 +219,7 @@ export default function Guide() {
         roughly doubles the interval between refreshes.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Ordering exact bag counts.</strong> Sand settles and kids
         export it — add 10% and keep a spare bag or two.{" "}

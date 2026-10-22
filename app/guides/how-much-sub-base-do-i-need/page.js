@@ -59,10 +59,25 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "what-a-sub-base-actually-does", label: "What a sub-base actually does" },
+        { id: "the-formula-then-the-depths", label: "The formula, then the depths" },
+        { id: "cubic-yards-to-tons-by-stone-type", label: "Cubic yards to tons, by stone type" },
+        { id: "worked-examples", label: "Worked examples" },
+        { id: "which-material-to-actually-order", label: "Which material to actually order" },
+        { id: "the-compaction-adjustment-explained", label: "The compaction adjustment, explained" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Site's published density variants (lib/calc.js)",
+        "ASTM C33 aggregate density ranges",
+        "UK sub-base terminology (hardcore / MOT Type 1) noted for naming equivalence; quantities use US crusher-run / road-base classes.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         For a <strong>residential driveway</strong>, plan on{" "}
         <strong>4–6 inches of compacted crushed stone</strong>; for a{" "}
@@ -78,7 +93,7 @@ export default function Guide() {
         reach your finished depth.
       </p>
 
-      <h2>What a sub-base actually does</h2>
+      <h2 id="what-a-sub-base-actually-does">What a sub-base actually does</h2>
       <p>
         Every paved or gravel surface that lasts is a stack of layers, and
         the sub-base is the load-bearing one — a bed of crushed stone laid
@@ -106,7 +121,7 @@ export default function Guide() {
         convert to tons — is identical.)
       </p>
 
-      <h2>The formula, then the depths</h2>
+      <h2 id="the-formula-then-the-depths">The formula, then the depths</h2>
       <p>
         Sub-base quantity is volume math with a unit conversion at the end:
       </p>
@@ -145,7 +160,7 @@ export default function Guide() {
         crusher run is the default choice below.
       </p>
 
-      <h2>Cubic yards to tons, by stone type</h2>
+      <h2 id="cubic-yards-to-tons-by-stone-type">Cubic yards to tons, by stone type</h2>
       <p>
         Suppliers usually quote sub-base <strong>by the ton</strong> and
         deliver <strong>by the yard</strong>, so you need both numbers.
@@ -178,7 +193,7 @@ export default function Guide() {
         the weights follow automatically.
       </p>
 
-      <h2>Worked examples</h2>
+      <h2 id="worked-examples">Worked examples</h2>
       <p>
         <strong>Driveway, 20 × 40 ft, 4 in compacted crusher run.</strong>{" "}
         Area: 800 sq ft. Depth: 4 ÷ 12 = ⅓ ft. Volume: 800 × ⅓ = 266.7 cu
@@ -210,7 +225,7 @@ export default function Guide() {
         footage by 35 lb and by 1.4 at 6 inches instead.
       </p>
 
-      <h2>Which material to actually order</h2>
+      <h2 id="which-material-to-actually-order">Which material to actually order</h2>
       <p>
         The name on the ticket matters less than the particle mix. What you
         want is <strong>angular crushed stone with fines</strong> — stone
@@ -238,7 +253,7 @@ export default function Guide() {
         under load.
       </p>
 
-      <h2>The compaction adjustment, explained</h2>
+      <h2 id="the-compaction-adjustment-explained">The compaction adjustment, explained</h2>
       <p>
         This is the step that strands DIYers a yard short. A 4-inch
         <em>compacted</em> layer of crusher run needs roughly{" "}
@@ -262,7 +277,7 @@ export default function Guide() {
         guide</a> covers the economics.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Ordering compacted yards instead of loose yards.</strong>{" "}
         The 15–20% shortfall shows up exactly when the truck is leaving.{" "}

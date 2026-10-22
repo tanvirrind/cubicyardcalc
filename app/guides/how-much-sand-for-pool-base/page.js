@@ -58,10 +58,27 @@ export default function Guide() {
       calculatorHref="/calculators/sand-calculator/"
       calculatorLabel="Try the sand calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-2-inch-rule-and-why-you-don-t-go-deeper", label: "The 2-inch rule — and why you don't go deeper" },
+        { id: "sand-chart-by-pool-size-2-inches-deep", label: "Sand chart by pool size (2 inches deep)" },
+        { id: "calculate-it-yourself", label: "Calculate it yourself" },
+        { id: "mason-sand-vs-play-sand", label: "Mason sand vs play sand" },
+        { id: "install-tips-keep-it-level-keep-it-inside", label: "Install tips: keep it level, keep it inside" },
+        { id: "what-if-your-site-isn-t-level", label: "What if your site isn't level?" },
+        { id: "cost-per-project", label: "Cost per project" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "ASTM C33 aggregate density ranges",
+        "Sand-type classes (mason / masonry sand vs. play sand): supplier product classifications.",
+        "Typical above-ground pool base practice (2-inch sand layer inside the bottom track): pool manufacturer installation guidance classes.",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Use <strong>2 inches of mason sand</strong>, set{" "}
         <strong>inside</strong> the pool&apos;s bottom track. At that depth,
@@ -71,7 +88,7 @@ export default function Guide() {
         pool&apos;s area in square feet by 2/12, then divide by 27.
       </p>
 
-      <h2>The 2-inch rule — and why you don&apos;t go deeper</h2>
+      <h2 id="the-2-inch-rule-and-why-you-don-t-go-deeper">The 2-inch rule — and why you don&apos;t go deeper</h2>
       <p>
         Two inches is the industry standard for a reason. Thicker sand
         doesn&apos;t give you more protection — it <strong>shifts</strong>{" "}
@@ -84,7 +101,7 @@ export default function Guide() {
         the sand only fills the interior floor area.
       </p>
 
-      <h2>Sand chart by pool size (2 inches deep)</h2>
+      <h2 id="sand-chart-by-pool-size-2-inches-deep">Sand chart by pool size (2 inches deep)</h2>
       <p>
         Yards first — that&apos;s how bulk sand is sold. Tons are for
         weight-based pricing (sand weighs about 2,700 lb per yard, so
@@ -124,7 +141,7 @@ export default function Guide() {
         <a href="/guides/how-much-does-a-cubic-yard-weigh/">cubic yard weight chart</a>.
       </p>
 
-      <h2>Calculate it yourself</h2>
+      <h2 id="calculate-it-yourself">Calculate it yourself</h2>
       <p>
         For a custom size, the formula is:{" "}
         <strong>(length × width × 2/12) / 27</strong> for rectangles, or{" "}
@@ -135,7 +152,7 @@ export default function Guide() {
         in one step if you&apos;d rather not do the arithmetic.
       </p>
 
-      <h2>Mason sand vs play sand</h2>
+      <h2 id="mason-sand-vs-play-sand">Mason sand vs play sand</h2>
       <p>
         <strong>Mason sand</strong> (masonry sand) is the standard
         recommendation: fine, screen-cleaned, free of pebbles and debris,
@@ -148,7 +165,7 @@ export default function Guide() {
         takes to ruin a liner.
       </p>
 
-      <h2>Install tips: keep it level, keep it inside</h2>
+      <h2 id="install-tips-keep-it-level-keep-it-inside">Install tips: keep it level, keep it inside</h2>
       <p>
         Clear and <strong>compact the ground first</strong>, then set the
         bottom track and pavers. Rake the sand evenly across the interior to
@@ -163,7 +180,7 @@ export default function Guide() {
         against liner stretch at the edge.
       </p>
 
-      <h2>What if your site isn&apos;t level?</h2>
+      <h2 id="what-if-your-site-isn-t-level">What if your site isn&apos;t level?</h2>
       <p>
         Dig the high side <strong>down</strong>, never build the low side up
         with sand. Sand is a cushion, not fill — a thick wedge of sand under
@@ -176,7 +193,7 @@ export default function Guide() {
         crushed stone first, then the sand layer.
       </p>
 
-      <h2>Cost per project</h2>
+      <h2 id="cost-per-project">Cost per project</h2>
       <p>
         Bulk mason sand typically runs <strong>$20–50 per cubic yard</strong>{" "}
         depending on region, plus a <strong>$50–150 delivery fee</strong> —
@@ -199,7 +216,7 @@ export default function Guide() {
         even $4 a bag is over $600 — and you get to haul every one of them.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Going deeper than 2 inches.</strong> It feels like more
         cushion; it becomes footprints. <strong>Sand under the walls.</strong>{" "}

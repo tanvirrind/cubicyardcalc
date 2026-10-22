@@ -65,10 +65,26 @@ export default function Guide() {
       calculatorHref="/calculators/landscape-rock-calculator/"
       calculatorLabel="Try the landscape rock calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "scope-and-a-shoreline-warning", label: "Scope and a shoreline warning" },
+        { id: "riprap-size-classes", label: "Riprap size classes" },
+        { id: "the-math-why-tons-per-linear-foot", label: "The math: why tons per linear foot" },
+        { id: "tons-per-linear-foot-2-1-slope", label: "Tons per linear foot (2:1 slope)" },
+        { id: "worked-example-and-common-projects", label: "Worked example and common projects" },
+        { id: "non-woven-geotextile-under-everything", label: "Non-woven geotextile under everything" },
+        { id: "grading-and-install-notes", label: "Grading and install notes" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Site's published density variants (lib/calc.js)",
+        "Riprap size classes (R-4, R-6, R-8 nominal gradations): quarry gradation listings and state DOT specification classes.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         For homeowner-scale riprap — dry creek beds, downspout outlets, pond
         edges, and small slope toes — on a typical <strong>2:1 slope at 12
@@ -81,7 +97,7 @@ export default function Guide() {
         trust.
       </p>
 
-      <h2>Scope and a shoreline warning</h2>
+      <h2 id="scope-and-a-shoreline-warning">Scope and a shoreline warning</h2>
       <p>
         This guide covers <strong>dry-land homeowner projects only</strong>:
         dry creek beds, downspout outlet aprons, pond and pool edges, and
@@ -96,7 +112,7 @@ export default function Guide() {
         below is sized for wave or current energy.
       </p>
 
-      <h2>Riprap size classes</h2>
+      <h2 id="riprap-size-classes">Riprap size classes</h2>
       <p>
         Riprap is graded by weight class, but quarries sell it by approximate
         stone diameter. The three classes a homeowner will ever see:
@@ -119,7 +135,7 @@ export default function Guide() {
         angular faces interlock and resist sliding; round stone rolls.
       </p>
 
-      <h2>The math: why tons per linear foot</h2>
+      <h2 id="the-math-why-tons-per-linear-foot">The math: why tons per linear foot</h2>
       <p>
         Riprap layers sit on a slope, so you measure the <strong>slope
         surface</strong>, not the horizontal run. On the standard 2:1 slope
@@ -147,7 +163,7 @@ export default function Guide() {
         covers the density math in full if you want the background.
       </p>
 
-      <h2>Tons per linear foot (2:1 slope)</h2>
+      <h2 id="tons-per-linear-foot-2-1-slope">Tons per linear foot (2:1 slope)</h2>
       <p>
         Read your bank height down the left, thickness across the top —
         multiply by your linear footage. The 18-inch column is the 12-inch
@@ -164,7 +180,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Worked example and common projects</h2>
+      <h2 id="worked-example-and-common-projects">Worked example and common projects</h2>
       <p>
         The worked example: <strong>20 linear feet of 2-foot bank at 12
         inches thick</strong> = 20 × 2 × 0.19 = <strong>7.6 tons</strong>.
@@ -201,7 +217,7 @@ export default function Guide() {
         covers the pipe and stone behind it.
       </p>
 
-      <h2>Non-woven geotextile under everything</h2>
+      <h2 id="non-woven-geotextile-under-everything">Non-woven geotextile under everything</h2>
       <p>
         Every riprap installation gets <strong>non-woven geotextile</strong>{" "}
         laid directly on the prepared soil before the first stone goes down.
@@ -217,7 +233,7 @@ export default function Guide() {
         settling by the second rainy season.
       </p>
 
-      <h2>Grading and install notes</h2>
+      <h2 id="grading-and-install-notes">Grading and install notes</h2>
       <p>
         <strong>Grade to a 2:1 slope or flatter</strong> before any stone
         arrives — steeper than 2:1 and the stone won&apos;t stay put without
@@ -246,7 +262,7 @@ export default function Guide() {
         flat beds) — use the slope table above for anything on an incline.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Rounded stone.</strong> River rock looks great and rolls
         downhill — riprap must be angular so the pieces interlock.{" "}

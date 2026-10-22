@@ -65,10 +65,28 @@ export default function Guide() {
       calculatorHref="/calculators/topsoil-calculator/"
       calculatorLabel="Try the topsoil calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-2-inch-vs-4-inch-rule", label: "The 2-inch vs 4-inch rule" },
+        { id: "the-math-one-formula-for-the-whole-page", label: "The math: one formula for the whole page" },
+        { id: "worked-example-1-000-sq-ft-stripped-to-bare-clay-4-inches", label: "Worked example: 1,000 sq ft stripped to bare clay, 4 inches" },
+        { id: "the-combined-ordering-table-2-inch-depth", label: "The combined ordering table: 2-inch depth" },
+        { id: "the-combined-ordering-table-4-inch-depth", label: "The combined ordering table: 4-inch depth" },
+        { id: "slope-correction-before-the-sod", label: "Slope correction before the sod" },
+        { id: "soil-contact-the-prep-that-decides-everything", label: "Soil contact: the prep that decides everything" },
+        { id: "watering-the-new-sod", label: "Watering the new sod" },
+        { id: "how-the-quantities-connect-to-cost", label: "How the quantities connect to cost" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Site's published density variants (lib/calc.js)",
+        "Typical topsoil application-depth practice for new sod (2 inches over existing grade, 4 inches over stripped or regraded sites): landscaping installation guidance classes.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         New sod needs <strong>2 inches of topsoil</strong> over an existing,
         decently graded area, or <strong>4 inches</strong> if the site was
@@ -81,7 +99,7 @@ export default function Guide() {
         common lawn size is below.
       </p>
 
-      <h2>The 2-inch vs 4-inch rule</h2>
+      <h2 id="the-2-inch-vs-4-inch-rule">The 2-inch vs 4-inch rule</h2>
       <p>
         This is the one decision that changes the whole order, so make it
         deliberately:
@@ -109,7 +127,7 @@ export default function Guide() {
         and put the 2–4 inches of screened topsoil on top.
       </p>
 
-      <h2>The math: one formula for the whole page</h2>
+      <h2 id="the-math-one-formula-for-the-whole-page">The math: one formula for the whole page</h2>
       <p>
         <strong>Cubic yards = lawn sq ft &times; (depth in inches &divide;
         12) &divide; 27</strong>, then &times; 1.10 for overage.
@@ -123,7 +141,7 @@ export default function Guide() {
         6.2 yards is about 7.4 tons and 12.3 yards is about 14.8 tons.
       </p>
 
-      <h2>Worked example: 1,000 sq ft stripped to bare clay, 4 inches</h2>
+      <h2 id="worked-example-1-000-sq-ft-stripped-to-bare-clay-4-inches">Worked example: 1,000 sq ft stripped to bare clay, 4 inches</h2>
       <p>
         Every step, shown:
       </p>
@@ -144,7 +162,7 @@ export default function Guide() {
         tri-axle load = <strong>2 truckloads</strong>.
       </p>
 
-      <h2>The combined ordering table: 2-inch depth</h2>
+      <h2 id="the-combined-ordering-table-2-inch-depth">The combined ordering table: 2-inch depth</h2>
       <p>
         Topsoil yards are the order size (with overage built in), tons use
         1.2 tons per yard, sod pallets assume 450 sq ft per pallet (400–500
@@ -164,7 +182,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>The combined ordering table: 4-inch depth</h2>
+      <h2 id="the-combined-ordering-table-4-inch-depth">The combined ordering table: 4-inch depth</h2>
       <p>
         Same columns, double the topsoil — for stripped, low, or
         compost-amended sites:
@@ -186,7 +204,7 @@ export default function Guide() {
         handles any square footage and depth in one pass.
       </p>
 
-      <h2>Slope correction before the sod</h2>
+      <h2 id="slope-correction-before-the-sod">Slope correction before the sod</h2>
       <p>
         Topsoil is also your grading tool. Before the sod arrives, get the
         slope right: the finished lawn should <strong>fall away from the
@@ -200,7 +218,7 @@ export default function Guide() {
         and use topsoil only for the final 2–4 inches.
       </p>
 
-      <h2>Soil contact: the prep that decides everything</h2>
+      <h2 id="soil-contact-the-prep-that-decides-everything">Soil contact: the prep that decides everything</h2>
       <p>
         Sod roots will not dive into a hard boundary. Do this prep in
         order:
@@ -220,7 +238,7 @@ export default function Guide() {
         establishment.
       </p>
 
-      <h2>Watering the new sod</h2>
+      <h2 id="watering-the-new-sod">Watering the new sod</h2>
       <p>
         <strong>Soak each section as it goes down</strong> — in summer heat,
         sod waiting on a pallet dries out from the edges in. For the first{" "}
@@ -233,7 +251,7 @@ export default function Guide() {
         means the roots have taken hold.
       </p>
 
-      <h2>How the quantities connect to cost</h2>
+      <h2 id="how-the-quantities-connect-to-cost">How the quantities connect to cost</h2>
       <p>
         Knowing yards, tons, and pallets lets you compare quotes
         apples-to-apples. Suppliers price bulk topsoil by the yard or the
@@ -245,7 +263,7 @@ export default function Guide() {
         <a href="/cubic-yard-cost/">cubic yard cost</a> pages.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Ordering topsoil before the sod date.</strong> Topsoil
         sitting in a pile grows weeds and crusts over; sod sitting on a
