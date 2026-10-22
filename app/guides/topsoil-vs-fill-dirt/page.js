@@ -54,10 +54,24 @@ export default function Guide() {
       calculatorHref="/calculators/topsoil-calculator/"
       calculatorLabel="Try the topsoil calculator"
       updated="2026-10-12"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "topsoil-vs-fill-dirt-side-by-side", label: "Topsoil vs fill dirt, side by side" },
+        { id: "the-1-diy-mistake-topsoil-as-structural-fill", label: "The #1 DIY mistake: topsoil as structural fill" },
+        { id: "the-two-layer-technique", label: "The two-layer technique" },
+        { id: "the-decision-flowchart", label: "The decision flowchart" },
+        { id: "worked-example-raising-a-200-sq-ft-area-6-inches", label: "Worked example: raising a 200 sq ft area 6 inches" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Published soil-science and grading guidance on topsoil and fill dirt composition, organic matter content, compaction, and settlement behaviour.",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         <strong>Topsoil</strong> is the dark, living top layer of earth —
         rich in organic matter, designed for growing things. <strong>Fill
@@ -74,7 +88,7 @@ export default function Guide() {
         calculator</a>, then size the cap separately.
       </p>
 
-      <h2>Topsoil vs fill dirt, side by side</h2>
+      <h2 id="topsoil-vs-fill-dirt-side-by-side">Topsoil vs fill dirt, side by side</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Factor</th><th>Topsoil</th><th>Fill dirt</th></tr>
@@ -97,7 +111,7 @@ export default function Guide() {
         grading project doubles its materials bill.
       </p>
 
-      <h2>The #1 DIY mistake: topsoil as structural fill</h2>
+      <h2 id="the-1-diy-mistake-topsoil-as-structural-fill">The #1 DIY mistake: topsoil as structural fill</h2>
       <p>
         This is the error that shows up a year later, when the patio corner
         drops two inches and the fence post leans. Topsoil&rsquo;s organic
@@ -112,7 +126,7 @@ export default function Guide() {
         settlement warranty you never wanted.</strong>
       </p>
 
-      <h2>The two-layer technique</h2>
+      <h2 id="the-two-layer-technique">The two-layer technique</h2>
       <p>
         For any project deeper than about 6 inches that also needs a
         finished planting surface — raising a lawn that dips toward the
@@ -145,7 +159,7 @@ export default function Guide() {
         separately keeps the order sheet honest.
       </p>
 
-      <h2>The decision flowchart</h2>
+      <h2 id="the-decision-flowchart">The decision flowchart</h2>
       <p>
         Work through these in order and the right material picks itself:
       </p>
@@ -176,7 +190,7 @@ export default function Guide() {
         is often leaner than the label suggests.
       </p>
 
-      <h2>Worked example: raising a 200 sq ft area 6 inches</h2>
+      <h2 id="worked-example-raising-a-200-sq-ft-area-6-inches">Worked example: raising a 200 sq ft area 6 inches</h2>
       <p>
         Say a 200 sq ft section of lawn dips 6 inches and you want to bring
         it to grade and plant grass on the finish. Two-layer job:
@@ -199,7 +213,7 @@ export default function Guide() {
         don&rsquo;t build the whole 6 inches out of topsoil.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Topsoil under the patio.</strong> Covered above — it is
         the single most common cause of DIY settling.{" "}

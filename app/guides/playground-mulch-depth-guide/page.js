@@ -58,10 +58,25 @@ export default function Guide() {
       calculatorHref="/calculators/mulch-calculator/"
       calculatorLabel="Try the mulch calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "safety-depths-by-fall-height", label: "Safety depths by fall height" },
+        { id: "engineered-wood-fiber-vs-rubber-mulch", label: "Engineered wood fiber vs rubber mulch" },
+        { id: "worked-quantity-examples", label: "Worked quantity examples" },
+        { id: "the-settle-and-compaction-allowance", label: "The settle and compaction allowance" },
+        { id: "maintenance-cadence-that-keeps-the-rating", label: "Maintenance cadence that keeps the rating" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "CPSC Public Playground Safety Handbook (Publication 325) — loose-fill surfacing depth and use-zone guidance by equipment fall height.",
+        "ASTM F1292 — impact-attenuation testing standard for playground surfacing fall-height ratings.",
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         For most backyard and school playgrounds: <strong>9 to 12 inches of
         engineered wood fiber (EWF)</strong>, or <strong>about 6 inches of
@@ -75,7 +90,7 @@ export default function Guide() {
         entirely.
       </p>
 
-      <h2>Safety depths by fall height</h2>
+      <h2 id="safety-depths-by-fall-height">Safety depths by fall height</h2>
       <p>
         The depths below follow the guidance in the CPSC Public Playground
         Safety Handbook (Publication 325) and the impact-attenuation testing
@@ -106,7 +121,7 @@ export default function Guide() {
         slide exit fails the spec.
       </p>
 
-      <h2>Engineered wood fiber vs rubber mulch</h2>
+      <h2 id="engineered-wood-fiber-vs-rubber-mulch">Engineered wood fiber vs rubber mulch</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th></th><th>Engineered wood fiber</th><th>Playground rubber mulch</th></tr>
@@ -130,7 +145,7 @@ export default function Guide() {
         a fall-height rating.
       </p>
 
-      <h2>Worked quantity examples</h2>
+      <h2 id="worked-quantity-examples">Worked quantity examples</h2>
       <p>
         Measure the <strong>whole use zone</strong>, not just the equipment
         footprint. Yards = (L × W × depth in feet) / 27; EWF tons = yards ×
@@ -155,7 +170,7 @@ export default function Guide() {
         delivery.
       </p>
 
-      <h2>The settle and compaction allowance</h2>
+      <h2 id="the-settle-and-compaction-allowance">The settle and compaction allowance</h2>
       <p>
         Loose-fill surfacing loses <strong>25–30% of its depth to
         settling</strong> in the first months of play. Because CPSC depths are
@@ -170,7 +185,7 @@ export default function Guide() {
         zone that averages 10 inches can be 5 inches where it matters most.
       </p>
 
-      <h2>Maintenance cadence that keeps the rating</h2>
+      <h2 id="maintenance-cadence-that-keeps-the-rating">Maintenance cadence that keeps the rating</h2>
       <p>
         <strong>Monthly:</strong> rake landing zones level and check depth at
         the markers. <strong>Yearly:</strong> add 1–3 inches of fresh EWF —
@@ -184,7 +199,7 @@ export default function Guide() {
         simple slope under the fill keeps EWF from rotting in standing water.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Using decorative mulch.</strong> Bagged landscape mulch is
         not EWF — inconsistent particle size, possible splinters, no impact

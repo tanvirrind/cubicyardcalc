@@ -57,10 +57,26 @@ export default function Guide() {
       calculatorHref="/calculators/topsoil-calculator/"
       calculatorLabel="Try the topsoil calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-60-second-material-decoder", label: "The 60-second material decoder" },
+        { id: "project-material-quantity", label: "Project → material → quantity" },
+        { id: "raised-beds-the-worked-example", label: "Raised beds: the worked example" },
+        { id: "new-in-ground-beds-amend-don-t-replace", label: "New in-ground beds: amend, don't replace" },
+        { id: "topdressing-and-leveling-compost-vs-topsoil", label: "Topdressing and leveling: compost vs topsoil" },
+        { id: "cost-per-yard-bulk-vs-bagged", label: "Cost per yard: bulk vs bagged" },
+        { id: "the-bagged-lies-label-math", label: "The “bagged lies” label math" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Published soil-science and gardening guidance on topsoil, compost, and blended garden soil composition, amendment ratios, and planting use.",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Buy by <strong>project, not by bag</strong>: raised beds want a{" "}
         <strong>50–60% topsoil / 40–50% compost</strong> mix; new in-ground
@@ -73,7 +89,7 @@ export default function Guide() {
         soil, or 16 of the 2 cu ft bags.
       </p>
 
-      <h2>The 60-second material decoder</h2>
+      <h2 id="the-60-second-material-decoder">The 60-second material decoder</h2>
       <p>
         <strong>Topsoil</strong> is screened native soil — the mineral base
         with sand, silt, clay, and some organic matter. It&apos;s what lawns
@@ -89,7 +105,7 @@ export default function Guide() {
         yard (see the cost table below).
       </p>
 
-      <h2>Project → material → quantity</h2>
+      <h2 id="project-material-quantity">Project → material → quantity</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Project</th><th>Buy this</th><th>Quantity rule</th></tr>
@@ -103,7 +119,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Raised beds: the worked example</h2>
+      <h2 id="raised-beds-the-worked-example">Raised beds: the worked example</h2>
       <p>
         The classic 4 &times; 8 &times; 1 ft raised bed: 4 &times; 8 &times; 1 = 32 cu ft / 27 =
         <strong> 1.19 cubic yards</strong>. A 50/50 mix means{" "}
@@ -133,7 +149,7 @@ export default function Guide() {
         of mix this way instead of 2.37.
       </p>
 
-      <h2>New in-ground beds: amend, don&apos;t replace</h2>
+      <h2 id="new-in-ground-beds-amend-don-t-replace">New in-ground beds: amend, don&apos;t replace</h2>
       <p>
         For a bed dug into native soil, you don&apos;t need a bed-full of
         bagged product — you need <strong>2–3 inches of compost tilled 6–8
@@ -146,7 +162,7 @@ export default function Guide() {
         then it&apos;s bulk topsoil by the yard, not bags.
       </p>
 
-      <h2>Topdressing and leveling: compost vs topsoil</h2>
+      <h2 id="topdressing-and-leveling-compost-vs-topsoil">Topdressing and leveling: compost vs topsoil</h2>
       <p>
         <strong>Topdressing a lawn</strong> (feeding it, not leveling) wants
         <strong> screened compost at ¼–½ inch</strong>: 1,000 sq ft at ½ inch
@@ -160,7 +176,7 @@ export default function Guide() {
         &ldquo;just an inch&rdquo; is heavy on a big lawn.
       </p>
 
-      <h2>Cost per yard: bulk vs bagged</h2>
+      <h2 id="cost-per-yard-bulk-vs-bagged">Cost per yard: bulk vs bagged</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Material</th><th>Bulk (per yard)</th><th>Bagged equivalent (per yard)</th></tr>
@@ -182,7 +198,7 @@ export default function Guide() {
         bags if this is the only one.
       </p>
 
-      <h2>The &ldquo;bagged lies&rdquo; label math</h2>
+      <h2 id="the-bagged-lies-label-math">The &ldquo;bagged lies&rdquo; label math</h2>
       <p>
         Bag labels state volume at fill, and bags are filled fluffy —
         the contents settle. Three things to check:{" "}
@@ -198,7 +214,7 @@ export default function Guide() {
         ($2.75/cu ft) every time.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Pure compost beds.</strong> Settles, holds water, burns
         seedlings — always blend with topsoil. <strong>Topsoil under

@@ -53,10 +53,27 @@ export default function Guide() {
       calculatorHref="/calculators/gravel-calculator/"
       calculatorLabel="Try the gravel calculator"
       updated="2026-10-12"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "materials-by-patio-size", label: "Materials by patio size" },
+        { id: "bedding-sand-vs-joint-sand-don-t-mix-them-up", label: "Bedding sand vs joint sand: don't mix them up" },
+        { id: "compaction-the-step-people-skip-and-regret", label: "Compaction: the step people skip and regret" },
+        { id: "which-gravel-to-use-under-pavers", label: "Which gravel to use under pavers" },
+        { id: "slope-for-drainage", label: "Slope for drainage" },
+        { id: "order-of-operations-the-base-step-by-step", label: "Order of operations: the base, step by step" },
+        { id: "don-t-forget-edge-restraint", label: "Don't forget edge restraint" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "ASTM C33 aggregate density ranges",
+        "Typical paver installation practice — compacted base depths, bedding and joint sand selection, screeding, and edge restraint guidance.",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Memorize the <strong>4-6-1 rule</strong>: <strong>4 to 6 inches</strong>{" "}
         of compacted crushed-stone base, <strong>1 inch</strong> of bedding
@@ -70,7 +87,7 @@ export default function Guide() {
         once you have the table ballpark below.
       </p>
 
-      <h2>Materials by patio size</h2>
+      <h2 id="materials-by-patio-size">Materials by patio size</h2>
       <p>
         Gravel figures are compacted depth — order about 10% extra to cover
         compaction loss and irregular edges. Bedding sand is shown in cubic
@@ -95,7 +112,7 @@ export default function Guide() {
         or ton: a cubic yard of gravel weighs about 1.4 tons.
       </p>
 
-      <h2>Bedding sand vs joint sand: don&apos;t mix them up</h2>
+      <h2 id="bedding-sand-vs-joint-sand-don-t-mix-them-up">Bedding sand vs joint sand: don&apos;t mix them up</h2>
       <p>
         <strong>Bedding sand</strong> is the 1-inch layer under the pavers.
         Use <strong>coarse washed concrete sand</strong> — sharp-edged
@@ -109,7 +126,7 @@ export default function Guide() {
         a mushy bed and weak joints.
       </p>
 
-      <h2>Compaction: the step people skip and regret</h2>
+      <h2 id="compaction-the-step-people-skip-and-regret">Compaction: the step people skip and regret</h2>
       <p>
         Compaction is what separates a patio that is still flat in ten
         years from one that looks like a wave pool by year three. The
@@ -123,7 +140,7 @@ export default function Guide() {
         single most important tool in the whole project.
       </p>
 
-      <h2>Which gravel to use under pavers</h2>
+      <h2 id="which-gravel-to-use-under-pavers">Which gravel to use under pavers</h2>
       <p>
         Not all &ldquo;gravel&rdquo; qualifies as a paver base. The
         spec is <strong>crushed stone with fines</strong> — sold as
@@ -136,10 +153,13 @@ export default function Guide() {
         bedding layer, insist on <strong>coarse washed concrete
         sand</strong> — sharp, clean, and free of silt. Stone dust is
         sometimes suggested as bedding, but it holds water and can
-        stain pavers, so concrete sand is the safer default.
+        stain pavers, so concrete sand is the safer default. For the
+        quantity side — depths, yards, and tons for your patio size — see
+        our <a href="/guides/how-much-sub-base-do-i-need/">sub-base
+        quantity guide</a>.
       </p>
 
-      <h2>Slope for drainage</h2>
+      <h2 id="slope-for-drainage">Slope for drainage</h2>
       <p>
         Before the base goes down, grade the soil so the finished patio
         slopes <strong>1 to 2 inches per 8 feet</strong> away from any
@@ -150,7 +170,7 @@ export default function Guide() {
         Set your screed rails to the slope and let the base follow it.
       </p>
 
-      <h2>Order of operations: the base, step by step</h2>
+      <h2 id="order-of-operations-the-base-step-by-step">Order of operations: the base, step by step</h2>
       <p>
         The sequence matters as much as the materials. <strong>1.
         Excavate</strong> 7 to 9 inches below finished grade (base
@@ -171,7 +191,7 @@ export default function Guide() {
         pieces.
       </p>
 
-      <h2>Don&apos;t forget edge restraint</h2>
+      <h2 id="don-t-forget-edge-restraint">Don&apos;t forget edge restraint</h2>
       <p>
         Pavers are held in place laterally by the base, the joint sand, and
         the edge. Leave off the edge restraint and the outer rows creep
@@ -181,7 +201,7 @@ export default function Guide() {
         that protects the entire build.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Sand layer too thick.</strong> More than 1 inch of bedding
         sand creates a shifting mattress — pavers rock and settle

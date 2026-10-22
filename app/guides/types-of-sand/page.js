@@ -57,10 +57,31 @@ export default function Guide() {
       calculatorHref="/calculators/sand-calculator/"
       calculatorLabel="Try the sand calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-five-sands-compared", label: "The five sands, compared" },
+        { id: "use-this-not-this-by-project", label: "Use this / not this, by project" },
+        { id: "a-note-on-bedding-vs-joint-sand-for-pavers", label: "A note on bedding vs joint sand for pavers" },
+        { id: "bag-vs-bulk-the-price-cliff", label: "Bag vs bulk: the price cliff" },
+        { id: "astm-specs-in-plain-english", label: "ASTM specs, in plain English" },
+        { id: "where-to-buy-each-sand", label: "Where to buy each sand" },
+        { id: "can-you-mix-sands", label: "Can you mix sands?" },
+        { id: "silica-dust-the-one-safety-note", label: "Silica dust: the one safety note" },
+        { id: "how-much-sand-do-you-actually-need", label: "How much sand do you actually need?" },
+        { id: "storage-and-handling", label: "Storage and handling" },
+        { id: "common-mistakes", label: "Common mistakes" },
+        { id: "a-quick-buying-checklist", label: "A quick buying checklist" },
+      ]}
+      references={[
+        "ASTM C33 — grading standard for concrete sand (coarse washed fine aggregate), as referenced in the guide.",
+        "ASTM C144 — grading standard for masonry (mortar) sand, as referenced in the guide.",
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+        "Pricing: published contractor cost guides and supplier listings, checked October 2026.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         <strong>Sandbox? Play sand. Mortar or pool base? Mason sand. General
         yard work? All-purpose. Mixing concrete? Concrete sand. Paver joints?
@@ -70,7 +91,7 @@ export default function Guide() {
         below matches each sand to its jobs.
       </p>
 
-      <h2>The five sands, compared</h2>
+      <h2 id="the-five-sands-compared">The five sands, compared</h2>
       <p>
         Every bag or bulk load you&apos;ll find at a yard or home center is
         one of these five. Here&apos;s how they differ on grain, texture, and
@@ -89,7 +110,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>Use this / not this, by project</h2>
+      <h2 id="use-this-not-this-by-project">Use this / not this, by project</h2>
       <p>
         Pick your project in the left column. The right column is what to
         avoid and why:
@@ -109,7 +130,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>A note on bedding vs joint sand for pavers</h2>
+      <h2 id="a-note-on-bedding-vs-joint-sand-for-pavers">A note on bedding vs joint sand for pavers</h2>
       <p>
         Pavers use two different sands doing two different jobs: coarse
         concrete sand as the 1-inch <strong>bedding</strong> layer, and
@@ -120,7 +141,7 @@ export default function Guide() {
         covers the full layer-by-layer build with quantities.
       </p>
 
-      <h2>Bag vs bulk: the price cliff</h2>
+      <h2 id="bag-vs-bulk-the-price-cliff">Bag vs bulk: the price cliff</h2>
       <p>
         Sand is sold two ways and the price difference is brutal. A
         50-pound bag holds about <strong>0.5 cubic feet</strong>, so a cubic
@@ -141,7 +162,7 @@ export default function Guide() {
         <strong>1.35</strong> for tons.
       </p>
 
-      <h2>ASTM specs, in plain English</h2>
+      <h2 id="astm-specs-in-plain-english">ASTM specs, in plain English</h2>
       <p>
         Bulk sand from a real supplier is often graded to an{" "}
         <strong>ASTM standard</strong> — a published spec that guarantees
@@ -164,7 +185,7 @@ export default function Guide() {
         from washing and screening, not a construction standard.)
       </p>
 
-      <h2>Where to buy each sand</h2>
+      <h2 id="where-to-buy-each-sand">Where to buy each sand</h2>
       <p>
         Not every seller stocks every sand, and buying from the right place
         saves money. <strong>Home centers</strong> carry bagged play sand,
@@ -180,7 +201,7 @@ export default function Guide() {
         width).
       </p>
 
-      <h2>Can you mix sands?</h2>
+      <h2 id="can-you-mix-sands">Can you mix sands?</h2>
       <p>
         Sometimes — but know what you&apos;re making. Blending mason sand
         into all-purpose sand for lawn leveling is fine. <strong>Never blend
@@ -193,7 +214,7 @@ export default function Guide() {
         harmless.
       </p>
 
-      <h2>Silica dust: the one safety note</h2>
+      <h2 id="silica-dust-the-one-safety-note">Silica dust: the one safety note</h2>
       <p>
         All natural sand contains crystalline silica; the risk is{" "}
         <strong>breathing the dust</strong>, not touching the sand. Cutting
@@ -205,7 +226,7 @@ export default function Guide() {
         for a sandbox.
       </p>
 
-      <h2>How much sand do you actually need?</h2>
+      <h2 id="how-much-sand-do-you-actually-need">How much sand do you actually need?</h2>
       <p>
         Once you&apos;ve picked the type, the quantity math is the same for
         all of them: <strong>(length × width × depth in feet) / 27</strong> =
@@ -216,7 +237,7 @@ export default function Guide() {
         for any shape and converts to tons and bags automatically.
       </p>
 
-      <h2>Storage and handling</h2>
+      <h2 id="storage-and-handling">Storage and handling</h2>
       <p>
         Bulk sand arrives in a pile — <strong>tarp it</strong> if it&apos;ll
         sit more than a day or two, because wet sand weighs more (delivery
@@ -228,7 +249,7 @@ export default function Guide() {
         driveway or lawn can&apos;t take the weight.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>One sand for everything.</strong> The all-purpose bag is
         tempting; it&apos;s wrong for mortar, concrete, and paver joints.{" "}
@@ -240,7 +261,7 @@ export default function Guide() {
         Store it dry or it sets before you use it.
       </p>
 
-      <h2>A quick buying checklist</h2>
+      <h2 id="a-quick-buying-checklist">A quick buying checklist</h2>
       <p>
         Before you order, run through this: <strong>1)</strong> Match the
         sand to the job using the table above — not whatever&apos;s

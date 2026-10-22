@@ -57,10 +57,28 @@ export default function Guide() {
       calculatorHref="/calculators/cubic-yard-calculator/"
       calculatorLabel="Try the cubic yard calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "the-universal-formula-first", label: "The universal formula first" },
+        { id: "rectangles-the-workhorse", label: "Rectangles: the workhorse" },
+        { id: "l-shapes-and-odd-polygons-split-into-rectangles", label: "L-shapes and odd polygons: split into rectangles" },
+        { id: "triangles-base-height", label: "Triangles: ½ × base × height" },
+        { id: "circles-radius", label: "Circles: π × radius²" },
+        { id: "ovals-long-radius-short-radius", label: "Ovals: π × long radius × short radius" },
+        { id: "curves-and-kidney-shapes-slice-into-pieces", label: "Curves and kidney shapes: slice into pieces" },
+        { id: "the-slope-adjustment", label: "The slope adjustment" },
+        { id: "where-depth-varies-average-it", label: "Where depth varies: average it" },
+        { id: "the-measure-twice-checklist", label: "The measure-twice checklist" },
+        { id: "from-area-to-the-right-material", label: "From area to the right material" },
+      ]}
+      references={[
+        "All calculations use the site's published constants — see Data Sources (/data-sources/).",
+        "Material densities: published bulk-material density tables cross-checked against supplier data (see /data-sources/).",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         Every irregular bed is a pile of simple shapes. Measure each piece as
         a rectangle, triangle, or circle, <strong>add the areas
@@ -72,7 +90,7 @@ export default function Guide() {
         and add ~10% for slope.
       </p>
 
-      <h2>The universal formula first</h2>
+      <h2 id="the-universal-formula-first">The universal formula first</h2>
       <p>
         Everything below funnels into one formula. Measure the bed&apos;s
         area in square feet however you must, pick your depth in inches, and
@@ -105,7 +123,7 @@ export default function Guide() {
         calculator</a>.
       </p>
 
-      <h2>Rectangles: the workhorse</h2>
+      <h2 id="rectangles-the-workhorse">Rectangles: the workhorse</h2>
       <p>
         <strong>Area = length &times; width.</strong> Measure the two longest
         straight runs at right angles, in feet. Round each measurement up to
@@ -116,7 +134,7 @@ export default function Guide() {
         mulch at 2 inches instead: 120 &times; 0.167 / 27 = 0.74 yards.
       </p>
 
-      <h2>L-shapes and odd polygons: split into rectangles</h2>
+      <h2 id="l-shapes-and-odd-polygons-split-into-rectangles">L-shapes and odd polygons: split into rectangles</h2>
       <p>
         Draw the L on paper, then split it into two rectangles with a single
         imaginary line. Measure each rectangle separately and add the areas.
@@ -131,7 +149,7 @@ export default function Guide() {
         mulch (1.44 &times; 13.5 = 19.4), or 22 with 10% overage.
       </p>
 
-      <h2>Triangles: ½ &times; base &times; height</h2>
+      <h2 id="triangles-base-height">Triangles: ½ &times; base &times; height</h2>
       <p>
         <strong>Area = ½ &times; base &times; height.</strong> Pick any side as the base,
         then measure the height as the shortest distance from the opposite
@@ -144,7 +162,7 @@ export default function Guide() {
         garden center, not a delivery.
       </p>
 
-      <h2>Circles: π &times; radius²</h2>
+      <h2 id="circles-radius">Circles: π &times; radius²</h2>
       <p>
         <strong>Area = 3.14 &times; radius &times; radius.</strong> Find the center (or
         just measure straight across the middle for the diameter and halve
@@ -157,7 +175,7 @@ export default function Guide() {
         mulch is 78.5 &times; 0.25 / 27 = 0.73 yards.
       </p>
 
-      <h2>Ovals: π &times; long radius &times; short radius</h2>
+      <h2 id="ovals-long-radius-short-radius">Ovals: π &times; long radius &times; short radius</h2>
       <p>
         <strong>Area = 3.14 &times; half-length &times; half-width.</strong> Measure the
         longest span and the widest span, halve each, and multiply with 3.14
@@ -168,7 +186,7 @@ export default function Guide() {
         yard, that&apos;s 1.40 &times; 1.2 = 1.68 tons of topsoil.
       </p>
 
-      <h2>Curves and kidney shapes: slice into pieces</h2>
+      <h2 id="curves-and-kidney-shapes-slice-into-pieces">Curves and kidney shapes: slice into pieces</h2>
       <p>
         Walk the curve with a tape and mentally slice the bed into 2–4
         straight rectangles, adding a triangle where the curve bends sharply.
@@ -180,7 +198,7 @@ export default function Guide() {
         / 27 = <strong>0.48 cubic yards</strong>, about 0.67 tons.
       </p>
 
-      <h2>The slope adjustment</h2>
+      <h2 id="the-slope-adjustment">The slope adjustment</h2>
       <p>
         On a slope, measure <strong>along the ground</strong>, not the flat
         map distance — lay the tape on the slope surface. The true surface
@@ -193,7 +211,7 @@ export default function Guide() {
         — rather than simply more of the same.
       </p>
 
-      <h2>Where depth varies: average it</h2>
+      <h2 id="where-depth-varies-average-it">Where depth varies: average it</h2>
       <p>
         Take 4–6 depth readings across the bed — corners and middle — and
         average them. A bed that reads 4, 3, 3, 2, 2, and 2 inches averages
@@ -204,7 +222,7 @@ export default function Guide() {
         guide</a> covers the wedge math for slopes.
       </p>
 
-      <h2>The measure-twice checklist</h2>
+      <h2 id="the-measure-twice-checklist">The measure-twice checklist</h2>
       <p>
         <strong>Measure in feet, convert once.</strong> Record feet and
         inches, then convert to decimal feet at the end (3 inches = 0.25,
@@ -219,7 +237,7 @@ export default function Guide() {
         half-empty bed and a second delivery are expensive.
       </p>
 
-      <h2>From area to the right material</h2>
+      <h2 id="from-area-to-the-right-material">From area to the right material</h2>
       <p>
         Once you have the square footage, the quantity guides take over:
         our <a href="/guides/how-much-mulch-do-i-need/">mulch quantity

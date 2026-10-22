@@ -58,10 +58,27 @@ export default function Guide() {
       calculatorHref="/calculators/landscape-rock-calculator/"
       calculatorLabel="Try the landscape rock calculator"
       updated="2026-10"
+      toc={[
+        { id: "the-short-answer", label: "The short answer" },
+        { id: "when-yes-use-landscape-fabric-under-rock", label: "When YES: use landscape fabric under rock" },
+        { id: "when-no-skip-the-fabric", label: "When NO: skip the fabric" },
+        { id: "the-weed-myth-honestly", label: "The weed myth, honestly" },
+        { id: "woven-vs-non-woven-buy-the-right-one", label: "Woven vs non-woven: buy the right one" },
+        { id: "how-to-install-it-so-it-actually-works", label: "How to install it so it actually works" },
+        { id: "fabric-vs-no-fabric-at-a-glance", label: "Fabric vs no-fabric at a glance" },
+        { id: "how-much-rock-to-put-over-the-fabric", label: "How much rock to put over the fabric" },
+        { id: "geotextile-under-driveways-a-special-case", label: "Geotextile under driveways: a special case" },
+        { id: "dealing-with-old-failed-fabric", label: "Dealing with old, failed fabric" },
+        { id: "common-mistakes", label: "Common mistakes" },
+      ]}
+      references={[
+        "Landscape fabric and geotextile manufacturer guidance on woven vs non-woven fabric selection, fabric weight, and service life under rock cover.",
+        "Typical landscape installation practice — seam overlap, pinning, and rock cover depths for permanent beds, walkways, and drainage applications.",
+      ]}
     >
       <JsonLd data={faqJsonLd(faqs)} />
 
-      <h2>The short answer</h2>
+      <h2 id="the-short-answer">The short answer</h2>
       <p>
         <strong>Yes</strong> under rock in permanent beds, walkways, and{" "}
         <a href="/guides/how-much-gravel-for-a-french-drain/">French drains</a>{" "}
@@ -74,7 +91,7 @@ export default function Guide() {
         your neighbors blame on the fabric were never its fault.
       </p>
 
-      <h2>When YES: use landscape fabric under rock</h2>
+      <h2 id="when-yes-use-landscape-fabric-under-rock">When YES: use landscape fabric under rock</h2>
       <p>
         <strong>Permanent rock beds.</strong> Decorative river rock or gravel
         beds you plan to leave alone for a decade belong on fabric. Without a
@@ -106,7 +123,7 @@ export default function Guide() {
         do well on fabric with 3+ inches of rock over it.
       </p>
 
-      <h2>When NO: skip the fabric</h2>
+      <h2 id="when-no-skip-the-fabric">When NO: skip the fabric</h2>
       <p>
         <strong>Future planting zones.</strong> The classic regret: fabric
         goes down under rock, then a new owner (or your future self) wants to
@@ -135,7 +152,7 @@ export default function Guide() {
         that surface through the rock for years afterward.
       </p>
 
-      <h2>The weed myth, honestly</h2>
+      <h2 id="the-weed-myth-honestly">The weed myth, honestly</h2>
       <p>
         Fabric stops weeds coming <em>up</em> from the soil. It does nothing
         about seeds landing <em>down</em>. Leaves, dust, and pollen decompose
@@ -157,7 +174,7 @@ export default function Guide() {
         for 15+ years.
       </p>
 
-      <h2>Woven vs non-woven: buy the right one</h2>
+      <h2 id="woven-vs-non-woven-buy-the-right-one">Woven vs non-woven: buy the right one</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Type</th><th>Best for</th><th>Strength</th><th>Drainage</th></tr>
@@ -177,7 +194,7 @@ export default function Guide() {
         creates a soggy, airless layer that rots nearby roots.
       </p>
 
-      <h2>How to install it so it actually works</h2>
+      <h2 id="how-to-install-it-so-it-actually-works">How to install it so it actually works</h2>
       <p>
         <strong>1. Prep the soil.</strong> Clear all existing weeds and roots,
         then level and lightly compact the soil. Fabric over bumpy, rooty
@@ -207,7 +224,7 @@ export default function Guide() {
         wave of top-rooted weeds, and looks substantially better.
       </p>
 
-      <h2>Fabric vs no-fabric at a glance</h2>
+      <h2 id="fabric-vs-no-fabric-at-a-glance">Fabric vs no-fabric at a glance</h2>
       <table className="ref-table" style={{ margin: "20px 0" }}>
         <thead>
           <tr><th>Project</th><th>Fabric?</th><th>Why</th></tr>
@@ -224,7 +241,7 @@ export default function Guide() {
         </tbody>
       </table>
 
-      <h2>How much rock to put over the fabric</h2>
+      <h2 id="how-much-rock-to-put-over-the-fabric">How much rock to put over the fabric</h2>
       <p>
         Fabric does nothing if the rock layer is too thin — and thin rock
         over fabric looks terrible, with the weave showing through. Use{" "}
@@ -239,7 +256,7 @@ export default function Guide() {
         minimums make short orders expensive.
       </p>
 
-      <h2>Geotextile under driveways: a special case</h2>
+      <h2 id="geotextile-under-driveways-a-special-case">Geotextile under driveways: a special case</h2>
       <p>
         Woven geotextile <em>does</em> have a role under gravel driveways —
         but not as a weed barrier. Here it acts as a <strong>soil
@@ -253,7 +270,7 @@ export default function Guide() {
         the driveway's life.
       </p>
 
-      <h2>Dealing with old, failed fabric</h2>
+      <h2 id="dealing-with-old-failed-fabric">Dealing with old, failed fabric</h2>
       <p>
         If you inherited shredded bargain fabric under rock, removal is
         unpleasant but straightforward: rake the rock to one side, cut the
@@ -266,7 +283,7 @@ export default function Guide() {
         than one.
       </p>
 
-      <h2>Common mistakes</h2>
+      <h2 id="common-mistakes">Common mistakes</h2>
       <p>
         <strong>Fabric under mulch.</strong> Covered above — mulch goes
         straight on soil. <strong>No overlap at seams.</strong> A 1-inch gap
